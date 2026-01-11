@@ -40,7 +40,7 @@ export function Navigation() {
               alt="Prime Icon" 
               className="h-12 md:h-16 w-auto object-contain brightness-110"
             />
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 -mt-[3px]">
               <span className="prime-silver tracking-[0.5em]">PRIME</span> 
               <span className="frame-gold">FRAME</span>
             </div>
@@ -89,7 +89,7 @@ export function Navigation() {
           </div>
 
           <button
-            className="md:hidden text-foreground hover:text-primary transition-colors"
+            className="md:hidden text-foreground hover:text-primary transition-colors -mt-[3px]"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
