@@ -404,7 +404,7 @@
   line-height: 1;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 0;
 }
 
 .prime-frame-logo .prime-silver {
