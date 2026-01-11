@@ -31,7 +31,7 @@ export function Navigation() {
         isScrolled ? "bg-background/80 backdrop-blur-md border-b border-border" : "bg-transparent",
       )}
     >
-      <div className="container md:px-6 md:py-6 my-0 mx-auto px-4 py-4">
+      <div className="container md:px-6 md:py-2 my-0 mx-auto px-4 py-2">
         <div className="flex items-center justify-between">
           {/* Prime Frame logo styling */}
           <div className="prime-frame-logo flex items-center gap-4">
