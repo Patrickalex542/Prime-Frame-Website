@@ -370,7 +370,7 @@
 .prime-silver {
   color: #b8b8b8; /* Silver/light gray matching "PRIME" in image */
   text-shadow: 0 2px 8px rgba(255, 255, 255, 0.15), 0 0 20px rgba(184, 184, 184, 0.2);
-  display: block;
+  display: inline-block;
 }
 
 .frame-gold {
@@ -380,7 +380,7 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-shadow: 0 2px 12px rgba(201, 162, 106, 0.4);
-  display: block;
+  display: inline-block;
 }
 
 /* Enhanced metallic effect on desktop */
