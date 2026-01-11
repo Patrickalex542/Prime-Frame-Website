@@ -1,5 +1,5 @@
 "use client"
-// Deployment Sync: 2026-01-11-v2
+// Deployment Sync: 2026-01-11-v3
 
 import { useRef, useEffect, useState } from "react"
 import * as THREE from "three"
@@ -322,7 +322,7 @@ export default function HeroNebula({
 
       <div className="hero-overlay">
         <div className="hero-content-top mt-20 mb-12 flex flex-col items-start px-6 md:px-12 w-full max-w-7xl mx-auto">
-          <div className="badge">NEXT GEN MARKETING</div>
+          <div className="badge self-start">NEXT GEN MARKETING</div>
           <h1 className="hero-title text-center w-full">{title}</h1>
           <p className="hero-subtitle text-center w-full">{subtitle}</p>
         </div>
