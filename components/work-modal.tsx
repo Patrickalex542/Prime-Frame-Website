@@ -31,14 +31,24 @@ export function WorkModal({ isOpen, onClose, title, category, tags, description,
       const videoId = url.split("/shorts/")[1].split("?")[0]
       return `https://www.youtube.com/embed/${videoId}?modestbranding=1&rel=0&controls=1`
     }
+    if (url.includes("cloudflarestream.com")) {
+      // Cloudflare Stream 4K optimization
+      if (url.includes("/iframe")) return url
+      const videoId = url.split("/").pop()
+      return `https://customer-f3s7okvsv6y788s3.cloudflarestream.com/${videoId}/iframe?preload=true&poster=true`
+    }
     if (url.includes("drive.google.com")) {
-      // The button is part of their player and cannot be removed
       return url
     }
     return url
   }
 
-  const isEmbed = videoUrl && (videoUrl.includes("youtube.com") || videoUrl.includes("drive.google.com"))
+  const isEmbed = 
+    videoUrl && (
+      videoUrl.includes("youtube.com") || 
+      videoUrl.includes("drive.google.com") || 
+      videoUrl.includes("cloudflarestream.com")
+    )
   const embedUrl = videoUrl ? getEmbedUrl(videoUrl) : ""
 
   return (
@@ -51,6 +61,7 @@ export function WorkModal({ isOpen, onClose, title, category, tags, description,
             isEmbed ? (
               <iframe
                 src={embedUrl}
+                title={title}
                 className="w-full h-full"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
