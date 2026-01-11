@@ -6,8 +6,15 @@ export function Footer() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex flex-col items-center md:items-start gap-4">
-            <div className="prime-frame-logo">
-              <span className="prime-silver tracking-[0.5em]">PRIME</span> <span className="frame-gold">FRAME</span>
+            <div className="prime-frame-logo flex items-center gap-2 mb-2">
+              <img 
+                src="/images/logo-icon.jpg" 
+                alt="Prime Icon" 
+                className="h-6 w-6 object-contain brightness-110"
+              />
+              <div>
+                <span className="prime-silver tracking-[0.5em]">PRIME</span> <span className="frame-gold">FRAME</span>
+              </div>
             </div>
             <p className="text-sm text-muted-foreground tracking-wider">© 2026 PRIME FRAME. Toate drepturile rezervate.</p>
           </div>

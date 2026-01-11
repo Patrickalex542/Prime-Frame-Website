@@ -34,8 +34,15 @@ export function Navigation() {
       <div className="container md:px-6 md:py-6 my-0 mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Prime Frame logo styling */}
-          <div className="prime-frame-logo">
-            <span className="prime-silver tracking-[0.5em]">PRIME</span> <span className="frame-gold">FRAME</span>
+          <div className="prime-frame-logo flex items-center gap-3">
+            <img 
+              src="/images/logo-icon.jpg" 
+              alt="Prime Icon" 
+              className="h-8 w-8 object-contain brightness-110"
+            />
+            <div>
+              <span className="prime-silver tracking-[0.5em]">PRIME</span> <span className="frame-gold">FRAME</span>
+            </div>
           </div>
 
           {/* Desktop Navigation */}
