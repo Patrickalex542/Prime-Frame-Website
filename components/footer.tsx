@@ -7,8 +7,9 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex flex-col items-center md:items-start gap-4">
             <div className="prime-frame-logo flex items-center gap-2 mb-2">
-              <div>
-                <span className="prime-silver tracking-[0.5em]">PRIME</span> <span className="frame-gold">FRAME</span>
+              <div className="flex items-center gap-2">
+                <span className="prime-silver tracking-[0.5em]">PRIME</span> 
+                <span className="frame-gold">FRAME</span>
               </div>
               <img 
                 src="/images/logo-icon.jpg" 
