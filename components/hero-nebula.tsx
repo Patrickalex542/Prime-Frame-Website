@@ -321,10 +321,10 @@ export default function HeroNebula({
       <div className="hero-canvas" ref={mountRef} aria-hidden="true" />
 
       <div className="hero-overlay">
-        <div className="hero-content-top mt-20 mb-12 text-center">
+        <div className="hero-content-top mt-20 mb-12 flex flex-col items-start px-6 md:px-12 w-full max-w-7xl mx-auto">
           <div className="badge">NEXT GEN MARKETING</div>
-          <h1 className="hero-title text-center">{title}</h1>
-          <p className="hero-subtitle text-center">{subtitle}</p>
+          <h1 className="hero-title text-center w-full">{title}</h1>
+          <p className="hero-subtitle text-center w-full">{subtitle}</p>
         </div>
 
         <div className="hero-content-bottom">
