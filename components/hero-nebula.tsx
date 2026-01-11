@@ -328,7 +328,7 @@ export default function HeroNebula({
         </div>
 
         <div className="hero-content-bottom">
-          <div className="hero-actions flex flex-col items-center md:flex-row md:justify-center py-0 text-lg px-8 py-3 gap-6 md:gap-12">
+          <div className="hero-actions flex flex-row justify-between items-center w-full max-w-7xl mx-auto text-lg px-6 md:px-12 gap-4">
             <AIButton href={ctaPrimary.href} label={ctaPrimary.label} />
             <AIButton href={ctaSecondary.href} label={ctaSecondary.label} className="secondary-ai-btn" />
           </div>
