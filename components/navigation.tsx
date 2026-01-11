@@ -34,7 +34,7 @@ export function Navigation() {
       <div className="container mx-auto pt-2 pb-0 pl-[3px] pr-[10px]">
         <div className="flex items-center justify-between">
           {/* Prime Frame logo styling */}
-          <div className="prime-frame-logo flex items-center gap-4">
+          <div className="prime-frame-logo flex items-center gap-0">
             <img 
               src="/images/logo-icon.jpg" 
               alt="Prime Icon" 
