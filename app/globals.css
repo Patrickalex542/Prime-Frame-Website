@@ -149,7 +149,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 80px 20px 80px; /* Increased from 40px to lift buttons on mobile */
+  padding: 50px 20px 80px; /* Reduced top padding from 80px to 50px */
   padding-bottom: calc(84px + env(safe-area-inset-bottom)); /* Add iOS safe area support */
 }
 
