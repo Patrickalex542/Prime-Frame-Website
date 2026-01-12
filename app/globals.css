@@ -149,13 +149,14 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 50px 20px 80px; /* Reduced top padding from 80px to 50px */
-  padding-bottom: calc(84px + env(safe-area-inset-bottom)); /* Add iOS safe area support */
+  padding: 40px 20px 120px; /* Reduced top, significantly increased bottom to lift content */
+  padding-bottom: calc(120px + env(safe-area-inset-bottom)); /* Aggressive lift for iPhone home bar */
 }
 
 @media (min-width: 768px) {
   .hero-overlay {
     padding-bottom: 40px;
+    padding-top: 80px; /* Restore desktop top padding */
   }
 }
 
