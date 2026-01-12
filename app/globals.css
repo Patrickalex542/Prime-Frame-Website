@@ -1,5 +1,5 @@
 @import "tailwindcss";
-/* Deployment Sync: 2026-01-11-v2 */
+/* Deployment Sync: 2026-01-12-v3-Force-Refresh */
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
