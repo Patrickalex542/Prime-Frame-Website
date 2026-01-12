@@ -328,6 +328,10 @@ export default function HeroNebula({
         </div>
 
         <div className="hero-content-bottom">
+          <div className="hero-actions flex flex-row justify-between items-center w-full max-w-7xl mx-auto text-lg px-6 md:px-12 gap-4 -mt-[20px]">
+            <AIButton href={ctaPrimary.href} label={ctaPrimary.label} />
+            <AIButton href={ctaSecondary.href} label={ctaSecondary.label} className="secondary-ai-btn" />
+          </div>
           <div className="scroll-arrow-container">
             <svg
               className="scroll-arrow"
@@ -339,22 +343,13 @@ export default function HeroNebula({
               onClick={() => window.scrollBy({ top: window.innerHeight, behavior: "smooth" })}
             >
               <path
-                d="M12 5V19M12 19L19 12M12 19L5 12"
+                d="M7 13L12 18L17 13M7 6L12 11L17 6"
                 stroke="currentColor"
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
             </svg>
-          </div>
-        </div>
-
-        <div className="hero-actions absolute bottom-16 left-0 right-0 w-full flex flex-row justify-between items-center px-4 md:px-8 z-50 pointer-events-none">
-          <div className="pointer-events-auto">
-            <AIButton href={ctaPrimary.href} label={ctaPrimary.label} />
-          </div>
-          <div className="pointer-events-auto">
-            <AIButton href={ctaSecondary.href} label={ctaSecondary.label} className="secondary-ai-btn" />
           </div>
         </div>
       </div>
