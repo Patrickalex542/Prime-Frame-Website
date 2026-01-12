@@ -321,8 +321,7 @@ export default function HeroNebula({
       <div className="hero-canvas" ref={mountRef} aria-hidden="true" />
 
       <div 
-        className="hero-overlay relative z-20 h-full flex flex-col justify-between items-center w-full pt-[40px] px-5 pb-[120px] md:pt-[80px] md:pb-[40px]"
-        style={{ paddingBottom: 'calc(120px + env(safe-area-inset-bottom))' }}
+        className="hero-overlay relative z-20 h-full flex flex-col justify-between items-center w-full pt-[40px] px-5 pb-[calc(120px+env(safe-area-inset-bottom))] md:pt-[80px] md:pb-[40px]"
       >
         <div className="hero-content-top mt-[50px] mb-[50px] flex flex-col items-center px-6 md:px-12 w-full max-w-7xl mx-auto">
           <div className="badge self-start -mt-[13px]">NEXT GEN MARKETING</div>

@@ -141,10 +141,6 @@
   inset: 0;
 }
 
-.hero-overlay {
-  /* Styles moved to Tailwind utility classes in hero-nebula.tsx */
-  /* Kept for potential external references but logic is now component-level */
-}
 
 .hero-inner {
   width: min(1100px, 100%);
