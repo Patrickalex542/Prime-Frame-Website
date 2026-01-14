@@ -251,7 +251,7 @@ export default function HeroNebula({
         manualRotation.y += dragRotationVelocity.y
       }
 
-      const targetY = -((group as any).scrollOffset || 0) + (isMobile ? -0.5 : 0.3) // Lower sphere on mobile to avoid overlap
+      const targetY = -((group as any).scrollOffset || 0) + 0.3 // Lift sphere by 0.3 units (~10px visual adjustment)
       group.position.y += (targetY - group.position.y) * 0.08
 
       ring.rotation.z = t * 0.8

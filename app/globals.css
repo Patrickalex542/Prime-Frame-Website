@@ -409,13 +409,13 @@
 
 /* Specific Mobile Padding to ensure lift on all devices */
 .hero-mobile-padding {
-  padding-bottom: calc(200px + env(safe-area-inset-bottom)) !important;
+  padding-bottom: calc(150px + env(safe-area-inset-bottom)) !important;
 }
 
 /* Targeted optimization for small screens (iPhone SE, small Androids) */
 @media (max-width: 380px) {
   .hero-mobile-padding {
-    padding-bottom: calc(180px + env(safe-area-inset-bottom)) !important;
+    padding-bottom: calc(130px + env(safe-area-inset-bottom)) !important;
   }
   
   .btn {
