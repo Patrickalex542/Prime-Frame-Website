@@ -404,19 +404,18 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: none;
   filter: drop-shadow(0 1px 6px rgba(201, 162, 106, 0.3));
 }
 
 /* Specific Mobile Padding to ensure lift on all devices */
 .hero-mobile-padding {
-  padding-bottom: calc(150px + env(safe-area-inset-bottom)) !important;
+  padding-bottom: calc(200px + env(safe-area-inset-bottom)) !important;
 }
 
 /* Targeted optimization for small screens (iPhone SE, small Androids) */
 @media (max-width: 380px) {
   .hero-mobile-padding {
-    padding-bottom: calc(130px + env(safe-area-inset-bottom)) !important;
+    padding-bottom: calc(180px + env(safe-area-inset-bottom)) !important;
   }
   
   .btn {
