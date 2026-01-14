@@ -321,7 +321,7 @@ export default function HeroNebula({
       <div className="hero-canvas" ref={mountRef} aria-hidden="true" />
 
       <div 
-        className="hero-overlay relative z-20 h-full flex flex-col justify-between items-center w-full pt-[40px] px-5 pb-[calc(150px+env(safe-area-inset-bottom))] md:pt-[80px] md:pb-[40px]"
+        className="hero-overlay hero-mobile-padding relative z-20 h-full flex flex-col justify-between items-center w-full pt-[40px] px-5 md:pt-[80px]"
       >
         <div className="hero-content-top mt-[30px] mb-[50px] flex flex-col items-center px-6 md:px-12 w-full max-w-7xl mx-auto">
           <div className="badge self-start -mt-[13px]">NEXT GEN MARKETING</div>
@@ -330,7 +330,7 @@ export default function HeroNebula({
         </div>
 
         <div className="hero-content-bottom">
-          <div className="hero-actions flex flex-row justify-between items-center w-full max-w-7xl mx-auto text-base sm:text-lg px-3 xs:px-6 md:px-12 gap-2 sm:gap-4 -mt-[55px] md:-mt-[35px]">
+          <div className="hero-actions flex flex-row justify-between items-center w-full max-w-7xl mx-auto text-base sm:text-lg px-3 xs:px-6 md:px-12 gap-2 sm:gap-4 -mt-[60px] md:-mt-[35px]">
             <AIButton href={ctaPrimary.href} label={ctaPrimary.label} />
             <AIButton href={ctaSecondary.href} label={ctaSecondary.label} className="secondary-ai-btn" />
           </div>
