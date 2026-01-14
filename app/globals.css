@@ -407,3 +407,31 @@
   text-shadow: none;
   filter: drop-shadow(0 1px 6px rgba(201, 162, 106, 0.3));
 }
+
+/* Specific Mobile Padding to ensure lift on all devices */
+.hero-mobile-padding {
+  padding-bottom: calc(150px + env(safe-area-inset-bottom)) !important;
+}
+
+/* Targeted optimization for small screens (iPhone SE, small Androids) */
+@media (max-width: 380px) {
+  .hero-mobile-padding {
+    padding-bottom: calc(130px + env(safe-area-inset-bottom)) !important;
+  }
+  
+  .btn {
+    padding: 14px 20px !important;
+    font-size: 14px !important;
+    min-width: 120px !important;
+  }
+  
+  .hero-actions {
+    gap: 6px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-mobile-padding {
+    padding-bottom: 40px !important;
+  }
+}
