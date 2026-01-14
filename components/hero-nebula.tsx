@@ -323,7 +323,7 @@ export default function HeroNebula({
       <div 
         className="hero-overlay relative z-20 h-full flex flex-col justify-between items-center w-full pt-[40px] px-5 pb-[calc(120px+env(safe-area-inset-bottom))] md:pt-[80px] md:pb-[40px]"
       >
-        <div className="hero-content-top mt-[50px] mb-[50px] flex flex-col items-center px-6 md:px-12 w-full max-w-7xl mx-auto">
+        <div className="hero-content-top mt-[30px] mb-[50px] flex flex-col items-center px-6 md:px-12 w-full max-w-7xl mx-auto">
           <div className="badge self-start -mt-[13px]">NEXT GEN MARKETING</div>
           <h1 className="hero-title text-center">{title}</h1>
           <p className="hero-subtitle flex justify-center text-center">{subtitle}</p>
