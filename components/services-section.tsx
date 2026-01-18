@@ -21,10 +21,10 @@ const services = [
     title: "Static Ads AI",
     description: "Reclame statice și vizualuri generate cu AI, create pentru coerență vizuală și utilizare în campanii digitale.",
     features: [
-      "Display ads și banners multi-format",
+      "Bannere și creatives statice multi-format",
       "Adaptare rapidă pentru diferite piețe",
-      "Design consistent cu brandul",
-      "Gata pentru orice platformă",
+      "Design aliniat cu identitatea brandului",
+      "Pregătite pentru platforme de advertising",
     ],
   },
   {
@@ -32,10 +32,10 @@ const services = [
     title: "Creative Variations",
     description: "Generăm multiple variații creative pornind de la același concept, pentru testare și refresh continuu de conținut.",
     features: [
-      "Variante multiple din același concept",
-      "Diferite stiluri și abordări",
-      "Testare A/B la scară",
-      "Refresh continuu de creativități",
+      "Variații multiple din același concept",
+      "Ajustări de stil, compoziție și mesaj",
+      "Testarea diferitelor abordări creative",
+      "Refresh constant de conținut",
     ],
   },
 ]
