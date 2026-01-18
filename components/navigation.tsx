@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { cn } from "@/lib/utils"
-import { Menu, X, Instagram, Linkedin } from "lucide-react"
+import { Menu, X, Instagram, MessageCircle } from "lucide-react"
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -82,8 +82,8 @@ export function Navigation() {
               <a href="https://www.instagram.com/primeframe.ro?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Instagram">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors" aria-label="LinkedIn">
-                <Linkedin className="w-5 h-5" />
+              <a href="https://wa.me/" className="text-muted-foreground hover:text-primary transition-colors" aria-label="WhatsApp">
+                <MessageCircle className="w-5 h-5" />
               </a>
             </div>
           </div>

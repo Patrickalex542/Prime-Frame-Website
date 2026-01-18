@@ -1,4 +1,4 @@
-import { Instagram, Linkedin, Send } from "lucide-react"
+import { Instagram, MessageCircle } from "lucide-react"
 
 export function Footer() {
   return (
@@ -24,11 +24,8 @@ export function Footer() {
             <a href="https://www.instagram.com/primeframe.ro?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="p-2 rounded-full bg-secondary/50 hover:bg-primary/20 text-muted-foreground hover:text-primary transition-all duration-300" aria-label="Instagram">
               <Instagram className="w-6 h-6" />
             </a>
-            <a href="#" className="p-2 rounded-full bg-secondary/50 hover:bg-primary/20 text-muted-foreground hover:text-primary transition-all duration-300" aria-label="LinkedIn">
-              <Linkedin className="w-6 h-6" />
-            </a>
-            <a href="#" className="p-2 rounded-full bg-secondary/50 hover:bg-primary/20 text-muted-foreground hover:text-primary transition-all duration-300" aria-label="Telegram">
-              <Send className="w-6 h-6" />
+            <a href="https://wa.me/" className="p-2 rounded-full bg-secondary/50 hover:bg-primary/20 text-muted-foreground hover:text-primary transition-all duration-300" aria-label="WhatsApp">
+              <MessageCircle className="w-6 h-6" />
             </a>
           </div>
           
