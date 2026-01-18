@@ -31,8 +31,11 @@ export default function HeroNebula({
 
     const isMobile = window.innerWidth < 768
     const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024
-    const PARTICLE_COUNT = isMobile ? 6000 : isTablet ? 15000 : 26000
-    const SPHERE_RADIUS = isMobile ? 2.1 : 3.0
+    const isSmallLandscape = window.innerWidth > window.innerHeight && window.innerHeight < 550
+    
+    // Higher particle count and radius for premium feel in landscape
+    const PARTICLE_COUNT = isSmallLandscape ? 10000 : isMobile ? 6000 : isTablet ? 15000 : 26000
+    const SPHERE_RADIUS = isSmallLandscape ? 2.5 : isMobile ? 2.1 : 3.0
 
     const scene = new THREE.Scene()
     scene.fog = new THREE.FogExp2(0x000000, 0.04)
@@ -50,7 +53,8 @@ export default function HeroNebula({
     mount.appendChild(renderer.domElement)
 
     const camera = new THREE.PerspectiveCamera(55, mount.clientWidth / mount.clientHeight, 0.1, 200)
-    camera.position.set(0, 0, isMobile ? 12 : 10)
+    // Camera position (15 for landscape mobile, 12 for portrait mobile, 10 for desktop)
+    camera.position.set(0, 0, isSmallLandscape ? 15 : isMobile ? 12 : 10)
 
     const ambient = new THREE.AmbientLight(0xffffff, 0.3)
     scene.add(ambient)
@@ -251,7 +255,11 @@ export default function HeroNebula({
         manualRotation.y += dragRotationVelocity.y
       }
 
-      const targetY = -((group as any).scrollOffset || 0) + 0.3 // Lift sphere by 0.3 units (~10px visual adjustment)
+      const isSmallLandscape = (mount?.clientWidth || 0) > (mount?.clientHeight || 0) && (mount?.clientHeight || 0) < 550
+      // Drastically lift sphere in small landscape to clear space for text and buttons
+      const targetY = isSmallLandscape 
+        ? -((group as any).scrollOffset || 0) * 0.4 + 0.6 
+        : -((group as any).scrollOffset || 0) + 0.3
       group.position.y += (targetY - group.position.y) * 0.08
 
       ring.rotation.z = t * 0.8
@@ -321,24 +329,24 @@ export default function HeroNebula({
       <div className="hero-canvas" ref={mountRef} aria-hidden="true" />
 
       <div 
-        className="hero-overlay relative z-20 h-full flex flex-col justify-between items-center w-full pt-[40px] px-5 md:pt-[80px] pb-[145px] md:pb-[40px]"
+        className="hero-overlay relative z-20 h-full flex flex-col justify-between items-center w-full px-5 pt-[40px] md:pt-[80px] pb-[130px] md:pb-[40px]"
       >
-        <div className="hero-content-top mt-[30px] md:mt-[40px] landscape:mt-[10px] mb-[30px] md:mb-[50px] landscape:mb-[15px] flex flex-col items-center px-3 md:px-6 lg:px-12 w-full max-w-7xl mx-auto">
-          <div className="badge self-start -mt-[8px] landscape:-mt-[4px] text-[10px] sm:text-[11px] px-[10px] py-[5px] sm:px-[12px] sm:py-[6px]">NEXT GEN MARKETING</div>
-          <h1 className="hero-title text-center uppercase text-2xl sm:text-3xl md:text-5xl lg:text-7xl px-2 md:px-0 !mt-[15px] landscape:!mt-[8px] leading-[1.1] tracking-[-0.02em] font-bold">
+        <div className="hero-content-top flex flex-col items-center px-3 md:px-6 lg:px-12 w-full max-w-7xl mx-auto mt-[40px] md:mt-[40px] mb-[20px] md:mb-[50px]">
+          <div className="badge self-start -mt-[8px] text-[10px] sm:text-[11px] px-[10px] py-[5px] sm:px-[12px] sm:py-[6px] opacity-70">NEXT GEN MARKETING</div>
+          <h1 className="hero-title text-center uppercase tracking-[-0.02em] font-bold mt-[10px] text-2xl sm:text-4xl lg:text-7xl px-2 md:px-0 leading-[1.1]">
             CINEMATIC AI-ENHANCED<br />CONTENT
           </h1>
-          <p className="hero-subtitle flex justify-center text-center mt-[10px] landscape:mt-[5px] max-w-[62ch] text-sm sm:text-base md:text-lg opacity-80">
+          <p className="hero-subtitle flex justify-center text-center mt-[10px] max-w-[62ch] opacity-70 text-sm sm:text-base md:text-lg">
             {subtitle}
           </p>
         </div>
 
         <div className="hero-content-bottom w-full">
-          <div className="hero-actions flex flex-row flex-wrap justify-center items-center w-full max-w-7xl mx-auto px-4 gap-2 sm:gap-4 -mt-[60px] md:-mt-[15px] landscape:-mt-[10px] pb-[20px] md:pb-0">
+          <div className="hero-actions flex flex-row flex-wrap justify-center items-center w-full max-w-7xl mx-auto px-4 gap-2 sm:gap-4 -mt-[60px] md:-mt-[15px] pb-[15px] md:pb-0">
             <AIButton href={ctaPrimary.href} label={ctaPrimary.label} className="flex-1 min-w-[140px] sm:min-w-[180px] py-4 sm:py-5 text-sm sm:text-lg" />
             <AIButton href={ctaSecondary.href} label={ctaSecondary.label} className="secondary-ai-btn flex-1 min-w-[140px] sm:min-w-[180px] py-4 sm:py-5 text-sm sm:text-lg" />
           </div>
-          <div className="scroll-arrow-container flex justify-center items-center mt-8 mb-5 landscape:mt-4 landscape:mb-2">
+          <div className="scroll-arrow-container flex justify-center items-center mt-8 mb-5 sm:mt-12">
             <svg
               className="scroll-arrow cursor-pointer animate-bounce w-8 h-8 sm:w-10 sm:h-10 text-primary opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300"
               viewBox="0 0 24 24"

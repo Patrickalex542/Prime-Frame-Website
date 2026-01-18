@@ -535,42 +535,113 @@
     opacity: 1;
   }
 }
-/* From Uiverse.io by JulanDeAlb */ 
+
+/* From Uiverse.io by JulanDeAlb - Robust Implementation */ 
 .hamburger {
-  cursor: pointer;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  -webkit-user-select: none !important;
+  user-select: none !important;
 }
 
 .hamburger input {
-  display: none;
+  display: none !important;
 }
 
 .hamburger svg {
-  /* The size of the SVG defines the overall size */
-  height: 3em;
-  /* Define the transition for transforming the SVG */
-  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  height: 48px !important;
+  width: 48px !important;
+  display: block !important;
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
-.line {
-  fill: none;
-  stroke: white !important;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 3;
-  /* Define the transition for transforming the Stroke */
-  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
-              stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+/* Specific selector to override any mystery "stroke: none" */
+.hamburger svg .line {
+  fill: none !important;
+  stroke: #ffffff !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+  stroke-width: 3px !important;
+  transition: stroke-dasharray 600ms, stroke-dashoffset 600ms !important;
 }
 
-.line-top-bottom {
-  stroke-dasharray: 12 63;
+.hamburger svg .line-top-bottom {
+  stroke-dasharray: 12 63 !important;
 }
 
 .hamburger input:checked + svg {
-  transform: rotate(-45deg);
+  transform: rotate(-45deg) !important;
 }
 
 .hamburger input:checked + svg .line-top-bottom {
-  stroke-dasharray: 20 300;
-  stroke-dashoffset: -32.42;
+  stroke-dasharray: 20 300 !important;
+  stroke-dashoffset: -32.42 !important;
+}
+/* targeted optimization for small height landscape (mobile phones rotation) */
+@media (max-height: 550px) and (orientation: landscape) {
+  /* Force hamburger on small heights regardless of width */
+  .lg\:flex {
+    display: none !important;
+  }
+  .lg\:hidden {
+    display: flex !important; /* Changed to flex for centering */
+    align-items: center !important;
+  }
+  
+  .hero-overlay {
+    padding-top: 5px !important; 
+    padding-bottom: 50px !important;
+  }
+  .hero-content-top {
+    margin-top: 10px !important; 
+    padding-top: 0px !important; /* Clear the [100px] padding from JSX */
+    margin-bottom: 0px !important;
+  }
+  .hero-title {
+    font-size: 1.3rem !important;
+    line-height: 1.1 !important;
+    margin-top: 5px !important;
+  }
+  .hero-subtitle {
+    font-size: 10px !important; 
+    margin-top: 2px !important;
+    max-width: 90% !important;
+  }
+  .hero-actions {
+    position: relative !important;
+    margin-top: -160px !important; /* Pull buttons up even more */
+    padding-bottom: 20px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 120px !important; /* Wide gap around sphere */
+    width: 100% !important;
+    justify-content: center !important;
+    z-index: 50 !important;
+  }
+  .btn {
+    padding: 10px 20px !important;
+    font-size: 13px !important;
+    min-width: 140px !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    backdrop-filter: blur(10px) !important;
+  }
+  .badge {
+    display: none !important; 
+    visibility: hidden !important;
+  }
+  .scroll-arrow-container {
+    display: none !important;
+  }
+  .prime-frame-logo {
+    transform: scale(0.65) !important;
+    transform-origin: left !important;
+    margin-top: -5px !important;
+  }
+  
+  .prime-frame-logo .prime-silver, 
+  .prime-frame-logo .frame-gold {
+    font-size: 15px !important;
+  }
 }

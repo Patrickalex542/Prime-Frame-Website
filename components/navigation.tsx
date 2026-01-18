@@ -1,4 +1,5 @@
 "use client"
+// Deployment Sync: 2026-01-18-v4-Hamburger-Visibility-Fix
 
 import { useState, useEffect } from "react"
 import { cn } from "@/lib/utils"
@@ -7,8 +8,10 @@ import { Menu, X, Instagram, MessageCircle, Mail } from "lucide-react"
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
     }
@@ -34,20 +37,20 @@ export function Navigation() {
       <div className="container mx-auto pt-2 pb-0 pl-[3px] pr-[10px]">
         <div className="flex items-center justify-between">
           {/* Prime Frame logo styling */}
-          <div className="prime-frame-logo flex items-center gap-0">
+          <div className="prime-frame-logo flex items-center gap-0 transition-all duration-300">
             <img 
               src="/images/logo-icon.jpg" 
               alt="Prime Icon" 
               className="h-12 md:h-16 w-auto object-contain brightness-110"
             />
             <div className="flex items-center gap-2 -mt-[6px]">
-              <span className="prime-silver tracking-[0.5em]">PRIME</span> 
-              <span className="frame-gold">FRAME</span>
+              <span className="prime-silver tracking-[0.5em] text-sm md:text-base">PRIME</span> 
+              <span className="frame-gold text-sm md:text-base">FRAME</span>
             </div>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8 lg:gap-12">
+          {/* Desktop Navigation - Visible only on screens >= 1024px */}
+          <div className="hidden lg:flex items-center gap-6 xl:gap-12">
             <button
               onClick={() => scrollToSection("work")}
               className="text-sm lg:text-base text-foreground hover:text-primary transition-colors"
@@ -115,42 +118,25 @@ export function Navigation() {
             </div>
           </div>
 
-          <div className="md:hidden -mt-[6px]">
-            <label className="hamburger">
-              <input type="checkbox" checked={isMobileMenuOpen} onChange={(e) => setIsMobileMenuOpen(e.target.checked)} />
-              <svg viewBox="0 0 32 32" style={{ height: '3em' }}>
-                <path 
-                  stroke="white" 
-                  strokeWidth="3" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  fill="none"
-                  className="line-top-bottom" 
-                  style={{ 
-                    strokeDasharray: isMobileMenuOpen ? '20 300' : '12 63',
-                    strokeDashoffset: isMobileMenuOpen ? '-32.42' : '0',
-                    transition: 'stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1)'
-                  }}
-                  d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
-                />
-                <path 
-                  stroke="white" 
-                  strokeWidth="3" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  fill="none"
-                  style={{ 
-                    transition: 'stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1)'
-                  }}
-                  d="M7 16 27 16"
-                />
+          <div className="lg:hidden flex items-center justify-center -mr-2">
+            <label className="hamburger" htmlFor="mobile-menu-toggle-v2">
+              <input 
+                type="checkbox" 
+                id="mobile-menu-toggle-v2"
+                checked={mounted && isMobileMenuOpen} 
+                onChange={(e) => setIsMobileMenuOpen(e.target.checked)}
+                aria-label="Meniu Navigare"
+              />
+              <svg viewBox="0 0 32 32">
+                <path className="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                <path className="line" d="M7 16 27 16"></path>
               </svg>
             </label>
           </div>
         </div>
 
-        {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 py-4 border-t border-border animate-in slide-in-from-top-2 duration-200 bg-[#2a2a2a] rounded-lg px-4">
+        {mounted && isMobileMenuOpen && (
+          <div className="lg:hidden mt-4 py-4 border-t border-border animate-in slide-in-from-top-2 duration-200 bg-[#2a2a2a] rounded-lg px-4 overflow-y-auto max-h-[80vh]">
             <div className="flex flex-col gap-4">
               <button
                 onClick={() => scrollToSection("work")}
