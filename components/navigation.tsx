@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { cn } from "@/lib/utils"
-import { Menu, X, Instagram, MessageCircle } from "lucide-react"
+import { Menu, X, Instagram, MessageCircle, Mail } from "lucide-react"
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -78,12 +78,15 @@ export function Navigation() {
             >
               Contact
             </button>
-            <div className="flex items-center gap-4 ml-4 border-l border-border pl-4">
-              <a href="https://www.instagram.com/primeframe.ro?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Instagram">
-                <Instagram className="w-5 h-5" />
+            <div className="flex items-center gap-3 ml-4 border-l border-border pl-4">
+              <a href="mailto:contact@primeframe.ro" className="w-9 h-9 flex items-center justify-center rounded-xl bg-[#1c1c1e] text-white hover:scale-110 hover:bg-[#2c2c2e] transition-all duration-300 shadow-lg shadow-black/20 group" aria-label="Email">
+                <Mail className="w-4 h-4 group-hover:text-primary transition-colors" />
               </a>
-              <a href="https://wa.me/40763481568" className="text-muted-foreground hover:text-primary transition-colors" aria-label="WhatsApp">
-                <MessageCircle className="w-5 h-5" />
+              <a href="https://www.instagram.com/primeframe.ro?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="w-9 h-9 flex items-center justify-center rounded-xl bg-[#1c1c1e] text-white hover:scale-110 hover:bg-[#2c2c2e] transition-all duration-300 shadow-lg shadow-black/20 group" aria-label="Instagram">
+                <Instagram className="w-4 h-4 group-hover:text-primary transition-colors" />
+              </a>
+              <a href="https://wa.me/40763481568" className="w-9 h-9 flex items-center justify-center rounded-xl bg-[#1c1c1e] text-white hover:scale-110 hover:bg-[#2c2c2e] transition-all duration-300 shadow-lg shadow-black/20 group" aria-label="WhatsApp">
+                <MessageCircle className="w-4 h-4 group-hover:text-primary transition-colors" />
               </a>
             </div>
           </div>
@@ -139,20 +142,27 @@ export function Navigation() {
               </button>
             </div>
             
-            <div className="mt-6 pt-6 border-t border-border/50 flex items-center justify-center gap-8">
+            <div className="mt-6 pt-6 border-t border-border/50 flex items-center justify-center gap-6">
+              <a 
+                href="mailto:contact@primeframe.ro" 
+                className="w-11 h-11 flex items-center justify-center rounded-xl bg-[#1c1c1e] text-white hover:scale-110 hover:bg-[#2c2c2e] transition-all duration-300 shadow-lg shadow-black/20 group"
+                aria-label="Email"
+              >
+                <Mail className="w-5 h-5 group-hover:text-primary transition-colors" />
+              </a>
               <a 
                 href="https://www.instagram.com/primeframe.ro?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
-                className="p-2 -m-2 text-muted-foreground hover:text-primary transition-colors"
+                className="w-11 h-11 flex items-center justify-center rounded-xl bg-[#1c1c1e] text-white hover:scale-110 hover:bg-[#2c2c2e] transition-all duration-300 shadow-lg shadow-black/20 group"
                 aria-label="Instagram"
               >
-                <Instagram className="w-6 h-6" />
+                <Instagram className="w-5 h-5 group-hover:text-primary transition-colors" />
               </a>
               <a 
                 href="https://wa.me/40763481568" 
-                className="p-2 -m-2 text-muted-foreground hover:text-primary transition-colors"
+                className="w-11 h-11 flex items-center justify-center rounded-xl bg-[#1c1c1e] text-white hover:scale-110 hover:bg-[#2c2c2e] transition-all duration-300 shadow-lg shadow-black/20 group"
                 aria-label="WhatsApp"
               >
-                <MessageCircle className="w-6 h-6" />
+                <MessageCircle className="w-5 h-5 group-hover:text-primary transition-colors" />
               </a>
             </div>
           </div>
