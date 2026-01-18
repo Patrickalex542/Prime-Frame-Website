@@ -167,7 +167,7 @@
 }
 
 .hero-title {
-  margin-bottom: 1.5rem;
+  /* margin removed to allow Tailwind margin classes (mt-[10px]) */
   /* font-size removed to allow Tailwind responsive classes (text-2xl md:text-5xl lg:text-6xl) */
   line-height: 1.1;
   letter-spacing: -0.02em;
