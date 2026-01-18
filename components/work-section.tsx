@@ -9,27 +9,27 @@ const workProjects = [
     id: 1,
     title: "Lansare Cazinou Cripto",
     category: "iGaming",
-    tags: ["Reclame Video", "Variante A/B", "Stil UGC"],
-    imagePlaceholder: "Campanie Publicitate Cazinou",
+    tags: ["Conținut Video", "Variante A/B", "Stil UGC"],
+    imagePlaceholder: "Campanie Conținut Cazinou",
     videoUrl: "https://drive.google.com/file/d/1nVeY7qcVHPrp4Um7KRmV5VgtnzTIhfLo/preview",
     description:
-      "Am lansat o campanie de reclame video cu conversie ridicată pentru o nouă platformă de cazinou cripto. Am generat peste 50 de variante cu AI, testând diferite hook-uri și CTA-uri. Am obținut o rată de clic de 3.2% pe Meta și TikTok.",
+      "Am lansat o campanie de conținut video cinematic cu conversie ridicată pentru o nouă platformă de cazinou cripto. Am generat peste 50 de variante cu AI, testând diferite hook-uri și CTA-uri.",
   },
   {
     id: 2,
     title: "Promoție Pariuri Sportive",
     category: "Marketing de Performanță",
-    tags: ["Reclame Statice", "Localizare", "Variante A/B"],
+    tags: ["Conținut Static", "Localizare", "Variante A/B"],
     imagePlaceholder: "Campanie Pariuri",
     videoUrl: "https://youtube.com/shorts/-BQTkBSQUbg", // Adaugă URL-ul tău de video aici
     description:
-      "Am creat seturi de reclame statice localizate pentru 12 piețe. Generarea bazată pe AI a permis testarea rapidă a titlurilor și vizualurilor. Am crescut înscrierile cu 180% comparativ cu campaniile anterioare.",
+      "Am creat seturi de conținut static localizat pentru 12 piețe. Generarea bazată pe AI a permis testarea rapidă a titlurilor și vizualurilor.",
   },
   {
     id: 3,
     title: "Creative Joc Slots",
     category: "iGaming",
-    tags: ["Reclame Video", "Stil UGC"],
+    tags: ["Conținut Video", "Stil UGC"],
     imagePlaceholder: "Video Slots",
     videoUrl: "", // Adaugă URL-ul tău de video aici
     description:
@@ -39,7 +39,7 @@ const workProjects = [
     id: 4,
     title: "Experiență Cazinou Live",
     category: "Gaming Premium",
-    tags: ["Reclame Video", "Reclame Statice", "Variante A/B"],
+    tags: ["Conținut Video", "Conținut Static", "Variante A/B"],
     imagePlaceholder: "Cazinou Live",
     videoUrl: "", // Adaugă URL-ul tău de video aici
     description:
@@ -49,21 +49,21 @@ const workProjects = [
     id: 5,
     title: "Campanie Rețea Afiliere",
     category: "Marketing de Performanță",
-    tags: ["Reclame Statice", "Localizare", "Variante A/B"],
+    tags: ["Conținut Static", "Localizare", "Variante A/B"],
     imagePlaceholder: "Campanie Afiliere",
     videoUrl: "", // Adaugă URL-ul tău de video aici
     description:
-      "Am construit un sistem scalabil de creative publicitare pentru parteneri afiliați în peste 20 de piețe. Localizarea și generarea de variante bazate pe AI au permis partenerilor să lanseze campanii în ore în loc de săptămâni.",
+      "Am construit un sistem scalabil de conținut creativ pentru parteneri afiliați în peste 20 de piețe.",
   },
   {
     id: 6,
     title: "Promovare Turneu",
     category: "iGaming",
-    tags: ["Reclame Video", "Reclame Statice", "Stil UGC"],
-    imagePlaceholder: "Reclame Turneu",
+    tags: ["Conținut Video", "Conținut Static", "Stil UGC"],
+    imagePlaceholder: "Conținut Turneu",
     videoUrl: "", // Adaugă URL-ul tău de video aici
     description:
-      "Am creat reclame video și statice care transmit urgență pentru turneul sezonier de poker. Variantele generate cu AI au testat diferite trigger-e emoționale, rezultând o creștere de 250% în înscrieri.",
+      "Am creat conținut video și static care transmit urgență pentru turneul sezonier de poker. Variantele generate cu AI au testat diferite trigger-e emoționale, rezultând o creștere de 250% în înscrieri.",
   },
 ]
 
@@ -102,10 +102,10 @@ export function WorkSection() {
           className={`text-center mb-12 md:mb-20 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
         >
           <h2 className="sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-balance text-3xl tracking-widest uppercase">
-            Proiecte Selectate
+            FEATURED WORK
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty px-4 tracking-wider">
-            Exemple de reclame video și vizuale create cu AI pentru campanii digitale.
+            O selecție de conținut cinematic video creat pentru clienții noștri
           </p>
         </div>
 

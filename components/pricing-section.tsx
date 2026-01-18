@@ -12,8 +12,8 @@ const plans = [
     period: "/lună",
     description: "Pentru testarea și validarea direcției creative",
     features: [
-      "Set lunar de reclame video AI",
-      "Set lunar de reclame statice AI",
+      "Set lunar de conținut video AI",
+      "Set lunar conținut static AI",
       "Direcție creativă & prompt engineering",
       "Livrare în formate standard",
       "Feedback & ajustări incluse",
@@ -27,7 +27,7 @@ const plans = [
     period: "/lună",
     description: "Pentru echipe care au nevoie de volum constant",
     features: [
-      "Volum extins de reclame video și statice",
+      "Volum extins de conținut video și static",
       "Variații multiple din același concept",
       "Storyboard & structură de reclamă",
       "Refresh creativ recurent",

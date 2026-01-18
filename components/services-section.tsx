@@ -7,7 +7,7 @@ import { Video, ImageIcon, Sparkles } from "lucide-react"
 const services = [
   {
     icon: Video,
-    title: "Video Ads AI",
+    title: "VIDEO CONTENT AI",
     description: "Concept creativ și structură de reclamă",
     features: [
       "Prompt engineering avansat pentru control vizual",
@@ -18,10 +18,10 @@ const services = [
   },
   {
     icon: ImageIcon,
-    title: "Static Ads AI",
-    description: "Reclame statice și vizualuri generate cu AI, create pentru coerență vizuală și utilizare în campanii digitale.",
+    title: "STATIC CONTENT AI",
+    description: "Imagini generate cu AI, create pentru coerență vizuală și utilizare în campanii",
     features: [
-      "Bannere și creatives statice multi-format",
+      "Bannere și creative statice multi-format",
       "Adaptare rapidă pentru diferite piețe",
       "Design aliniat cu identitatea brandului",
       "Pregătite pentru platforme de advertising",
@@ -51,7 +51,7 @@ export function ServicesSection() {
             CE LIVRĂM
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty px-4 tracking-wider">
-            Reclame video generate cu AI, construite ca mini-spoturi cinematice pentru social media și platforme de advertising.
+            Conținut video cinematic, conținut static (foto) și servicii de creație grafică, realizate cu AI, concepute ca mini-spoturi și vizualuri de impact adaptate fiecărui canal digital
           </p>
         </div>
 

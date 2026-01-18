@@ -12,12 +12,12 @@ const steps = [
     number: "02",
     title: "Generare AI",
     description:
-      "Folosim AI și prompt engineering pentru a genera multiple variante de reclame — video și statice — în stilurile și formatele stabilite.",
+      "Folosim AI și prompt engineering pentru a genera multiple variante de conținut – video și foto – în stilurile și dimensiunile stabilite.",
   },
   {
     number: "03",
     title: "Livrare",
-    description: "Livrăm seturile de reclame generate, pregătite în formatele necesare pentru utilizare în campanii digitale.",
+    description: "Livrăm seturile de vizualuri generate, pregătite în formatele necesare pentru utilizarea în campanii.",
   },
   {
     number: "04",
@@ -56,10 +56,10 @@ export function ProcessSection() {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center mb-12 sm:mb-16 md:mb-20">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 tracking-widest uppercase">
-            Procesul Nostru
+            WORKFLOW-UL NOSTRU
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4 tracking-wider">
-            Un proces structurat pentru producția de reclame AI, scalabile și gata de utilizare în campanii digitale.
+            Un proces structurat pentru producția de conținut AI, scalabil și gata de utilizare
           </p>
         </div>
 
