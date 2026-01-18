@@ -602,7 +602,7 @@
   .hero-title {
     font-size: 1.3rem !important;
     line-height: 1.1 !important;
-    margin-top: 5px !important;
+    margin-top: 45px !important; /* Pushed down from header as requested */
   }
   .hero-subtitle {
     font-size: 10px !important; 
