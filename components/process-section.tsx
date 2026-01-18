@@ -16,8 +16,8 @@ const steps = [
   },
   {
     number: "03",
-    title: "Selecție & Livrare",
-    description: "Alegi creativitățile preferate, noi le pregătim în toate formatele necesare pentru campanii.",
+    title: "Livrare",
+    description: "Livrăm seturile de reclame generate, pregătite în formatele necesare pentru utilizare în campanii digitale.",
   },
   {
     number: "04",
