@@ -668,7 +668,7 @@
 
 .line {
   fill: none;
-  stroke: white;
+  stroke: white !important;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 3;
