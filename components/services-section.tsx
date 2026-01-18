@@ -30,7 +30,7 @@ const services = [
   {
     icon: Sparkles,
     title: "Creative Variations",
-    description: "Generăm sute de variante creative pentru testare și scalare.",
+    description: "Generăm multiple variații creative pornind de la același concept, pentru testare și refresh continuu de conținut.",
     features: [
       "Variante multiple din același concept",
       "Diferite stiluri și abordări",
