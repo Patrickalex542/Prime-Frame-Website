@@ -21,7 +21,7 @@ export function Footer() {
           </div>
 
           <div className="flex gap-6">
-            <a href="#" className="p-2 rounded-full bg-secondary/50 hover:bg-primary/20 text-muted-foreground hover:text-primary transition-all duration-300" aria-label="Instagram">
+            <a href="https://www.instagram.com/primeframe.ro?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="p-2 rounded-full bg-secondary/50 hover:bg-primary/20 text-muted-foreground hover:text-primary transition-all duration-300" aria-label="Instagram">
               <Instagram className="w-6 h-6" />
             </a>
             <a href="#" className="p-2 rounded-full bg-secondary/50 hover:bg-primary/20 text-muted-foreground hover:text-primary transition-all duration-300" aria-label="LinkedIn">

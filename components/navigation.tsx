@@ -79,7 +79,7 @@ export function Navigation() {
               Contact
             </button>
             <div className="flex items-center gap-4 ml-4 border-l border-border pl-4">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Instagram">
+              <a href="https://www.instagram.com/primeframe.ro?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Instagram">
                 <Instagram className="w-5 h-5" />
               </a>
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors" aria-label="LinkedIn">
