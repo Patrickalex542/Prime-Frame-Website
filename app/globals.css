@@ -453,34 +453,6 @@
   width: 100%;
   height: 4px;
   background-color: var(--foreground); /* Adapted to theme */
-  border-radius: 10px;
-  transition:
-    transform 0.3s ease,
-    opacity 0.3s ease;
-  position: relative;
-}
-
-/* Use :has selector or class based approach if possible, but since we control React state, 
-   we can also use a wrapping class or keep the sibling structure.
-   The user provided sibling selector css: .toggle-checkbox:checked + .hamburger ...
-   For this to work in React without shadow DOM issues, we need the exact DOM structure.
-*/
-
-.toggle-checkbox:checked + .hamburger .bar:nth-child(2) {
-  transform: translate(0px, 10px);
-  opacity: 0;
-  transition-delay: 0.3s;
-}
-
-.toggle-checkbox:checked + .hamburger .bar:nth-child(3) {
-  transform: translate(0px, -10px);
-  transition-delay: 0s;
-}
-
-.toggle-checkbox:checked + .hamburger .bar:nth-child(1) {
-  transform: rotate(-45deg) scale(0.7);
-  transition-delay: 0.6s;
-}
 /* Custom Premium Card - Design by Spacious74 */
 .premium-card-outer {
   width: 100%;
