@@ -22,7 +22,7 @@ const steps = [
   {
     number: "04",
     title: "Iterații & Refresh",
-    description: "Generăm noi variante constant pe baza feedback-ului tău și a nevoilor de campanie.",
+    description: "Pe baza feedback-ului tău, generăm noi variații și actualizăm constant conținutul creativ.",
   },
 ]
 
