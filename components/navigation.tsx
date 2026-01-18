@@ -131,6 +131,23 @@ export function Navigation() {
                 Contact
               </button>
             </div>
+            
+            <div className="mt-6 pt-6 border-t border-border/50 flex items-center justify-center gap-8">
+              <a 
+                href="https://www.instagram.com/primeframe.ro?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
+                className="p-2 -m-2 text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-6 h-6" />
+              </a>
+              <a 
+                href="https://wa.me/40763481568" 
+                className="p-2 -m-2 text-muted-foreground hover:text-primary transition-colors"
+                aria-label="WhatsApp"
+              >
+                <MessageCircle className="w-6 h-6" />
+              </a>
+            </div>
           </div>
         )}
       </div>
