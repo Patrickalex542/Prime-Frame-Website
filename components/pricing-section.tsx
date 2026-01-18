@@ -74,7 +74,7 @@ export function PricingSection() {
     <section id="pricing" className="py-16 sm:py-20 md:py-32 bg-secondary/30">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center mb-12 md:mb-20">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-balance tracking-wider">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-balance tracking-wider uppercase">
             Prețuri Simple și Transparente
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty px-4 tracking-wider">

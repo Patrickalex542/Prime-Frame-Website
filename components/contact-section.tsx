@@ -50,7 +50,7 @@ export function ContactSection() {
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="text-center mb-12 sm:mb-16 md:mb-20">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 tracking-widest">Hai Să Discutăm</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 tracking-widest uppercase">Hai Să Discutăm</h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4 tracking-wider">
             Gata să transformi producția ta creativă? Ia legătura și îți vom arăta ce este posibil.
           </p>
