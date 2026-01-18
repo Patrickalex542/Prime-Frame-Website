@@ -88,13 +88,21 @@ export function Navigation() {
             </div>
           </div>
 
-          <button
-            className="md:hidden text-foreground hover:text-primary transition-colors -mt-[6px]"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="md:hidden -mt-[6px]">
+            <div className="hamburgers">
+              <label className="hamburger">
+                <input 
+                  type="checkbox" 
+                  checked={isMobileMenuOpen}
+                  onChange={(e) => setIsMobileMenuOpen(e.target.checked)}
+                  aria-label="Toggle menu"
+                />
+                <span className="bar"></span>
+                <span className="bar"></span>
+                <span className="bar"></span>
+              </label>
+            </div>
+          </div>
         </div>
 
         {isMobileMenuOpen && (
