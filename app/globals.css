@@ -574,11 +574,42 @@
 .hamburger input:checked + svg {
   transform: rotate(-45deg) !important;
 }
-
 .hamburger input:checked + svg .line-top-bottom {
   stroke-dasharray: 20 300 !important;
   stroke-dashoffset: -32.42 !important;
 }
+
+/* Constant Shine Effect for AI Buttons */
+.ai-btn {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.ai-btn::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -200%;
+  width: 60%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    rgba(201, 162, 106, 0) 0%,
+    rgba(201, 162, 106, 0.4) 50%,
+    rgba(201, 162, 106, 0) 100%
+  );
+  transform: rotate(25deg);
+  animation: constant-shine 2.5s infinite linear;
+  pointer-events: none;
+  z-index: 5;
+}
+
+@keyframes constant-shine {
+  0% { left: -200%; }
+  35% { left: 200%; }
+  100% { left: 200%; }
+}
+
 /* targeted optimization for small height landscape (mobile phones rotation) */
 @media (max-height: 550px) and (orientation: landscape) {
   .lg\:flex { display: none !important; }
@@ -652,30 +683,6 @@
     overflow: hidden !important;
   }
 
-  /* Constant Shine Effect */
-  .btn::after {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -150%;
-    width: 50%;
-    height: 200%;
-    background: linear-gradient(
-      to right,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.3) 50%,
-      rgba(255, 255, 255, 0) 100%
-    );
-    transform: rotate(25deg);
-    animation: constant-shine 3s infinite linear;
-    pointer-events: none;
-  }
-
-  @keyframes constant-shine {
-    0% { left: -150%; }
-    40% { left: 150%; }
-    100% { left: 150%; } /* Pause effect */
-  }
 
   .badge, .scroll-arrow-container {
     display: none !important;
