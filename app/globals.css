@@ -580,39 +580,62 @@
 }
 
 /* Ported from Uiverse.io by roajuan93 */
-.social-btn {
-  /* Dimensions controlled by Tailwind utility classes (w-9/h-9 etc) */
+/* From Uiverse.io by roajuan93 */ 
+/* for all social containers*/
+.socialContainer {
+  width: 52px;
+  height: 52px;
+  border-radius: 5px;
+  background-color: rgb(44, 44, 44);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   transition-duration: 0.3s;
-  background-color: rgb(44, 44, 44);
-  border-radius: 5px; /* Square with slight radius */
 }
-
-/* Hover Colors */
-.social-btn.insta:hover {
+/* Email - Custom Concept using same style */
+.containerZero:hover {
+  background-color: #ea4335;
+  transition-duration: 0.3s;
+}
+/* instagram*/
+.containerOne:hover {
   background-color: #d62976;
+  transition-duration: 0.3s;
 }
-.social-btn.wa:hover {
-  background-color: #25D366; /* Brand Green */
+/* Tiktok*/
+.containerTwo:hover {
+  background-color: #25f4ee;
+  transition-duration: 0.3s;
 }
-.social-btn.mail:hover {
-  background-color: #ea4335; /* Gmail Red for Email */
+/* Facebook*/
+.containerThree:hover {
+  background-color: #1877f2;
+  transition-duration: 0.3s;
+}
+/* Whatsapp*/
+.containerFour:hover {
+  background-color: green;
+  transition-duration: 0.3s;
 }
 
-.social-btn:active {
+.socialContainer:active {
   transform: scale(0.9);
   transition-duration: 0.3s;
 }
 
-.social-btn svg {
-  fill: white;
-  transition: all 0.3s;
+.socialSvg {
+  width: 19px;
+  height: 19px;
+}
+.largeIcon {
+  width: 27px; /* Ancho específico solo para el icono de TikTok */
+}
+.socialSvg path {
+  fill: rgb(255, 255, 255);
 }
 
-.social-btn:hover svg {
+.socialContainer:hover .socialSvg {
   animation: slide-in-top 0.3s both;
 }
 
@@ -621,6 +644,7 @@
     transform: translateY(-50px);
     opacity: 0;
   }
+
   100% {
     transform: translateY(0);
     opacity: 1;
