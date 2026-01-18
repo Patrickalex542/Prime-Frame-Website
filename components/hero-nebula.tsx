@@ -328,23 +328,25 @@ export default function HeroNebula({
     <section className="hero-nebula">
       <div className="hero-canvas" ref={mountRef} aria-hidden="true" />
 
-      <div className="hero-overlay">
-        <div className="hero-content-top">
-          <div className="badge">NEXT GEN MARKETING</div>
-          <h1 className="hero-title">
+      <div 
+        className="hero-overlay relative z-20 h-full flex flex-col justify-between items-center w-full px-5 pt-[40px] md:pt-[80px] pb-[130px] md:pb-[40px]"
+      >
+        <div className="hero-content-top flex flex-col items-center px-3 md:px-6 lg:px-12 w-full max-w-7xl mx-auto mt-[40px] md:mt-[40px] mb-[20px] md:mb-[50px]">
+          <div className="badge self-start -mt-[8px] text-[10px] sm:text-[11px] px-[10px] py-[5px] sm:px-[12px] sm:py-[6px] opacity-70">NEXT GEN MARKETING</div>
+          <h1 className="hero-title text-center uppercase tracking-[-0.02em] font-bold mt-[10px] text-2xl sm:text-4xl lg:text-7xl px-2 md:px-0 leading-[1.1]">
             CINEMATIC AI-ENHANCED<br />CONTENT
           </h1>
-          <p className="hero-subtitle">
+          <p className="hero-subtitle flex justify-center text-center mt-[10px] max-w-[62ch] opacity-70 text-sm sm:text-base md:text-lg">
             {subtitle}
           </p>
         </div>
 
-        <div className="hero-content-bottom">
-          <div className="hero-actions">
+        <div className="hero-content-bottom w-full">
+          <div className="hero-actions flex flex-row flex-wrap justify-center items-center w-full max-w-7xl mx-auto px-4 gap-2 sm:gap-4 -mt-[60px] md:-mt-[15px] pb-[15px] md:pb-0">
             <AIButton href={ctaPrimary.href} label={ctaPrimary.label} className="flex-1 min-w-[140px] sm:min-w-[180px] py-4 sm:py-5 text-sm sm:text-lg" />
             <AIButton href={ctaSecondary.href} label={ctaSecondary.label} className="secondary-ai-btn flex-1 min-w-[140px] sm:min-w-[180px] py-4 sm:py-5 text-sm sm:text-lg" />
           </div>
-          <div className="scroll-arrow-container">
+          <div className="scroll-arrow-container flex justify-center items-center mt-8 mb-5 sm:mt-12">
             <svg
               className="scroll-arrow cursor-pointer animate-bounce w-8 h-8 sm:w-10 sm:h-10 text-primary opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300"
               viewBox="0 0 24 24"
