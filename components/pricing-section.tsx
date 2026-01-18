@@ -78,7 +78,7 @@ export function PricingSection() {
             MODELE DE COLABORARE
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty px-4 tracking-wider">
-            Alege planul care se potrivește etapei tale de creștere. Scalează sus sau jos oricând.
+            Fiecare colaborare este adaptată volumului, ritmului și nevoilor creative ale proiectului.
           </p>
         </div>
 
