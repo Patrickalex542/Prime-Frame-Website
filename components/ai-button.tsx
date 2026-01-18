@@ -13,7 +13,7 @@ interface AIButtonProps {
 }
 
 export function AIButton({
-  label = "Vezi Portofoliul",
+  label = "Portofoliu",
   thinkingLabel = "Se încarcă...",
   onClick,
   className,

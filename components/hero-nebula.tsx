@@ -15,7 +15,7 @@ interface HeroNebulaProps {
 export default function HeroNebula({
   title = "RECLAME AI CU IMPACT CINEMATIC",
   subtitle = "Studio de creație AI care produce reclame cinematice — video și statice — concepute pentru campanii digitale și social media",
-  ctaPrimary = { label: "Vezi Portofoliul", href: "#work" },
+  ctaPrimary = { label: "Portofoliu", href: "#work" },
   ctaSecondary = { label: "Rezervă o Discuție", href: "#contact" },
 }: HeroNebulaProps) {
   const mountRef = useRef<HTMLDivElement | null>(null)
