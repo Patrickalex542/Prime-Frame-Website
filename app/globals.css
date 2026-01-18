@@ -305,7 +305,7 @@
   }
 
   .hero-title {
-    margin: 12px 0 10px;
+    /* margin removed - using Tailwind mt-[10px] instead */
   }
 
   .hero-subtitle {
