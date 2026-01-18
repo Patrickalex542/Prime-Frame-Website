@@ -149,7 +149,7 @@ export function ContactSection() {
         }
 
         .rotate-btn.tiktok {
-          --btn-gradient: linear-gradient(45deg, #25F4EE, #FE2C55, #000000);
+          --btn-gradient: linear-gradient(45deg, #000000 0%, #25F4EE 50%, #FE2C55 100%);
           --icon-color: #25F4EE;
         }
 
@@ -164,8 +164,9 @@ export function ContactSection() {
         }
 
         .rotate-btn.mail {
-          --btn-gradient: linear-gradient(45deg, #EA4335, #C5221F);
-          --icon-color: #EA4335;
+          /* Gmail specific red-to-dark gradient */
+          --btn-gradient: linear-gradient(45deg, #EA4335 0%, #FBBC05 25%, #34A853 50%, #4285F4 75%, #EA4335 100%);
+          --icon-color: #ffffff;
         }
       ` }} />
       <div className="absolute inset-0 bg-gradient-to-b from-secondary/20 to-background pointer-events-none" />
