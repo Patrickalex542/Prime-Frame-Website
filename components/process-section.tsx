@@ -12,7 +12,7 @@ const steps = [
     number: "02",
     title: "Generare AI",
     description:
-      "AI-ul nostru creează sute de variante de reclame - video și statice - optimizate pentru platformele tale.",
+      "Folosim AI și prompt engineering pentru a genera multiple variante de reclame — video și statice — în stilurile și formatele stabilite.",
   },
   {
     number: "03",
