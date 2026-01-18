@@ -8,12 +8,12 @@ const services = [
   {
     icon: Video,
     title: "Video Ads AI",
-    description: "Reclame video generate cu AI pentru social media și platforme de advertising.",
+    description: "Concept creativ și structură de reclamă",
     features: [
-      "Video ads pentru Facebook, Instagram, TikTok",
-      "Multiple formate și dimensiuni",
-      "Adaptare automată pe platforme",
-      "Brand-safe și optimizat pentru conversie",
+      "Prompt engineering avansat pentru control vizual",
+      "Storyboard simplificat (hook → mesaj → final)",
+      "Formate multiple pentru social media",
+      "Adaptate pentru distribuție digitală",
     ],
   },
   {
@@ -48,10 +48,10 @@ export function ServicesSection() {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center mb-12 md:mb-20">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-balance tracking-widest">
-            Ce Generăm
+            CE LIVRĂM
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty px-4 tracking-wider">
-            Creativități AI pentru toate nevoile tale de advertising.
+            Reclame video generate cu AI, construite ca mini-spoturi cinematice pentru social media și platforme de advertising.
           </p>
         </div>
 

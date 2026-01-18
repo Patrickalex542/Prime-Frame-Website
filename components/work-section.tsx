@@ -105,7 +105,7 @@ export function WorkSection() {
             Proiecte Selectate
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty px-4 tracking-wider">
-            Creativ AI construit pentru rezultate măsurabile.
+            Exemple de reclame video și vizuale create cu AI pentru campanii digitale.
           </p>
         </div>
 
