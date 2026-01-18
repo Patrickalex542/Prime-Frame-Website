@@ -586,57 +586,66 @@
   
   .hero-overlay {
     height: 100vh !important;
+    min-height: 100vh !important;
     position: relative !important;
-    display: block !important; /* Break flex and go absolute */
+    display: block !important;
     padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    overflow: hidden !important;
   }
 
   .hero-content-top {
     position: absolute !important;
-    top: 60px !important;
+    top: 40px !important; /* Pushed high */
     left: 0 !important;
     width: 100% !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    z-index: 50 !important;
+    z-index: 100 !important;
   }
 
   .hero-title {
-    font-size: 1.4rem !important;
+    font-size: 1.5rem !important;
     margin: 0 !important;
+    padding: 0 !important;
     text-align: center !important;
-    width: 100% !important;
   }
 
   .hero-subtitle {
-    font-size: 10px !important;
+    font-size: 11px !important;
     margin-top: 5px !important;
     max-width: 80% !important;
     text-align: center !important;
+    line-height: 1.2 !important;
   }
 
   .hero-content-bottom {
     position: absolute !important;
-    top: calc(50% + 70px) !important; /* Adjusted to 70px as requested */
+    bottom: 40px !important; /* FIXED AT BOTTOM */
+    top: auto !important; /* Clear any previous calc */
     left: 0 !important;
     width: 100% !important;
-    transform: translateY(-50%) !important;
-    z-index: 40 !important;
+    transform: none !important; /* Clear any previous lift */
+    z-index: 100 !important;
+    display: block !important;
   }
 
   .hero-actions {
     display: flex !important;
     flex-direction: row !important;
     justify-content: center !important;
-    gap: 150px !important; /* Wide gap for sphere */
+    align-items: center !important;
+    gap: 160px !important; /* Clear space for sphere */
+    width: 100% !important;
     margin: 0 !important;
   }
 
   .btn {
-    padding: 10px 18px !important;
-    font-size: 12px !important;
-    min-width: 130px !important;
+    padding: 10px 20px !important;
+    font-size: 13px !important;
+    min-width: 150px !important;
     -webkit-backdrop-filter: blur(10px) !important;
     backdrop-filter: blur(10px) !important;
   }
