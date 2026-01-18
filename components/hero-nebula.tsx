@@ -325,7 +325,9 @@ export default function HeroNebula({
       >
         <div className="hero-content-top mt-[30px] mb-[50px] flex flex-col items-center px-6 md:px-12 w-full max-w-7xl mx-auto">
           <div className="badge self-start -mt-[13px]">NEXT GEN MARKETING</div>
-          <h1 className="hero-title text-center uppercase">{title}</h1>
+          <h1 className="hero-title text-center uppercase text-4xl md:text-5xl lg:text-6xl">
+            CINEMATIC AI-ENHANCED<br />CONTENT
+          </h1>
           <p className="hero-subtitle flex justify-center text-center">{subtitle}</p>
         </div>
 
@@ -334,34 +336,24 @@ export default function HeroNebula({
             <AIButton href={ctaPrimary.href} label={ctaPrimary.label} />
             <AIButton href={ctaSecondary.href} label={ctaSecondary.label} className="secondary-ai-btn" />
           </div>
-          <div className="hero-overlay relative z-10 flex flex-col items-center justify-center text-center px-4 hero-mobile-padding">
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300 uppercase"
+          <div className="scroll-arrow-container">
+            <svg
+              className="scroll-arrow"
+              width="40"
+              height="40"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              onClick={() => window.scrollBy({ top: window.innerHeight, behavior: "smooth" })}
             >
-              CINEMATIC AI-ENHANCED<br />CONTENT
-            </motion.h1>
-            <div className="scroll-arrow-container">
-              <svg
-                className="scroll-arrow"
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                onClick={() => window.scrollBy({ top: window.innerHeight, behavior: "smooth" })}
-              >
-                <path
-                  d="M7 13L12 18L17 13M7 6L12 11L17 6"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </div>
+              <path
+                d="M7 13L12 18L17 13M7 6L12 11L17 6"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </div>
         </div>
       </div>
