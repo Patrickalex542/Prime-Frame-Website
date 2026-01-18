@@ -11,7 +11,7 @@ export async function POST(req: Request) {
 
     console.log("Contact form submission:", { name, email, message })
 
-    // Aici s-ar integra serviciul de email (ex: Resend, SendGrid)
+    // Aici s-ar integra serviciul de email (ex: Resend, SendGrid) -> Emailul va ajunge la: contact@primeframe.ro
     // Momentan simulam succesul pentru a permite testarea flow-ului functional
 
     return NextResponse.json({ success: true, message: "Mesajul a fost recepționat!" }, { status: 200 })

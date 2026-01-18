@@ -24,7 +24,7 @@ export function Footer() {
             <a href="https://www.instagram.com/primeframe.ro?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="p-2 rounded-full bg-secondary/50 hover:bg-primary/20 text-muted-foreground hover:text-primary transition-all duration-300" aria-label="Instagram">
               <Instagram className="w-6 h-6" />
             </a>
-            <a href="https://wa.me/" className="p-2 rounded-full bg-secondary/50 hover:bg-primary/20 text-muted-foreground hover:text-primary transition-all duration-300" aria-label="WhatsApp">
+            <a href="https://wa.me/40763481568" className="p-2 rounded-full bg-secondary/50 hover:bg-primary/20 text-muted-foreground hover:text-primary transition-all duration-300" aria-label="WhatsApp">
               <MessageCircle className="w-6 h-6" />
             </a>
           </div>
