@@ -177,10 +177,9 @@
 }
 
 .hero-subtitle {
-  margin: 0 0 24px;
-  max-width: 62ch;
+  /* margin and max-width handled by Tailwind */
   color: rgba(255, 255, 255, 0.78);
-  font-size: clamp(14px, 2.5vw, 18px);
+  /* font-size handled by Tailwind clamp/classes */
   line-height: 1.6;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
 }
@@ -279,68 +278,19 @@
   }
 }
 
-/* Mobile adjustments for scroll arrow */
-@media (max-width: 640px) {
-  .scroll-arrow-container {
-    margin-top: 24px;
-    margin-bottom: 16px;
-  }
-
-  .scroll-arrow {
-    width: 32px;
-    height: 32px;
-  }
+/* Base hero nebula behavior */
+.hero-nebula {
+  min-height: 550px; /* Base for mobile */
 }
 
-/* Added mobile-specific optimizations */
-@media (max-width: 640px) {
+@media (min-width: 768px) {
   .hero-nebula {
-    min-height: 550px;
-  }
-
-
-  .badge {
-    font-size: 10px;
-    padding: 5px 10px;
-  }
-
-  .hero-title {
-    /* margin removed - using Tailwind mt-[10px] instead */
-  }
-
-  .hero-subtitle {
-    margin: 0 0 20px;
-  }
-
-  .hero-actions {
-    flex-direction: row;
-    width: 100%;
-    gap: 8px;
-    padding-bottom: 16px;
-  }
-
-  .btn {
-    flex: 1;
-    min-width: 140px;
-    padding: 16px 28px; /* Increased mobile padding from 16px 20px to 16px 28px for wider buttons */
-    font-size: 15px;
-  }
-
-  .hero-hint {
-    margin-top: 16px;
-    font-size: 10px;
+    min-height: 600px;
   }
 }
 
-@media (min-width: 641px) and (max-width: 768px) {
-  .hero-actions {
-    gap: 10px;
-  }
 
-  .btn {
-    padding: 17px 40px; /* Increased tablet padding from 17px 28px to 17px 40px for wider buttons */
-  }
-}
+/* Hero actions and button scaling moved to Tailwind in component */
 
 /* Added Prime Frame title styling matching the image */
 .prime-frame-title {
@@ -407,33 +357,9 @@
   filter: drop-shadow(0 1px 6px rgba(201, 162, 106, 0.3));
 }
 
-/* Specific Mobile Padding to ensure lift on all devices */
-.hero-mobile-padding {
-  padding-bottom: calc(145px + env(safe-area-inset-bottom)) !important;
-}
+/* Small screen overrides removed - handled by responsive Tailwind classes */
 
-/* Targeted optimization for small screens (iPhone SE, small Androids) */
-@media (max-width: 380px) {
-  .hero-mobile-padding {
-    padding-bottom: calc(125px + env(safe-area-inset-bottom)) !important;
-  }
-  
-  .btn {
-    padding: 14px 20px !important;
-    font-size: 14px !important;
-    min-width: 120px !important;
-  }
-  
-  .hero-actions {
-    gap: 6px !important;
-  }
-}
-
-@media (min-width: 768px) {
-  .hero-mobile-padding {
-    padding-bottom: 40px !important;
-  }
-}
+/* Static padding removed - using Tailwind classes in component */
 
 /* Custom Animated Hamburger Menu - Design by elijahgummer */
 .toggle-checkbox {

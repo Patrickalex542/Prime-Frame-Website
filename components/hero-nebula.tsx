@@ -321,26 +321,26 @@ export default function HeroNebula({
       <div className="hero-canvas" ref={mountRef} aria-hidden="true" />
 
       <div 
-        className="hero-overlay hero-mobile-padding relative z-20 h-full flex flex-col justify-between items-center w-full pt-[40px] px-5 md:pt-[80px]"
+        className="hero-overlay relative z-20 h-full flex flex-col justify-between items-center w-full pt-[40px] px-5 md:pt-[80px] pb-[145px] md:pb-[40px]"
       >
-        <div className="hero-content-top mt-[30px] md:mt-[40px] mb-[30px] md:mb-[50px] flex flex-col items-center px-3 md:px-6 lg:px-12 w-full max-w-7xl mx-auto">
-          <div className="badge self-start -mt-[8px]">NEXT GEN MARKETING</div>
-          <h1 className="hero-title text-center uppercase text-2xl md:text-5xl lg:text-6xl px-2 md:px-0 !mt-[20px]">
+        <div className="hero-content-top mt-[30px] md:mt-[40px] landscape:mt-[10px] mb-[30px] md:mb-[50px] landscape:mb-[15px] flex flex-col items-center px-3 md:px-6 lg:px-12 w-full max-w-7xl mx-auto">
+          <div className="badge self-start -mt-[8px] landscape:-mt-[4px] text-[10px] sm:text-[11px] px-[10px] py-[5px] sm:px-[12px] sm:py-[6px]">NEXT GEN MARKETING</div>
+          <h1 className="hero-title text-center uppercase text-2xl sm:text-3xl md:text-5xl lg:text-7xl px-2 md:px-0 !mt-[15px] landscape:!mt-[8px] leading-[1.1] tracking-[-0.02em] font-bold">
             CINEMATIC AI-ENHANCED<br />CONTENT
           </h1>
-          <p className="hero-subtitle flex justify-center text-center mt-[5px]">{subtitle}</p>
+          <p className="hero-subtitle flex justify-center text-center mt-[10px] landscape:mt-[5px] max-w-[62ch] text-sm sm:text-base md:text-lg opacity-80">
+            {subtitle}
+          </p>
         </div>
 
-        <div className="hero-content-bottom">
-          <div className="hero-actions flex flex-row justify-between items-center w-full max-w-7xl mx-auto text-base sm:text-lg px-3 xs:px-6 md:px-12 gap-2 sm:gap-4 -mt-[60px] md:-mt-[15px]">
-            <AIButton href={ctaPrimary.href} label={ctaPrimary.label} />
-            <AIButton href={ctaSecondary.href} label={ctaSecondary.label} className="secondary-ai-btn" />
+        <div className="hero-content-bottom w-full">
+          <div className="hero-actions flex flex-row flex-wrap justify-center items-center w-full max-w-7xl mx-auto px-4 gap-2 sm:gap-4 -mt-[60px] md:-mt-[15px] landscape:-mt-[10px] pb-[20px] md:pb-0">
+            <AIButton href={ctaPrimary.href} label={ctaPrimary.label} className="flex-1 min-w-[140px] sm:min-w-[180px] py-4 sm:py-5 text-sm sm:text-lg" />
+            <AIButton href={ctaSecondary.href} label={ctaSecondary.label} className="secondary-ai-btn flex-1 min-w-[140px] sm:min-w-[180px] py-4 sm:py-5 text-sm sm:text-lg" />
           </div>
-          <div className="scroll-arrow-container">
+          <div className="scroll-arrow-container flex justify-center items-center mt-8 mb-5 landscape:mt-4 landscape:mb-2">
             <svg
-              className="scroll-arrow"
-              width="40"
-              height="40"
+              className="scroll-arrow cursor-pointer animate-bounce w-8 h-8 sm:w-10 sm:h-10 text-primary opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
