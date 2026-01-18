@@ -18,7 +18,7 @@ const plans = [
       "Livrare în formate standard",
       "Feedback & ajustări incluse",
     ],
-    cta: "Discută un Starter",
+    cta: "CONTACTEAZA-NE",
     highlighted: false,
   },
   {
@@ -33,7 +33,7 @@ const plans = [
       "Refresh creativ recurent",
       "Suport prioritar",
     ],
-    cta: "Programează un Apel",
+    cta: "CONTACTEAZA-NE",
     highlighted: true,
   },
   {
@@ -47,7 +47,7 @@ const plans = [
       "Procese și livrări custom",
       "Colaborare strategică continuă",
     ],
-    cta: "Contactează-ne",
+    cta: "CONTACTEAZA-NE",
     highlighted: false,
   },
 ]

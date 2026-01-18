@@ -346,6 +346,7 @@ export function AIButton({
             inset 2px 2px 2px 1px #fff2;
           z-index: 2;
           text-decoration: none;
+          text-transform: uppercase;
         }
 
         .ai-btn .txt-1, .ai-btn .txt-2 {
