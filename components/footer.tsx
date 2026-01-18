@@ -28,8 +28,8 @@ export function Footer() {
             <a href="https://www.instagram.com/primeframe.ro?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="w-10 h-10 flex items-center justify-center rounded-xl bg-[#1c1c1e] text-white hover:scale-110 hover:bg-[#2c2c2e] transition-all duration-300 shadow-lg shadow-black/20 group" aria-label="Instagram">
               <Instagram className="w-5 h-5 group-hover:text-primary transition-colors" />
             </a>
-            <a href="https://wa.me/40763481568" className="w-10 h-10 flex items-center justify-center rounded-xl bg-[#1c1c1e] text-white hover:scale-110 hover:bg-[#2c2c2e] transition-all duration-300 shadow-lg shadow-black/20 group" aria-label="WhatsApp">
-              <MessageCircle className="w-5 h-5 group-hover:text-primary transition-colors" />
+            <a href="https://wa.me/40763481568" className="w-10 h-10 flex items-center justify-center rounded-xl bg-[#25D366] text-white hover:scale-110 hover:brightness-110 transition-all duration-300 shadow-lg shadow-black/20" aria-label="WhatsApp">
+              <MessageCircle className="w-5 h-5" />
             </a>
           </div>
           
