@@ -53,7 +53,6 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="py-16 sm:py-24 md:py-32 bg-background relative overflow-hidden">
- toxicology
       <div className="absolute inset-0 bg-gradient-to-b from-secondary/20 to-background pointer-events-none" />
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
