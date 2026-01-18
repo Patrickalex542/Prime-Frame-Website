@@ -106,10 +106,10 @@ export function PricingSection() {
               <div className="mb-6 md:mb-8">
                 <h3 className="text-xl md:text-2xl font-bold mb-2">{plan.name}</h3>
                 <p className="text-muted-foreground text-xs md:text-sm mb-4">{plan.description}</p>
-                <div className="flex items-baseline gap-1 sm:gap-3">
+                {/* <div className="flex items-baseline gap-1 sm:gap-3">
                   <span className="text-3xl sm:text-4xl md:text-5xl font-bold">{plan.price}</span>
                   <span className="text-muted-foreground text-sm md:text-base">{plan.period}</span>
-                </div>
+                </div> */}
               </div>
 
               <ul className="space-y-2 sm:space-y-3 md:space-y-4 mb-6 md:mb-8 flex-grow">
