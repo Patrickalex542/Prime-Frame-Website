@@ -618,7 +618,7 @@
 
   .hero-content-bottom {
     position: absolute !important;
-    top: calc(50% + 25px) !important; /* Lowered by 25px as requested */
+    top: calc(50% + 70px) !important; /* Adjusted to 70px as requested */
     left: 0 !important;
     width: 100% !important;
     transform: translateY(-50%) !important;
