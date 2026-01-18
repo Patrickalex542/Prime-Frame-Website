@@ -82,7 +82,6 @@ export function ContactSection() {
           position: absolute;
           left: 50%;
           top: 50%;
-          transform: translate(-50%, -50%) rotate(calc(var(--index) * 15deg)) translateY(-38px);
           font-size: 10px;
           font-weight: 800;
           text-transform: uppercase;
@@ -91,6 +90,7 @@ export function ContactSection() {
           color: rgba(255, 255, 255, 0.95);
           width: 12px;
           text-align: center;
+          display: block;
         }
 
         .rotate-btn__circle {
@@ -201,7 +201,12 @@ export function ContactSection() {
                 >
                   <p className="rotate-btn__text">
                     {link.label.split("").map((char, i) => (
-                      <span key={i} style={{ "--index": i } as React.CSSProperties}>
+                      <span 
+                        key={i} 
+                        style={{ 
+                          transform: `translate(-50%, -50%) rotate(${i * 15}deg) translateY(-38px)` 
+                        }}
+                      >
                         {char}
                       </span>
                     ))}
