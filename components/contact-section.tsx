@@ -67,9 +67,8 @@ export function ContactSection() {
           display: flex;
           align-items: center;
           justify-content: center;
-          transition: all 400ms cubic-bezier(0.23, 1, 0.32, 1);
+          transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
           text-decoration: none;
-          margin: 0 auto;
         }
 
         .rotate-btn__text {
@@ -77,31 +76,26 @@ export function ContactSection() {
           inset: 0;
           animation: text-rotation 12s linear infinite;
           pointer-events: none;
-          display: flex;
-          align-items: center;
-          justify-content: center;
         }
 
         .rotate-btn__text span {
           position: absolute;
           left: 50%;
-          top: 8px;
-          transform-origin: 50% 37px; /* 45px center - 8px top = 37px radius */
+          top: 5px;
+          transform-origin: 50% 40px; /* 45px center - 5px top = 40px radius */
           transform: translateX(-50%) rotate(calc(var(--index) * 18deg));
-          font-size: 9px;
+          font-size: 9.5px;
           font-weight: 900;
           text-transform: uppercase;
-          letter-spacing: 0;
+          letter-spacing: 0.1em;
           white-space: nowrap;
-          color: rgba(255, 255, 255, 0.95);
-          width: 12px;
-          text-align: center;
+          color: rgba(255, 255, 255, 0.9);
         }
 
         .rotate-btn__circle {
           position: relative;
-          width: 42px;
-          height: 42px;
+          width: 40px;
+          height: 40px;
           overflow: hidden;
           background: #111;
           color: var(--icon-color, #fff);
@@ -110,9 +104,8 @@ export function ContactSection() {
           align-items: center;
           justify-content: center;
           z-index: 5;
-          transition: all 500ms cubic-bezier(0.23, 1, 0.32, 1);
-          box-shadow: 0 4px 15px rgba(0,0,0,0.8);
-          flex-shrink: 0;
+          transition: all 400ms cubic-bezier(0.23, 1, 0.32, 1);
+          box-shadow: 0 4px 15px rgba(0,0,0,0.6);
         }
 
         .rotate-btn__icon--copy {
@@ -122,14 +115,13 @@ export function ContactSection() {
 
         .rotate-btn:hover {
           background: #000;
-          transform: scale(1.15);
+          transform: scale(1.12);
           box-shadow: 0 0 30px var(--icon-color);
         }
 
         .rotate-btn:hover .rotate-btn__circle {
           color: #fff;
           transform: scale(1.05);
-          box-shadow: 0 0 20px var(--icon-color);
         }
 
         .rotate-btn:hover .rotate-btn__icon:first-child {
@@ -157,8 +149,8 @@ export function ContactSection() {
         }
 
         .rotate-btn.tiktok {
-          --btn-gradient: linear-gradient(45deg, #000000 0%, #25F4EE 50%, #FE2C55 100%);
-          --icon-color: #25F4EE;
+          --btn-gradient: linear-gradient(45deg, #000000 0%, #00f2ea 40%, #ff0050 60%, #000000 100%);
+          --icon-color: #00f2ea;
         }
 
         .rotate-btn.facebook {
@@ -172,9 +164,8 @@ export function ContactSection() {
         }
 
         .rotate-btn.mail {
-          /* Gmail specific red-to-dark gradient */
-          --btn-gradient: linear-gradient(45deg, #EA4335 0%, #FBBC05 25%, #34A853 50%, #4285F4 75%, #EA4335 100%);
-          --icon-color: #ffffff;
+          --btn-gradient: linear-gradient(45deg, #4285F4 0%, #34A853 25%, #FBBC05 50%, #EA4335 100%);
+          --icon-color: #EA4335;
         }
       ` }} />
       <div className="absolute inset-0 bg-gradient-to-b from-secondary/20 to-background pointer-events-none" />
