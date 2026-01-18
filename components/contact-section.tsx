@@ -52,7 +52,7 @@ export function ContactSection() {
         <div className="text-center mb-12 sm:mb-16 md:mb-20">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 tracking-widest uppercase">Hai Să Discutăm</h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4 tracking-wider">
-            Gata să transformi producția ta creativă? Ia legătura și îți vom arăta ce este posibil.
+            Spune-ne ce ai nevoie, iar noi îți vom propune o direcție creativă potrivită proiectului tău.
           </p>
         </div>
 
@@ -105,7 +105,7 @@ export function ContactSection() {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="bg-background/50 border-border focus:border-primary min-h-32 resize-none"
-                  placeholder="Spune-ne despre proiectul tău..."
+                  placeholder="Descrie pe scurt proiectul tău, tipul de conținut de care ai nevoie și volumul estimat."
                 />
               </div>
 
@@ -123,7 +123,7 @@ export function ContactSection() {
                 ) : isSubmitting ? (
                   <span>Se trimite...</span>
                 ) : (
-                  <span className="relative z-10">Trimite Mesaj</span>
+                  <span className="relative z-10">Programează o discuție</span>
                 )}
                 {!isSubmitted && !isSubmitting && (
                   <div className="absolute inset-0 bg-primary/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
