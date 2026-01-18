@@ -6,7 +6,7 @@ const steps = [
   {
     number: "01",
     title: "Brief & Concept",
-    description: "Ne dai detalii despre brand, produs și audiență. Stabilim stilul vizual și mesajul campaniei.",
+    description: "Ne oferi detalii despre brand, produs și obiective. Definim conceptul creativ, stilul vizual și direcția mesajului.",
   },
   {
     number: "02",
@@ -55,11 +55,11 @@ export function ProcessSection() {
     <section id="process" ref={sectionRef} className="py-16 sm:py-24 md:py-32 bg-background">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center mb-12 sm:mb-16 md:mb-20">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 tracking-widest">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 tracking-widest uppercase">
             Procesul Nostru
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4 tracking-wider">
-            Un framework dovedit pentru crearea de creative cu conversie ridicată la scară mare
+            Un proces structurat pentru producția de reclame AI, scalabile și gata de utilizare în campanii digitale.
           </p>
         </div>
 
