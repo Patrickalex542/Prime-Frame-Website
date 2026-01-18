@@ -75,7 +75,7 @@ export function PricingSection() {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center mb-12 md:mb-20">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-balance tracking-wider uppercase">
-            Prețuri Simple și Transparente
+            MODELE DE COLABORARE
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty px-4 tracking-wider">
             Alege planul care se potrivește etapei tale de creștere. Scalează sus sau jos oricând.
