@@ -440,24 +440,6 @@
   display: none;
 }
 
-.hamburger {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 35px;
-  height: 24px;
-  cursor: pointer;
-}
-
-.hamburger .bar {
-  width: 100%;
-  height: 4px;
-  background-color: var(--foreground);
-  border-radius: 10px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  position: relative;
-}
-
 /* Custom Premium Card - Design by Spacious74 */
 .premium-card-outer {
   width: 100%;
