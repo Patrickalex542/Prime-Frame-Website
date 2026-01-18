@@ -89,19 +89,18 @@ export function Navigation() {
           </div>
 
           <div className="md:hidden -mt-[6px]">
-            <div className="hamburgers">
-              <label className="hamburger">
-                <input 
-                  type="checkbox" 
-                  checked={isMobileMenuOpen}
-                  onChange={(e) => setIsMobileMenuOpen(e.target.checked)}
-                  aria-label="Toggle menu"
-                />
-                <span className="bar"></span>
-                <span className="bar"></span>
-                <span className="bar"></span>
-              </label>
-            </div>
+            <input 
+              className="toggle-checkbox" 
+              id="toggle" 
+              type="checkbox" 
+              checked={isMobileMenuOpen}
+              onChange={(e) => setIsMobileMenuOpen(e.target.checked)}
+            />
+            <label className="hamburger" htmlFor="toggle">
+              <div className="bar"></div>
+              <div className="bar"></div>
+              <div className="bar"></div>
+            </label>
           </div>
         </div>
 

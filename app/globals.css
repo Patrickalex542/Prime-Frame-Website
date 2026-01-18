@@ -435,48 +435,53 @@
   }
 }
 
-/* Custom Animated Hamburger Menu */
-.hamburgers {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* Custom Animated Hamburger Menu - Design by elijahgummer */
+.toggle-checkbox {
+  display: none;
 }
 
 .hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 35px;
+  height: 24px;
   cursor: pointer;
-  padding-bottom: 3px;
-  position: relative;
-  display: block; /* Ensure label wraps content */
 }
 
-.hamburger input {
-  position: absolute;
+.hamburger .bar {
   width: 100%;
-  height: 100%;
-  margin: 0;
-  cursor: pointer;
+  height: 4px;
+  background-color: var(--foreground); /* Adapted to theme */
+  border-radius: 10px;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+  position: relative;
+}
+
+/* Use :has selector or class based approach if possible, but since we control React state, 
+   we can also use a wrapping class or keep the sibling structure.
+   The user provided sibling selector css: .toggle-checkbox:checked + .hamburger ...
+   For this to work in React without shadow DOM issues, we need the exact DOM structure.
+*/
+
+.toggle-checkbox:checked + .hamburger .bar:nth-child(2) {
+  transform: translate(0px, 10px);
   opacity: 0;
-  z-index: 2;
+  transition-delay: 0.3s;
 }
 
-.bar {
-  display: block;
-  width: 30px;
-  height: 3px;
-  margin: 6px auto;
-  border-radius: 40px;
-  transition: all 0.3s cubic-bezier(0.37, -1.11, 0.79, 2.02);
-  background-color: var(--foreground); /* Adapted to theme foreground color */
+.toggle-checkbox:checked + .hamburger .bar:nth-child(3) {
+  transform: translate(0px, -10px);
+  transition-delay: 0s;
 }
 
-.hamburger input:checked ~ .bar:nth-child(2) {
-  transform: translateY(9.5px) rotate(45deg);
+.toggle-checkbox:checked + .hamburger .bar:nth-child(1) {
+  transform: rotate(-45deg) scale(0.7);
+  transition-delay: 0.6s;
 }
-
-.hamburger input:checked ~ .bar:nth-child(3) {
-  opacity: 0;
-}
-
-.hamburger input:checked ~ .bar:nth-child(4) {
-  transform: translateY(-8px) rotate(-45deg);
+.toggle-checkbox:checked + .hamburger .bar:nth-child(3) {
+  transform: rotate(45deg) scale(0.7);
+  transition-delay: 0.6s;
 }
