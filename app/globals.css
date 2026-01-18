@@ -599,14 +599,14 @@
     rgba(212, 175, 122, 0) 100%
   );
   transform: rotate(25deg);
-  animation: constant-shine 2.5s infinite ease-in-out; /* Smoother transition */
+  animation: constant-shine 4s infinite ease-in-out; /* Slower 4s cycle */
   pointer-events: none;
   z-index: 5;
 }
 
 @keyframes constant-shine {
   0% { left: -200%; }
-  60% { left: 200%; } /* Slower swipe (takes 60% of the time) */
+  85% { left: 200%; } /* Movement takes 85% of 4s (~3.4s), very slow */
   100% { left: 200%; }
 }
 
