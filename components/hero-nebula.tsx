@@ -325,7 +325,7 @@ export default function HeroNebula({
       >
         <div className="hero-content-top mt-[25px] md:mt-[35px] mb-[30px] md:mb-[50px] flex flex-col items-center px-3 md:px-6 lg:px-12 w-full max-w-7xl mx-auto">
           <div className="badge self-start -mt-[13px]">NEXT GEN MARKETING</div>
-          <h1 className="hero-title text-center uppercase text-2xl md:text-5xl lg:text-6xl px-2 md:px-0 mt-[5px]">
+          <h1 className="hero-title text-center uppercase text-2xl md:text-5xl lg:text-6xl px-2 md:px-0 mt-[10px]">
             CINEMATIC AI-ENHANCED<br />CONTENT
           </h1>
           <p className="hero-subtitle flex justify-center text-center mt-[5px]">{subtitle}</p>
