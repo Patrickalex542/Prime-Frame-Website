@@ -53,6 +53,121 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="py-16 sm:py-24 md:py-32 bg-background relative overflow-hidden">
+      <style dangerouslySetInnerHTML={{ __html: `
+        .rotate-btn {
+          cursor: pointer;
+          border: none;
+          background: var(--btn-gradient, #212121);
+          color: #fff;
+          width: 90px;
+          height: 90px;
+          border-radius: 50%;
+          overflow: hidden;
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+          text-decoration: none;
+        }
+
+        .rotate-btn__text {
+          position: absolute;
+          inset: 0;
+          animation: text-rotation 12s linear infinite;
+          pointer-events: none;
+        }
+
+        .rotate-btn__text span {
+          position: absolute;
+          left: 50%;
+          top: 5px;
+          transform-origin: 50% 40px; /* 45px center - 5px top = 40px radius */
+          transform: translateX(-50%) rotate(calc(var(--index) * 18deg));
+          font-size: 9.5px;
+          font-weight: 900;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          white-space: nowrap;
+          color: rgba(255, 255, 255, 0.9);
+        }
+
+        .rotate-btn__circle {
+          position: relative;
+          width: 40px;
+          height: 40px;
+          overflow: hidden;
+          background: #111;
+          color: var(--icon-color, #fff);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 5;
+          transition: all 400ms cubic-bezier(0.23, 1, 0.32, 1);
+          box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+        }
+
+        .rotate-btn__icon--copy {
+          position: absolute;
+          transform: translate(-150%, 150%);
+        }
+
+        .rotate-btn:hover {
+          background: #000;
+          transform: scale(1.12);
+          box-shadow: 0 0 30px var(--icon-color);
+        }
+
+        .rotate-btn:hover .rotate-btn__circle {
+          color: #fff;
+          transform: scale(1.05);
+        }
+
+        .rotate-btn:hover .rotate-btn__icon:first-child {
+          transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+          transform: translate(150%, -150%);
+        }
+
+        .rotate-btn:hover .rotate-btn__icon--copy {
+          transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0.05s;
+          transform: translate(0);
+        }
+
+        @keyframes text-rotation {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+
+        .rotate-btn:active {
+          transform: scale(0.92);
+        }
+
+        .rotate-btn.instagram {
+          --btn-gradient: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+          --icon-color: #dc2743;
+        }
+
+        .rotate-btn.tiktok {
+          --btn-gradient: linear-gradient(45deg, #25F4EE, #FE2C55, #000000);
+          --icon-color: #25F4EE;
+        }
+
+        .rotate-btn.facebook {
+          --btn-gradient: linear-gradient(45deg, #1877F2, #0C5DC7);
+          --icon-color: #1877F2;
+        }
+
+        .rotate-btn.whatsapp {
+          --btn-gradient: linear-gradient(45deg, #25D366, #128C7E);
+          --icon-color: #25D366;
+        }
+
+        .rotate-btn.mail {
+          --btn-gradient: linear-gradient(45deg, #EA4335, #C5221F);
+          --icon-color: #EA4335;
+        }
+      ` }} />
       <div className="absolute inset-0 bg-gradient-to-b from-secondary/20 to-background pointer-events-none" />
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
