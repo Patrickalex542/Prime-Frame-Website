@@ -579,8 +579,121 @@
   background: linear-gradient(180deg, #747474 30%, #222424 70%);
 }
 
-.premium-line.rightl {
-  right: 10%;
-  width: 1px;
-  height: 100%;
+/* Ported from PR Fitness - Uiverse Button Style */
+.uiverse-button {
+  --duration: 7s;
+  --easing: linear;
+  --c-color-1: rgba(255, 215, 0, 0.7); /* Gold */
+  --c-color-2: #212121; /* Dark Grey Premium */
+  --c-color-3: #ffffff; /* White */
+  --c-color-4: rgba(204, 0, 0, 0.7); /* Red */
+  --c-shadow: rgba(204, 0, 0, 0.5);
+  --c-shadow-inset-top: rgba(255, 50, 50, 0.9);
+  --c-shadow-inset-bottom: rgba(100, 0, 0, 0.8);
+  --c-radial-inner: #ff3333; /* Bright Red */
+  --c-radial-outer: #990000; /* Dark Red */
+  --c-color: #fff;
+  
+  overflow: hidden;
+  position: relative;
+  border: none;
+  background: radial-gradient(
+    circle,
+    var(--c-radial-inner),
+    var(--c-radial-outer) 80%
+  );
+  box-shadow: 0 0 14px var(--c-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.uiverse-button:before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 3px 12px var(--c-shadow-inset-top),
+    inset 0 -3px 4px var(--c-shadow-inset-bottom);
+}
+
+.uiverse-button .wrapper {
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  mask-image: radial-gradient(white, black);
+  overflow: hidden;
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.uiverse-button .wrapper .circle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px; /* Scaled down from 40px for small button */
+  height: 20px;
+  border-radius: 50%;
+  filter: blur(var(--blur, 4px)); /* Reduced blur */
+  background: var(--background, transparent);
+  transform: translate(var(--x, 0), var(--y, 0)) translateZ(0);
+  animation: var(--animation, none) var(--duration) var(--easing) infinite;
+}
+
+.uiverse-button .wrapper .circle.circle-1,
+.uiverse-button .wrapper .circle.circle-9,
+.uiverse-button .wrapper .circle.circle-10 {
+  --background: var(--c-color-4);
+}
+.uiverse-button .wrapper .circle.circle-3,
+.uiverse-button .wrapper .circle.circle-4 {
+  --background: var(--c-color-2);
+  --blur: 7px;
+}
+.uiverse-button .wrapper .circle.circle-5,
+.uiverse-button .wrapper .circle.circle-6 {
+  --background: var(--c-color-3);
+  --blur: 8px;
+}
+.uiverse-button .wrapper .circle.circle-2,
+.uiverse-button .wrapper .circle.circle-7,
+.uiverse-button .wrapper .circle.circle-8,
+.uiverse-button .wrapper .circle.circle-11,
+.uiverse-button .wrapper .circle.circle-12 {
+  --background: var(--c-color-1);
+  --blur: 6px;
+}
+
+.uiverse-button .wrapper .circle.circle-1 { --x: 0; --y: -20px; --animation: circle-1; }
+.uiverse-button .wrapper .circle.circle-2 { --x: 46px; --y: 4px; --animation: circle-2; }
+.uiverse-button .wrapper .circle.circle-3 { --x: -6px; --y: -6px; --animation: circle-3; }
+.uiverse-button .wrapper .circle.circle-4 { --x: 40px; --y: -6px; --animation: circle-4; }
+.uiverse-button .wrapper .circle.circle-5 { --x: 6px; --y: -2px; --animation: circle-5; }
+.uiverse-button .wrapper .circle.circle-6 { --x: 28px; --y: 8px; --animation: circle-6; }
+.uiverse-button .wrapper .circle.circle-7 { --x: 4px; --y: 14px; --animation: circle-7; }
+.uiverse-button .wrapper .circle.circle-8 { --x: 14px; --y: -2px; --animation: circle-8; }
+.uiverse-button .wrapper .circle.circle-9 { --x: 10px; --y: -6px; --animation: circle-9; }
+.uiverse-button .wrapper .circle.circle-10 { --x: 32px; --y: 8px; --animation: circle-10; }
+.uiverse-button .wrapper .circle.circle-11 { --x: 2px; --y: 2px; --animation: circle-11; }
+.uiverse-button .wrapper .circle.circle-12 { --blur: 7px; --x: 26px; --y: 2px; --animation: circle-12; }
+
+@keyframes circle-1 { 33% { transform: translate(0px, 8px) translateZ(0); } 66% { transform: translate(6px, 32px) translateZ(0); } }
+@keyframes circle-2 { 33% { transform: translate(40px, -5px) translateZ(0); } 66% { transform: translate(36px, -24px) translateZ(0); } }
+@keyframes circle-3 { 33% { transform: translate(10px, 6px) translateZ(0); } 66% { transform: translate(6px, 2px) translateZ(0); } }
+@keyframes circle-4 { 33% { transform: translate(38px, -6px) translateZ(0); } 66% { transform: translate(56px, -4px) translateZ(0); } }
+@keyframes circle-5 { 33% { transform: translate(42px, 14px) translateZ(0); } 66% { transform: translate(20px, -16px) translateZ(0); } }
+@keyframes circle-6 { 33% { transform: translate(14px, -8px) translateZ(0); } 66% { transform: translate(38px, -28px) translateZ(0); } }
+@keyframes circle-7 { 33% { transform: translate(4px, 14px) translateZ(0); } 66% { transform: translate(10px, -30px) translateZ(0); } }
+@keyframes circle-8 { 33% { transform: translate(16px, -2px) translateZ(0); } 66% { transform: translate(28px, -10px) translateZ(0); } }
+@keyframes circle-9 { 33% { transform: translate(10px, -6px) translateZ(0); } 66% { transform: translate(40px, -4px) translateZ(0); } }
+@keyframes circle-10 { 33% { transform: translate(34px, 10px) translateZ(0); } 66% { transform: translate(50px, 14px) translateZ(0); } }
+@keyframes circle-11 { 33% { transform: translate(2px, 2px) translateZ(0); } 66% { transform: translate(34px, 10px) translateZ(0); } }
+@keyframes circle-12 { 33% { transform: translate(28px, 0px) translateZ(0); } 66% { transform: translate(30px, -16px) translateZ(0); } }

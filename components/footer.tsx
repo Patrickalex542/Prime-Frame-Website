@@ -21,15 +21,57 @@ export function Footer() {
           </div>
 
           <div className="flex gap-6">
-            {/* iOS Style Dark Icons */}
-            <a href="mailto:contact@primeframe.ro" className="w-10 h-10 flex items-center justify-center rounded-xl bg-[#1c1c1e] text-white hover:scale-110 hover:bg-[#2c2c2e] transition-all duration-300 shadow-lg shadow-black/20 group" aria-label="Email">
-              <Mail className="w-5 h-5 group-hover:text-primary transition-colors" />
+            {/* iOS Style Dark Icons with Uiverse Red/Gold Theme */}
+            <a href="mailto:contact@primeframe.ro" className="uiverse-button w-10 h-10 rounded-xl text-white hover:scale-110 hover:brightness-110 transition-all duration-300 shadow-lg shadow-black/20 group" aria-label="Email">
+               <div className="wrapper">
+                <div className="circle circle-12"></div>
+                <div className="circle circle-11"></div>
+                <div className="circle circle-10"></div>
+                <div className="circle circle-9"></div>
+                <div className="circle circle-8"></div>
+                <div className="circle circle-7"></div>
+                <div className="circle circle-6"></div>
+                <div className="circle circle-5"></div>
+                <div className="circle circle-4"></div>
+                <div className="circle circle-3"></div>
+                <div className="circle circle-2"></div>
+                <div className="circle circle-1"></div>
+              </div>
+              <Mail className="w-5 h-5 relative z-10 group-hover:text-white transition-colors" />
             </a>
-            <a href="https://www.instagram.com/primeframe.ro?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="w-10 h-10 flex items-center justify-center rounded-xl bg-[#1c1c1e] text-white hover:scale-110 hover:bg-[#2c2c2e] transition-all duration-300 shadow-lg shadow-black/20 group" aria-label="Instagram">
-              <Instagram className="w-5 h-5 group-hover:text-primary transition-colors" />
+            <a href="https://www.instagram.com/primeframe.ro?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="uiverse-button w-10 h-10 rounded-xl text-white hover:scale-110 hover:brightness-110 transition-all duration-300 shadow-lg shadow-black/20 group" aria-label="Instagram">
+              <div className="wrapper">
+                <div className="circle circle-12"></div>
+                <div className="circle circle-11"></div>
+                <div className="circle circle-10"></div>
+                <div className="circle circle-9"></div>
+                <div className="circle circle-8"></div>
+                <div className="circle circle-7"></div>
+                <div className="circle circle-6"></div>
+                <div className="circle circle-5"></div>
+                <div className="circle circle-4"></div>
+                <div className="circle circle-3"></div>
+                <div className="circle circle-2"></div>
+                <div className="circle circle-1"></div>
+              </div>
+              <Instagram className="w-5 h-5 relative z-10 group-hover:text-white transition-colors" />
             </a>
-            <a href="https://wa.me/40763481568" className="w-10 h-10 flex items-center justify-center rounded-xl bg-[#25D366] text-white hover:scale-110 hover:brightness-110 transition-all duration-300 shadow-lg shadow-black/20" aria-label="WhatsApp">
-              <MessageCircle className="w-5 h-5" />
+            <a href="https://wa.me/40763481568" className="uiverse-button w-10 h-10 rounded-xl text-white hover:scale-110 hover:brightness-110 transition-all duration-300 shadow-lg shadow-black/20 group" aria-label="WhatsApp">
+              <div className="wrapper">
+                <div className="circle circle-12"></div>
+                <div className="circle circle-11"></div>
+                <div className="circle circle-10"></div>
+                <div className="circle circle-9"></div>
+                <div className="circle circle-8"></div>
+                <div className="circle circle-7"></div>
+                <div className="circle circle-6"></div>
+                <div className="circle circle-5"></div>
+                <div className="circle circle-4"></div>
+                <div className="circle circle-3"></div>
+                <div className="circle circle-2"></div>
+                <div className="circle circle-1"></div>
+              </div>
+              <MessageCircle className="w-5 h-5 relative z-10 group-hover:text-white transition-colors" />
             </a>
           </div>
           
