@@ -579,47 +579,119 @@
   stroke-dasharray: 20 300 !important;
   stroke-dashoffset: -32.42 !important;
 }
+
+/* Core Hero Layout Styles */
+.hero-overlay {
+  position: relative;
+  z-index: 20;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 20px 40px;
+}
+
+.hero-content-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 80rem;
+  margin: 40px auto 50px;
+  text-align: center;
+}
+
+.hero-title {
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  font-weight: bold;
+  margin-top: 10px;
+  line-height: 1.1;
+  font-size: clamp(1.5rem, 8vw, 4.5rem);
+}
+
+.hero-subtitle {
+  margin-top: 10px;
+  max-width: 62ch;
+  opacity: 0.7;
+  font-size: clamp(0.875rem, 2vw, 1.125rem);
+}
+
+.hero-content-bottom {
+  width: 100%;
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: -15px;
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.badge {
+  text-transform: uppercase;
+  font-size: 11px;
+  padding: 6px 12px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 99px;
+  opacity: 0.7;
+  margin-bottom: 8px;
+}
+
+.scroll-arrow-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+
 /* targeted optimization for small height landscape (mobile phones rotation) */
 @media (max-height: 550px) and (orientation: landscape) {
-  /* Force hamburger on small heights regardless of width */
-  .lg\:flex {
-    display: none !important;
-  }
-  .lg\:hidden {
-    display: flex !important; /* Changed to flex for centering */
-    align-items: center !important;
-  }
+  .lg\:flex { display: none !important; }
+  .lg\:hidden { display: flex !important; align-items: center !important; }
   
   .hero-overlay {
-    padding-top: 5px !important; 
-    padding-bottom: 50px !important;
+    padding: 20px !important;
+    justify-content: center !important; /* Center everything together */
+    gap: 10px !important;
   }
+
   .hero-content-top {
-    margin-top: 10px !important; 
-    padding-top: 0px !important; /* Clear the [100px] padding from JSX */
-    margin-bottom: 0px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: translateY(-20px) !important; /* Global lift */
   }
+
   .hero-title {
-    font-size: 1.3rem !important;
-    line-height: 1.1 !important;
-    margin-top: 45px !important; /* Pushed down from header as requested */
+    font-size: 1.4rem !important;
+    margin-top: 40px !important; /* Push down from header after audit */
   }
+
   .hero-subtitle {
-    font-size: 10px !important; 
-    margin-top: 2px !important;
-    max-width: 90% !important;
+    font-size: 11px !important;
+    margin-top: 5px !important;
+    max-width: 450px !important;
   }
+
   .hero-actions {
     position: relative !important;
-    margin-top: -160px !important; /* Pull buttons up even more */
-    padding-bottom: 20px !important;
-    display: flex !important;
+    margin-top: -120px !important; /* Balance with sphere elevation */
     flex-direction: row !important;
-    gap: 120px !important; /* Wide gap around sphere */
-    width: 100% !important;
-    justify-content: center !important;
+    gap: 100px !important; 
     z-index: 50 !important;
   }
+
   .btn {
     padding: 10px 20px !important;
     font-size: 13px !important;
@@ -627,21 +699,16 @@
     -webkit-backdrop-filter: blur(10px) !important;
     backdrop-filter: blur(10px) !important;
   }
-  .badge {
-    display: none !important; 
-    visibility: hidden !important;
-  }
-  .scroll-arrow-container {
+
+  .badge, .scroll-arrow-container {
     display: none !important;
   }
+
   .prime-frame-logo {
     transform: scale(0.65) !important;
-    transform-origin: left !important;
-    margin-top: -5px !important;
-  }
-  
-  .prime-frame-logo .prime-silver, 
-  .prime-frame-logo .frame-gold {
-    font-size: 15px !important;
+    transform-origin: left top !important;
+    position: absolute !important;
+    top: 20px !important;
+    left: 20px !important;
   }
 }
