@@ -7,19 +7,18 @@ import { Check } from "lucide-react"
 
 const plans = [
   {
-    name: "Starter",
+    name: "STARTER",
     price: "€2.299",
     period: "/lună",
-    description: "Perfect pentru testarea creativelor generate cu AI",
+    description: "Pentru testarea și validarea direcției creative",
     features: [
-      "20 variante reclame video pe lună",
-      "40 variante reclame statice pe lună",
-      "2 strategii de campanie",
-      "Testare A/B de bază",
-      "Suport prin email",
-      "Integrare ghiduri de brand",
+      "Set lunar de reclame video AI",
+      "Set lunar de reclame statice AI",
+      "Direcție creativă & prompt engineering",
+      "Livrare în formate standard",
+      "Feedback & ajustări incluse",
     ],
-    cta: "Începe Perioada de Probă",
+    cta: "Discută un Starter",
     highlighted: false,
   },
   {
