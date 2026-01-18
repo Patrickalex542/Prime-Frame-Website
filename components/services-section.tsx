@@ -19,7 +19,7 @@ const services = [
   {
     icon: ImageIcon,
     title: "Static Ads AI",
-    description: "Banners și creatives statice generate cu AI pentru campaniile tale.",
+    description: "Reclame statice și vizualuri generate cu AI, create pentru coerență vizuală și utilizare în campanii digitale.",
     features: [
       "Display ads și banners multi-format",
       "Adaptare rapidă pentru diferite piețe",
