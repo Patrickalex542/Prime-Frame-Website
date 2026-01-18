@@ -695,3 +695,114 @@
     letter-spacing: 0.1em !important;
   }
 }
+
+/* From Uiverse.io by MikeeMikee - Rotating Social Buttons */ 
+.rotate-btn {
+  cursor: pointer;
+  border: none;
+  background: var(--btn-gradient, #212121);
+  color: #fff;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  place-content: center;
+  transition: background 300ms, transform 200ms;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.rotate-btn__text {
+  position: absolute;
+  inset: 0;
+  animation: text-rotation 8s linear infinite;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.rotate-btn__text > span {
+  position: absolute;
+  transform: rotate(calc(18deg * var(--index)));
+  inset: 6px;
+  display: inline-block;
+  width: 10px;
+  text-align: center;
+}
+
+.rotate-btn__circle {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  overflow: hidden;
+  background: #111;
+  color: var(--icon-color, #fff);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  transition: color 300ms;
+}
+
+.rotate-btn__icon--copy {
+  position: absolute;
+  transform: translate(-150%, 150%);
+}
+
+.rotate-btn:hover {
+  background: #000;
+  transform: scale(1.1);
+}
+
+.rotate-btn:hover .rotate-btn__circle {
+  color: #fff;
+}
+
+.rotate-btn:hover .rotate-btn__icon:first-child {
+  transition: transform 0.3s ease-in-out;
+  transform: translate(150%, -150%);
+}
+
+.rotate-btn:hover .rotate-btn__icon--copy {
+  transition: transform 0.3s ease-in-out 0.1s;
+  transform: translate(0);
+}
+
+@keyframes text-rotation {
+  to {
+    rotate: 360deg;
+  }
+}
+
+.rotate-btn:active {
+  transform: scale(0.95);
+}
+
+/* Network Specific Gradients */
+.rotate-btn.instagram {
+  --btn-gradient: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  --icon-color: #dc2743;
+}
+
+.rotate-btn.tiktok {
+  --btn-gradient: linear-gradient(45deg, #25F4EE, #FE2C55, #000000);
+  --icon-color: #25F4EE;
+}
+
+.rotate-btn.facebook {
+  --btn-gradient: linear-gradient(45deg, #1877F2, #0C5DC7);
+  --icon-color: #1877F2;
+}
+
+.rotate-btn.whatsapp {
+  --btn-gradient: linear-gradient(45deg, #25D366, #128C7E);
+  --icon-color: #25D366;
+}
+
+.rotate-btn.mail {
+  --btn-gradient: linear-gradient(45deg, #EA4335, #C5221F);
+  --icon-color: #EA4335;
+}
