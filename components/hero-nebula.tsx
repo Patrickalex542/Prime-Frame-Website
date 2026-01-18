@@ -14,7 +14,7 @@ interface HeroNebulaProps {
 
 export default function HeroNebula({
   title = "CINEMATIC AI-ENHANCED CONTENT",
-  subtitle = "STUDIO DE CREAȚIE AI CARE PRODUCE CONȚINUT CINEMATIC – VIDEO ȘI STATIC – CUSTOMIZAT PENTRU IDENTITATEA BRANDULUI TĂU",
+  subtitle = "Studio de creație AI care produce conținut cinematic – video și static – customizat pentru identitatea brandului tău.",
   ctaPrimary = { label: "Portofoliu", href: "#work" },
   ctaSecondary = { label: "CONTACTEAZA-NE", href: "#contact" },
 }: HeroNebulaProps) {
