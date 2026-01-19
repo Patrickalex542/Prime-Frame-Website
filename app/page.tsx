@@ -1,11 +1,12 @@
-import { Navigation } from "@/components/navigation"
-import HeroNebula from "@/components/hero-nebula"
-import { WorkSection } from "@/components/work-section"
-import { ServicesSection } from "@/components/services-section"
-import { ProcessSection } from "@/components/process-section"
-import { PricingSection } from "@/components/pricing-section"
-import { ContactSection } from "@/components/contact-section"
-import { Footer } from "@/components/footer"
+import { Navigation } from "@/components/layout/navigation"
+import HeroNebula from "@/components/sections/hero-nebula"
+import { WorkSection } from "@/components/sections/work-section"
+import { ServicesSection } from "@/components/sections/services-section"
+import { ProcessSection } from "@/components/sections/process-section"
+import { PricingSection } from "@/components/sections/pricing-section"
+import { ContactSection } from "@/components/sections/contact-section"
+import { TestimonialsSection } from "@/components/sections/testimonials-section"
+import { Footer } from "@/components/layout/footer"
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <ServicesSection />
       <ProcessSection />
       <PricingSection />
+      <TestimonialsSection />
       <ContactSection />
       <Footer />
     </main>

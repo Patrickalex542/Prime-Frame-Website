@@ -814,3 +814,122 @@
 }
 
 
+
+/* Prime Frame Custom Premium Service Card */
+.prime-service-card {
+  position: relative;
+  background: linear-gradient(145deg, #121212, #050505);
+  border: 1px solid rgba(255, 255, 255, 0.08); /* Subtle border initially */
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Cinematic Gold Top Line effect */
+.prime-service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 162, 106, 0.0), transparent);
+  transition: all 0.5s ease;
+}
+
+/* Hover State */
+.prime-service-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(201, 162, 106, 0.3); /* Gold border on hover */
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6), 
+              0 0 30px rgba(201, 162, 106, 0.05); /* Subtle gold glow */
+}
+
+.prime-service-card:hover::before {
+  background: linear-gradient(90deg, transparent, rgba(201, 162, 106, 1), transparent);
+  box-shadow: 0 0 15px rgba(201, 162, 106, 0.8);
+}
+
+/* Icon Wrapper Styling */
+.prime-icon-wrapper {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.prime-service-card:hover .prime-icon-wrapper {
+  background: rgba(201, 162, 106, 0.1);
+  border-color: rgba(201, 162, 106, 0.4);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(201, 162, 106, 0.2);
+}
+
+/* Icon Color Transition */
+.prime-service-card .service-icon {
+  color: #a0a0a0; /* Muted silver */
+  transition: all 0.3s ease;
+}
+
+.prime-service-card:hover .service-icon {
+  color: #c9a26a; /* Prime Gold */
+  filter: drop-shadow(0 0 8px rgba(201, 162, 106, 0.6));
+}
+
+/* Premium 3D Pricing Card - "The Monolith" */
+.pricing-3d-card {
+  position: relative;
+  background: #0a0a0a; /* Deepest black */
+  border-radius: 24px;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  transform-style: preserve-3d;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 40px -10px rgba(0,0,0,0.8);
+}
+
+.pricing-3d-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% -20%, rgba(201, 162, 106, 0.08), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.pricing-3d-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: rgba(201, 162, 106, 0.3);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9),
+              0 0 30px rgba(201, 162, 106, 0.1); /* Gold glow */
+}
+
+.pricing-3d-card:hover::before {
+  opacity: 1;
+}
+
+/* Floating Elements Effect */
+.pricing-content-float {
+  transform: translateZ(20px);
+  transition: transform 0.4s ease;
+}
+
+.pricing-3d-card:hover .pricing-content-float {
+  transform: translateZ(30px);
+}
+
+/* Gold Gradient Text */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #e3c489 0%, #c9a26a 50%, #b08d55 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 10px rgba(201, 162, 106, 0.2);
+}
+
+/* Checkmark Glow */
+.check-glow {
+  filter: drop-shadow(0 0 5px rgba(201, 162, 106, 0.5));
+}

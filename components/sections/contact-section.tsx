@@ -3,6 +3,7 @@
 import type React from "react"
 
 import { Mail, MessageCircle, Facebook, Instagram } from "lucide-react"
+import { ScrollReveal } from "@/components/features/scroll-reveal"
 
 export function ContactSection() {
   const socialLinks = [
@@ -56,14 +57,17 @@ export function ContactSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-secondary/20 to-background pointer-events-none" />
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
-        <div className="text-center mb-12 sm:mb-16 md:mb-20">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 tracking-widest uppercase text-balance">Hai Să Discutăm</h2>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4 tracking-wider text-pretty">
-            Suntem gata să dăm viață viziunii tale. Contactează-ne pe platforma ta preferată.
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-12 sm:mb-16 md:mb-20">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 tracking-widest uppercase text-balance">Hai Să Discutăm</h2>
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4 tracking-wider text-pretty">
+              Suntem gata să dăm viață viziunii tale. Contactează-ne pe platforma ta preferată.
+            </p>
+          </div>
+        </ScrollReveal>
 
         <div className="max-w-4xl mx-auto">
+          <ScrollReveal delay={0.2}>
           <div
             className="p-10 sm:p-12 md:p-16 rounded-3xl border border-border/50 relative overflow-hidden glass-panel flex flex-col items-center justify-center"
           >
@@ -97,6 +101,7 @@ export function ContactSection() {
               ))}
             </div>
           </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

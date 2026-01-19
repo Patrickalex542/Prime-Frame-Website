@@ -3,7 +3,7 @@
 
 import { useRef, useEffect, useState } from "react"
 import * as THREE from "three"
-import { AIButton } from "./ai-button"
+import { AIButton } from "@/components/features/ai-button"
 
 interface HeroNebulaProps {
   title?: string

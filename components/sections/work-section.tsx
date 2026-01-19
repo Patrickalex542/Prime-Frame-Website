@@ -1,8 +1,9 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { WorkCard } from "./work-card"
-import { WorkModal } from "./work-modal"
+import { WorkCard } from "@/components/features/work-card"
+import { WorkModal } from "@/components/features/work-modal"
+import { ScrollReveal } from "@/components/features/scroll-reveal"
 
 const workProjects = [
   {
@@ -69,53 +70,24 @@ const workProjects = [
 
 export function WorkSection() {
   const [selectedProject, setSelectedProject] = useState<(typeof workProjects)[0] | null>(null)
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef<HTMLElement>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true)
-          }
-        })
-      },
-      { threshold: 0.1 },
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current)
-      }
-    }
-  }, [])
 
   return (
-    <section ref={sectionRef} id="work" className="py-16 sm:py-20 md:py-32 bg-background">
+    <section id="work" className="py-16 sm:py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4 sm:px-6 transition-all duration-300 hover:scale-[1.01]">
-        <div
-          className={`text-center mb-12 md:mb-20 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
-        >
-          <h2 className="sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-balance text-3xl tracking-widest uppercase">
-            FEATURED WORK
-          </h2>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty px-4 tracking-wider">
-            O selecție de conținut cinematic video creat pentru clienții noștri
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-12 md:mb-20">
+            <h2 className="sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-balance text-3xl tracking-widest uppercase">
+              FEATURED WORK
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty px-4 tracking-wider">
+              O selecție de conținut cinematic video creat pentru clienții noștri
+            </p>
+          </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {workProjects.map((project, index) => (
-            <div
-              key={project.id}
-              className={`transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
-              style={{ transitionDelay: isVisible ? `${index * 100}ms` : "0ms" }}
-            >
+            <ScrollReveal key={project.id} delay={index * 0.1}>
               <WorkCard
                 title={project.title}
                 category={project.category}
@@ -123,7 +95,7 @@ export function WorkSection() {
                 imagePlaceholder={project.imagePlaceholder}
                 onClick={() => setSelectedProject(project)}
               />
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

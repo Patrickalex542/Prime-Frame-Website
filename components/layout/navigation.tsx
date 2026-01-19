@@ -2,7 +2,9 @@
 // Deployment Sync: 2026-01-18-v4-Hamburger-Visibility-Fix
 
 import { useState, useEffect } from "react"
+import { Link as ScrollLink } from "react-scroll"
 import { cn } from "@/lib/utils"
+import { AIButton } from "@/components/features/ai-button"
 import { Menu, X, Instagram, MessageCircle, Mail } from "lucide-react"
 
 export function Navigation() {
