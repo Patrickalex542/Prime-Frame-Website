@@ -79,9 +79,9 @@ export function PricingSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
           {plans.map((plan, index) => (
-            <ScrollReveal key={index} delay={index * 0.1}>
+            <ScrollReveal key={index} delay={index * 0.1} className="h-full">
               <div
-                className={`p-8 pricing-3d-card group cursor-default flex flex-col border border-white/5 hover:border-primary/30 transition-all duration-500 hover:shadow-[0_0_40px_rgba(201,162,106,0.15)] ${plan.highlighted ? 'shadow-[0_0_30px_rgba(201,162,106,0.15)] border-primary/30' : ''}`}
+                className={`p-8 pricing-3d-card group cursor-default flex flex-col items-stretch border border-white/5 hover:border-primary/30 transition-all duration-500 hover:shadow-[0_0_40px_rgba(201,162,106,0.15)] h-full ${plan.highlighted ? 'shadow-[0_0_30px_rgba(201,162,106,0.15)] border-primary/30' : ''}`}
               >
                 {/* Premium Top Line - All Cards */}
                 <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#b08d55] via-[#e3c489] to-[#b08d55] transition-opacity duration-500 ${plan.highlighted ? 'opacity-100' : 'opacity-40 group-hover:opacity-100'}`} />
@@ -111,7 +111,7 @@ export function PricingSection() {
                   ))}
                 </ul>
 
-                <div className="relative z-10 pricing-content-float delay-100">
+                <div className="relative z-10 pricing-content-float delay-100 mt-auto">
                   <Button
                     className={`w-full py-6 text-sm font-bold tracking-widest uppercase rounded-xl transition-all duration-300 ${
                       plan.highlighted 

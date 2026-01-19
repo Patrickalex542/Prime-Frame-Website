@@ -7,17 +7,6 @@ import { ScrollReveal } from "@/components/features/scroll-reveal"
 
 const services = [
   {
-    icon: Video,
-    title: "VIDEO CONTENT AI",
-    description: "Concept creativ și structură de reclamă",
-    features: [
-      "Prompt engineering avansat pentru control vizual",
-      "Storyboard simplificat (hook → mesaj → final)",
-      "Formate multiple pentru social media",
-      "Adaptate pentru distribuție digitală",
-    ],
-  },
-  {
     icon: ImageIcon,
     title: "STATIC CONTENT AI",
     description: "Imagini generate cu AI, create pentru coerență vizuală și utilizare în campanii",
@@ -26,6 +15,17 @@ const services = [
       "Adaptare rapidă pentru diferite piețe",
       "Design aliniat cu identitatea brandului",
       "Pregătite pentru platforme de advertising",
+    ],
+  },
+  {
+    icon: Video,
+    title: "VIDEO CONTENT AI",
+    description: "Concept creativ și structură de reclamă",
+    features: [
+      "Prompt engineering avansat pentru control vizual",
+      "Storyboard simplificat (hook → mesaj → final)",
+      "Formate multiple pentru social media",
+      "Adaptate pentru distribuție digitală",
     ],
   },
   {
@@ -62,16 +62,16 @@ export function ServicesSection() {
           {services.map((service, index) => {
             const Icon = service.icon
             return (
-              <ScrollReveal key={index} delay={index * 0.1}>
+              <ScrollReveal key={index} delay={index * 0.1} className="h-full">
               <div
-                className="relative overflow-hidden p-6 md:p-8 rounded-[20px] bg-[linear-gradient(145deg,#121212,#050505)] border border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-2 hover:border-primary/30 hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.6),0_0_30px_rgba(201,162,106,0.05)] group cursor-default"
+                className="relative overflow-hidden p-6 md:p-8 rounded-[20px] bg-[linear-gradient(145deg,#121212,#050505)] border border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-2 hover:border-primary/30 hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.6),0_0_30px_rgba(201,162,106,0.05)] group cursor-default h-full flex flex-col"
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >
                 {/* Cinematic Top Line */}
                 <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-transparent to-transparent group-hover:via-primary transition-all duration-500 opacity-0 group-hover:opacity-100 shadow-[0_0_15px_rgba(201,162,106,0.8)]" />
 
-                <div className="mb-6 relative z-10">
+                <div className="mb-6 relative z-10 flex-1">
                   <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center mb-6 bg-white/5 border border-white/5 transition-all duration-400 group-hover:scale-105 group-hover:bg-primary/10 group-hover:border-primary/40 group-hover:shadow-[0_0_20px_rgba(201,162,106,0.2)]">
                     <Icon className="w-7 h-7 md:w-8 md:h-8 text-[#a0a0a0] transition-all duration-300 group-hover:text-primary group-hover:drop-shadow-[0_0_8px_rgba(201,162,106,0.6)]" />
                   </div>
