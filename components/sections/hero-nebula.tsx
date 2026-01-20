@@ -235,6 +235,14 @@ export default function HeroNebula({
 
     window.addEventListener("resize", onResize)
 
+    // Scroll sync logic
+    function computeScrollTarget() {
+      // Subtle vertical movement based on scroll
+      const progress = window.scrollY / window.innerHeight
+      const clamped = Math.max(0, Math.min(1, progress))
+      ;(group as any).scrollOffset = clamped * 2.0
+    }
+
     const clock = new THREE.Clock()
 
     function animate() {
@@ -256,11 +264,11 @@ export default function HeroNebula({
         manualRotation.y += dragRotationVelocity.y
       }
 
-      // Parallax / Scroll effect
-      // HeroNebula originally had some scroll logic to move the sphere?
-      // For now, keep it simple and centered.
+      // Restore subtle parallax movement
       const baseY = params.isLandscapeMobile ? 0.5 : 0 
-      group.position.y = baseY
+      const scrollYOffset = -((group as any).scrollOffset || 0)
+      const targetY = baseY + scrollYOffset
+      group.position.y += (targetY - group.position.y) * 0.1
 
       if (ring) ring.rotation.z = t * 0.2
 
@@ -268,11 +276,13 @@ export default function HeroNebula({
       rafRef.current = requestAnimationFrame(animate)
     }
 
+    window.addEventListener("scroll", computeScrollTarget, { passive: true })
     rafRef.current = requestAnimationFrame(animate)
 
     return () => {
       cleanedUpRef.current = true
       if (rafRef.current) cancelAnimationFrame(rafRef.current)
+      window.removeEventListener("scroll", computeScrollTarget)
       window.removeEventListener("resize", onResize)
       window.removeEventListener("pointermove", onPointerMove)
       window.removeEventListener("pointerdown", onPointerDown)
@@ -290,9 +300,9 @@ export default function HeroNebula({
 
   return (
     <section className="hero-nebula relative w-full h-[100dvh] overflow-hidden bg-transparent">
-      {/* 3D Canvas Background - Fixed on Desktop, Absolute on Mobile */}
+      {/* 3D Canvas Background - Absolute for static hero effect, with parallax movement inside */}
       <div 
-        className="absolute md:fixed inset-0 z-0 pointer-events-none bg-black" 
+        className="absolute inset-0 z-0 pointer-events-none bg-black" 
         ref={mountRef} 
         aria-hidden="true"
       />
