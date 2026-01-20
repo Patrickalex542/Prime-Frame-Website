@@ -295,9 +295,9 @@ export default function HeroNebula({
       />
       
       <div 
-        className="hero-overlay relative z-20 h-full flex flex-col justify-between items-center w-full px-5 py-[4vh] md:pt-[80px] md:pb-[40px]"
+        className="hero-overlay relative z-20 h-full flex flex-col justify-between items-center w-full px-5 pt-[110px] pb-[4vh] md:pt-[120px] md:pb-[40px]"
       >
-        <div className="hero-content-top flex flex-col items-center px-4 md:px-6 lg:px-12 w-full max-w-7xl mx-auto mt-[5vh] mb-[2vh] md:mt-[40px] md:mb-[50px]">
+        <div className="hero-content-top flex flex-col items-center px-4 md:px-6 lg:px-12 w-full max-w-7xl mx-auto mt-0 mb-[2vh] md:mt-[20px] md:mb-[50px]">
           <div className="badge self-start -mt-[8px] text-[10px] sm:text-[11px] px-[10px] py-[5px] sm:px-[12px] sm:py-[6px] opacity-70">NEXT GEN MARKETING</div>
           <h1 className="hero-title text-center uppercase tracking-[-0.02em] font-bold mt-[10px] text-[clamp(1.2rem,4.5vw,5rem)] md:text-[clamp(2.5rem,5.5vw,6rem)] lg:text-[clamp(3rem,3.5vw,5.5rem)] px-2 md:px-0 leading-[1.1] w-full max-w-full overflow-hidden whitespace-nowrap">
             CINEMATIC AI-ENHANCED<br />CONTENT
