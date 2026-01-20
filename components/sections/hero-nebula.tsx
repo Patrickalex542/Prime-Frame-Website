@@ -199,6 +199,9 @@ export default function HeroNebula({
     }
 
     function onPointerDown(e: PointerEvent) {
+      // Disable interaction on mobile to prevent interference with connection/scrolling
+      if (window.innerWidth < 768) return
+      
       isDragging = true
       previousMousePosition = { x: e.clientX, y: e.clientY }
       if (document.body) document.body.style.cursor = "grabbing"
