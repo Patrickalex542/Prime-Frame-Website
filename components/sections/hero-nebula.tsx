@@ -290,9 +290,9 @@ export default function HeroNebula({
 
   return (
     <section className="hero-nebula relative w-full h-[100dvh] overflow-hidden bg-transparent">
-      {/* 3D Canvas Background - Fixed for Global Effect */}
+      {/* 3D Canvas Background - Fixed on Desktop, Absolute on Mobile */}
       <div 
-        className="fixed inset-0 z-0 pointer-events-none bg-black" 
+        className="absolute md:fixed inset-0 z-0 pointer-events-none bg-black" 
         ref={mountRef} 
         aria-hidden="true"
       />
