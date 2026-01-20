@@ -67,7 +67,7 @@ export function PricingSection() {
     <section id="pricing" className="py-16 sm:py-20 md:py-32 bg-secondary/30">
       <div className="container mx-auto px-4 sm:px-6">
         <ScrollReveal>
-          <div className="text-center mb-12 md:mb-20">
+          <div className="text-center mb-12 md:mb-20 bg-black/40 backdrop-blur-sm py-8 px-6 rounded-3xl border border-white/5 mx-auto max-w-4xl shadow-2xl">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-balance tracking-wider uppercase">
               MODELE DE COLABORARE
             </h2>
@@ -81,7 +81,7 @@ export function PricingSection() {
           {plans.map((plan, index) => (
             <ScrollReveal key={index} delay={index * 0.1} className="h-full">
               <div
-                className={`pricing-3d-card group cursor-default flex flex-col items-stretch border border-white/5 hover:border-primary/30 transition-all duration-500 hover:shadow-[0_0_40px_rgba(201,162,106,0.15)] h-full p-[clamp(1.5rem,3vw,2.5rem)] ${plan.highlighted ? 'shadow-[0_0_30px_rgba(201,162,106,0.15)] border-primary/30' : ''}`}
+                className={`pricing-3d-card group cursor-default flex flex-col items-stretch border border-white/5 bg-black/40 backdrop-blur-md hover:border-primary/30 transition-all duration-500 hover:shadow-[0_0_40px_rgba(201,162,106,0.15)] h-full p-[clamp(1.5rem,3vw,2.5rem)] ${plan.highlighted ? 'shadow-[0_0_30px_rgba(201,162,106,0.15)] border-primary/30' : ''}`}
               >
                 {/* Premium Top Line - All Cards */}
                 <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#b08d55] via-[#e3c489] to-[#b08d55] transition-opacity duration-500 ${plan.highlighted ? 'opacity-100' : 'opacity-40 group-hover:opacity-100'}`} />

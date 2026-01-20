@@ -53,10 +53,10 @@ export function ProcessSection() {
   }, [])
 
   return (
-    <section id="process" ref={sectionRef} className="py-16 sm:py-24 md:py-32 bg-background">
+    <section id="process" ref={sectionRef} className="py-16 sm:py-24 md:py-32 bg-transparent">
       <div className="container mx-auto px-4 sm:px-6">
         <ScrollReveal>
-          <div className="text-center mb-12 sm:mb-16 md:mb-20">
+          <div className="text-center mb-12 sm:mb-16 md:mb-20 bg-black/40 backdrop-blur-sm py-8 px-6 rounded-3xl border border-white/5 mx-auto max-w-4xl shadow-2xl">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 tracking-widest uppercase">
               WORKFLOW-UL NOSTRU
             </h2>
@@ -70,6 +70,7 @@ export function ProcessSection() {
           <div className="absolute top-20 left-0 right-0 h-0.5 bg-border hidden lg:block">
             <div
               className="h-full bg-primary transition-all duration-500 ease-out"
+              // eslint-disable-next-line react-dom/no-unsafe-inline-style
               style={{ width: `${((activeStep + 1) / steps.length) * 100}%` }}
             />
           </div>
@@ -77,24 +78,24 @@ export function ProcessSection() {
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-8">
             {steps.map((step, index) => (
               <ScrollReveal key={index} delay={index * 0.1}>
-              <div className="relative">
-                <div className="flex flex-col items-center lg:items-start">
-                  <div
-                    className={`w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center text-xl sm:text-2xl font-bold mb-4 sm:mb-6 transition-all duration-500 ${
-                      index <= activeStep
-                        ? "bg-primary text-primary-foreground scale-110"
-                        : "bg-secondary text-secondary-foreground"
-                    }`}
-                  >
-                    {step.number}
-                  </div>
+                <div className="relative h-full bg-black/40 backdrop-blur-md border border-white/10 rounded-2xl p-6 sm:p-8 hover:border-primary/30 transition-all duration-300 hover:shadow-[0_0_20px_rgba(201,162,106,0.1)] group">
+                  <div className="flex flex-col items-center lg:items-start h-full">
+                    <div
+                      className={`w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center text-xl sm:text-2xl font-bold mb-4 sm:mb-6 transition-all duration-500 shadow-lg ${
+                        index <= activeStep
+                          ? "bg-primary text-black scale-110 shadow-primary/40"
+                          : "bg-secondary text-secondary-foreground border border-white/10"
+                      }`}
+                    >
+                      {step.number}
+                    </div>
 
-                  <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-center lg:text-left">{step.title}</h3>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed text-center lg:text-left">
-                    {step.description}
-                  </p>
+                    <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-center lg:text-left text-white group-hover:text-primary transition-colors">{step.title}</h3>
+                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed text-center lg:text-left">
+                      {step.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
               </ScrollReveal>
             ))}
           </div>

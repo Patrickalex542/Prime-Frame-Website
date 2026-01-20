@@ -72,10 +72,10 @@ export function WorkSection() {
   const [selectedProject, setSelectedProject] = useState<(typeof workProjects)[0] | null>(null)
 
   return (
-    <section id="work" className="py-16 sm:py-20 md:py-32 bg-background">
+    <section id="work" className="py-16 sm:py-20 md:py-32 bg-transparent">
       <div className="container mx-auto px-4 sm:px-6 transition-all duration-300 hover:scale-[1.01]">
         <ScrollReveal>
-          <div className="text-center mb-12 md:mb-20">
+          <div className="text-center mb-12 md:mb-20 bg-black/40 backdrop-blur-sm py-8 px-6 rounded-3xl border border-white/5 mx-auto max-w-4xl shadow-2xl">
             <h2 className="sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-balance text-3xl tracking-widest uppercase">
               FEATURED WORK
             </h2>
@@ -84,7 +84,9 @@ export function WorkSection() {
             </p>
           </div>
         </ScrollReveal>
+      </div>
 
+      <div className="container mx-auto px-4 sm:px-6 transition-all duration-300 hover:scale-[1.01]">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {workProjects.map((project, index) => (
             <ScrollReveal key={project.id} delay={index * 0.1}>

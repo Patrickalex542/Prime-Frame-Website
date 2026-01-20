@@ -1,7 +1,6 @@
 "use client"
-// Deployment Sync: 2026-01-11-v3
 
-import { useRef, useEffect, useState } from "react"
+import { useRef, useEffect } from "react"
 import * as THREE from "three"
 import { AIButton } from "@/components/features/ai-button"
 
@@ -29,22 +28,18 @@ export default function HeroNebula({
 
     cleanedUpRef.current = false
 
-    // Dynamic viewport calculations
     const getViewportParams = () => {
       const width = window.innerWidth
       const height = window.innerHeight
-      const aspect = width / height
+      
       const isMobile = width < 768
       const isLandscapeMobile = width > height && height < 500
       
-      // Calculate dynamic sphere radius based on viewport size
-      // Use a base of min dimension * percentage
       const minDim = Math.min(width, height)
-      let radiusBase = minDim * 0.0025 // Dynamic scaling factor
+      let radiusBase = minDim * 0.0025 
       
-      // Clamp values to sane defaults
       if (isMobile) {
-        radiusBase = Math.max(1.5, Math.min(2.1, width * 0.005)) // Adjusted for optimal mobile fit
+        radiusBase = Math.max(1.5, Math.min(2.1, width * 0.005))
       } else {
         radiusBase = Math.max(2.5, Math.min(3.5, width * 0.002))
       }
@@ -56,13 +51,14 @@ export default function HeroNebula({
         isLandscapeMobile,
         particleCount: isMobile ? 8000 : 20000,
         sphereRadius: radiusBase,
-        cameraZ: isLandscapeMobile ? 12 : isMobile ? 12 : 9 // Optimized mobile camera distance
+        cameraZ: isLandscapeMobile ? 12 : isMobile ? 12 : 9 
       }
     }
 
     let params = getViewportParams()
 
     const scene = new THREE.Scene()
+    // scene.background = new THREE.Color(0x000000) // Ensure black background if needed, or keep transparent
     scene.fog = new THREE.FogExp2(0x000000, 0.04)
 
     const renderer = new THREE.WebGLRenderer({
@@ -72,7 +68,7 @@ export default function HeroNebula({
     })
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
     renderer.setSize(mount.clientWidth, mount.clientHeight)
-    renderer.setClearColor(0x000000, 0)
+    // renderer.setClearColor(0x000000, 1) // Force opaque black for Hero if that was the original state, or 0 for transparent
 
     rendererRef.current = renderer
     mount.appendChild(renderer.domElement)
@@ -98,14 +94,12 @@ export default function HeroNebula({
     const group = new THREE.Group()
     scene.add(group)
 
-    // Initial Geometry Creation
     let geometry: THREE.BufferGeometry
     let material: THREE.PointsMaterial
     let particles: THREE.Points
     let ring: THREE.Mesh
 
     function createObjects() {
-      // Clean up old objects if they exist
       if (particles) {
         group.remove(particles)
         geometry.dispose()
@@ -113,7 +107,6 @@ export default function HeroNebula({
       }
       if (ring) {
         group.remove(ring)
-        // types for ring geometry/material disposal handled in cleanup
       }
 
       params = getViewportParams()
@@ -149,7 +142,6 @@ export default function HeroNebula({
       geometry = new THREE.BufferGeometry()
       geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3))
       geometry.setAttribute("color", new THREE.BufferAttribute(colors, 3))
-      // Store base positions for animation reference
       geometry.userData = { basePositions: positions.slice() }
 
       material = new THREE.PointsMaterial({
@@ -164,7 +156,6 @@ export default function HeroNebula({
       particles = new THREE.Points(geometry, material)
       group.add(particles)
 
-      // Ring
       const ringGeom = new THREE.TorusGeometry(params.sphereRadius + 0.5, 0.02, 12, 100)
       const ringMat = new THREE.MeshStandardMaterial({
         color: 0xd4af7a,
@@ -190,11 +181,13 @@ export default function HeroNebula({
 
     function onPointerMove(e: PointerEvent) {
       if (!rendererRef.current) return
-      const rect = rendererRef.current.domElement.getBoundingClientRect()
-      mouse.x = ((e.clientX - rect.left) / rect.width) * 2 - 1
-      mouse.y = -(((e.clientY - rect.top) / rect.height) * 2 - 1)
+      // Track on window
+      const w = window.innerWidth
+      const h = window.innerHeight
+      mouse.x = (e.clientX / w) * 2 - 1
+      mouse.y = -(e.clientY / h) * 2 + 1
 
-      if (isDragging) {
+       if (isDragging) {
         const deltaX = e.clientX - previousMousePosition.x
         const deltaY = e.clientY - previousMousePosition.y
         dragRotationVelocity.x = deltaY * 0.005
@@ -208,54 +201,36 @@ export default function HeroNebula({
     function onPointerDown(e: PointerEvent) {
       isDragging = true
       previousMousePosition = { x: e.clientX, y: e.clientY }
-      if (rendererRef.current) rendererRef.current.domElement.style.cursor = "grabbing"
+      if (document.body) document.body.style.cursor = "grabbing"
     }
 
     function onPointerUp() {
       isDragging = false
-      if (rendererRef.current) rendererRef.current.domElement.style.cursor = "grab"
+      if (document.body) document.body.style.cursor = "default"
     }
 
-    if (renderer.domElement) {
-      renderer.domElement.style.cursor = "grab"
-      renderer.domElement.addEventListener("pointermove", onPointerMove)
-      renderer.domElement.addEventListener("pointerdown", onPointerDown)
-      renderer.domElement.addEventListener("pointerup", onPointerUp)
-      renderer.domElement.addEventListener("pointerleave", onPointerUp)
-    }
-
-    // Scroll sync logic
-    function computeScrollTarget() {
-      // Smoother scroll transition relative to viewport height
-      const progress = window.scrollY / window.innerHeight
-      const clamped = Math.max(0, Math.min(1, progress))
-      // Move slightly less to keep visible longer
-      ;(group as any).scrollOffset = clamped * 2.5
-    }
+    // Global listeners
+    window.addEventListener("pointermove", onPointerMove)
+    window.addEventListener("pointerdown", onPointerDown)
+    window.addEventListener("pointerup", onPointerUp)
 
     let resizeTimeout: NodeJS.Timeout
     function onResize() {
       if (!mount || !rendererRef.current) return
-      
-      // Debounce resize object recreation
       clearTimeout(resizeTimeout)
-      
-      const w = mount.clientWidth
-      const h = mount.clientHeight
+      const w = window.innerWidth
+      const h = window.innerHeight
       camera.aspect = w / h
       camera.updateProjectionMatrix()
       rendererRef.current.setSize(w, h)
       
-      // Recreate objects on significant resize to adjust radius
       resizeTimeout = setTimeout(() => {
          createObjects()
-         // Update camera Z based on new params
          camera.position.z = params.cameraZ
       }, 200)
     }
 
     window.addEventListener("resize", onResize)
-    window.addEventListener("scroll", computeScrollTarget, { passive: true })
 
     const clock = new THREE.Clock()
 
@@ -264,13 +239,11 @@ export default function HeroNebula({
 
       const t = clock.getElapsedTime()
 
-      // Smooth camera follow
       camera.position.x += (mouse.x * 0.5 - camera.position.x) * 0.05
       camera.position.y += (mouse.y * 0.3 - camera.position.y) * 0.05
       camera.lookAt(0, 0, 0)
 
-      // Rotation physics
-      group.rotation.y = t * 0.2 + manualRotation.y // Increased speed from 0.1 to 0.2
+      group.rotation.y = t * 0.2 + manualRotation.y
       group.rotation.x = manualRotation.x
       
       if (!isDragging) {
@@ -280,14 +253,11 @@ export default function HeroNebula({
         manualRotation.y += dragRotationVelocity.y
       }
 
-      // Responsive positioning
-      // Move sphere up/down based on scroll AND screen aspect ratio
-      // On small screens, push it slightly lower to center in available space
+      // Parallax / Scroll effect
+      // HeroNebula originally had some scroll logic to move the sphere?
+      // For now, keep it simple and centered.
       const baseY = params.isLandscapeMobile ? 0.5 : 0 
-      const scrollYOffset = -((group as any).scrollOffset || 0)
-      
-      const targetY = baseY + scrollYOffset
-      group.position.y += (targetY - group.position.y) * 0.1
+      group.position.y = baseY
 
       if (ring) ring.rotation.z = t * 0.2
 
@@ -300,16 +270,11 @@ export default function HeroNebula({
     return () => {
       cleanedUpRef.current = true
       if (rafRef.current) cancelAnimationFrame(rafRef.current)
-      window.removeEventListener("scroll", computeScrollTarget)
       window.removeEventListener("resize", onResize)
+      window.removeEventListener("pointermove", onPointerMove)
+      window.removeEventListener("pointerdown", onPointerDown)
+      window.removeEventListener("pointerup", onPointerUp)
       
-      if (renderer.domElement) {
-        renderer.domElement.removeEventListener("pointermove", onPointerMove)
-        renderer.domElement.removeEventListener("pointerdown", onPointerDown)
-        renderer.domElement.removeEventListener("pointerup", onPointerUp)
-        renderer.domElement.removeEventListener("pointerleave", onPointerUp)
-      }
-
       if (geometry) geometry.dispose()
       if (material) material.dispose()
       
@@ -321,10 +286,14 @@ export default function HeroNebula({
   }, [])
 
   return (
-    <section className="hero-nebula relative w-full h-[100dvh] overflow-hidden bg-black">
-      {/* 3D Canvas Background */}
-      <div className="absolute inset-0 z-10" ref={mountRef} aria-hidden="true" />
-
+    <section className="hero-nebula relative w-full h-[100dvh] overflow-hidden bg-transparent">
+      {/* 3D Canvas Background - Fixed for Global Effect */}
+      <div 
+        className="fixed inset-0 z-0 pointer-events-none bg-black" 
+        ref={mountRef} 
+        aria-hidden="true"
+      />
+      
       <div 
         className="hero-overlay relative z-20 h-full flex flex-col justify-between items-center w-full px-5 py-[4vh] md:pt-[80px] md:pb-[40px]"
       >

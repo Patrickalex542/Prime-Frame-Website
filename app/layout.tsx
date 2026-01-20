@@ -7,32 +7,93 @@ import "./globals.css";
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "PRIME FRAME - Agenție de Publicitate AI pentru iGaming",
-  description:
-    "Creativități video și statice de impact, generate cu AI, special pentru branduri de iGaming și performance marketing.",
-  generator: "v0.app",
-  keywords: [
-    "AI advertising",
-    "iGaming marketing",
-    "video ads AI",
-    "creative agency",
-    "Prime Frame",
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Agency",
+  "name": "PRIME FRAME",
+  "url": "https://primeframe.ro",
+  "logo": "https://primeframe.ro/images/logo-icon.jpg",
+  "sameAs": [
+    "https://www.instagram.com/primeframe.ro",
+    "https://www.tiktok.com/@primeframe.ro"
   ],
-  authors: [{ name: "PRIME FRAME" }],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Strada ANGHEL MOLDOVEANU, Nr. 59",
+    "addressLocality": "București",
+    "addressRegion": "București",
+    "postalCode": "041697",
+    "addressCountry": "RO"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+40-763-481-568",
+    "contactType": "sales",
+    "email": "contact@primeframe.ro",
+    "areaServed": "RO",
+    "availableLanguage": ["Romanian", "English"]
+  },
+  "description": "Studio de creație AI specializat în conținut video și static cinematic pentru iGaming și performance marketing."
+}
+
+export const metadata: Metadata = {
+  title: "PRIME FRAME | Agenție de Publicitate AI pentru iGaming",
+  description:
+    "Transformăm viziunea ta în realitate vizuală. Studio specializat în creativități video și statice de impact, generate cu AI, pentru branduri de iGaming competitive.",
+  keywords: [
+    "AI advertising agency",
+    "agentie marketing AI",
+    "iGaming creative studio",
+    "video ads production",
+    "reclame video AI",
+    "social media content",
+    "performance marketing visuals",
+    "Prime Frame"
+  ],
+  authors: [{ name: "PRIME FRAME", url: "https://primeframe.ro" }],
+  creator: "PRIME FRAME",
+  publisher: "PRIME FRAME",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://primeframe.ro'),
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
-    title: "PRIME FRAME - Reclame AI de Impact",
-    description:
-      "Portofoliu de creativități generate cu AI pentru branduri competitive.",
+    title: "PRIME FRAME | Reclame AI de Impact pentru iGaming",
+    description: "Creativitate fără limite. Descoperă portofoliul nostru de vizualuri generate cu AI pentru campanii de succes.",
     url: "https://primeframe.ro",
     siteName: "PRIME FRAME",
     locale: "ro_RO",
     type: "website",
+    images: [
+      {
+        url: "/images/logo-icon.jpg", 
+        width: 800,
+        height: 600,
+        alt: "PRIME FRAME - AI Creative Studio",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "PRIME FRAME - Agenție AI",
-    description: "Reclame AI de impact pentru iGaming.",
+    description: "Reclame Video & Foto AI de impact pentru iGaming.",
+    images: ["/images/logo-icon.jpg"], 
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
   icons: {
     icon: [
@@ -57,6 +118,7 @@ export const viewport = {
   themeColor: "#000000",
   width: "device-width",
   initialScale: 1,
+  maximumScale: 5,
   viewportFit: "cover",
 };
 
@@ -68,6 +130,10 @@ export default function RootLayout({
   return (
     <html lang="ro" className="dark scroll-smooth">
       <body className={`font-sans antialiased`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
         <Analytics />
       </body>

@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { Mail, MessageCircle, Facebook, Instagram } from "lucide-react"
+import { Mail, MessageCircle, Instagram } from "lucide-react"
 import { ScrollReveal } from "@/components/features/scroll-reveal"
 
 export function ContactSection() {
@@ -33,13 +33,6 @@ export function ContactSection() {
       class: "tiktok"
     },
     {
-      name: "FACEBOOK",
-      href: "#",
-      label: "FACEBOOK FACEBOOK   ",
-      icon: Facebook,
-      class: "facebook"
-    },
-    {
       name: "WHATSAPP",
       href: "https://wa.me/40763481568",
       label: "WHATSAPP WHATSAPP   ",
@@ -53,12 +46,12 @@ export function ContactSection() {
   ]
 
   return (
-    <section id="contact" className="py-16 sm:py-24 md:py-32 bg-background relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-secondary/20 to-background pointer-events-none" />
+    <section id="contact" className="py-16 sm:py-24 md:py-32 bg-transparent relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-secondary/20 to-transparent pointer-events-none" />
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <ScrollReveal>
-          <div className="text-center mb-12 sm:mb-16 md:mb-20">
+          <div className="text-center mb-12 sm:mb-16 md:mb-20 bg-black/40 backdrop-blur-sm py-8 px-6 rounded-3xl border border-white/5 mx-auto max-w-4xl shadow-2xl">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 tracking-widest uppercase text-balance">Hai Să Discutăm</h2>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4 tracking-wider text-pretty">
               Suntem gata să dăm viață viziunii tale. Contactează-ne pe platforma ta preferată.
@@ -69,7 +62,7 @@ export function ContactSection() {
         <div className="max-w-4xl mx-auto">
           <ScrollReveal delay={0.2}>
           <div
-            className="p-10 sm:p-12 md:p-16 rounded-3xl border border-border/50 relative overflow-hidden glass-panel flex flex-col items-center justify-center"
+            className="p-10 sm:p-12 md:p-16 rounded-3xl border border-white/5 bg-black/40 backdrop-blur-sm relative overflow-hidden flex flex-col items-center justify-center shadow-2xl"
           >
             <div
               className="absolute inset-0 opacity-30 pointer-events-none contact-glow"
@@ -87,6 +80,7 @@ export function ContactSection() {
                 >
                   <p className="rotate-btn__text">
                     {link.label.split("").map((char, i) => (
+                      // eslint-disable-next-line react-dom/no-unsafe-inline-style
                       <span key={i} style={{ "--index": i } as React.CSSProperties}>
                         {char}
                       </span>

@@ -50,12 +50,12 @@ export function TestimonialsSection() {
   }, [])
 
   return (
-    <section id="testimonials" className="py-20 sm:py-32 bg-background relative overflow-hidden">
+    <section id="testimonials" className="py-20 sm:py-32 bg-transparent relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/5 via-background to-background pointer-events-none" />
       
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 bg-black/40 backdrop-blur-sm py-8 px-6 rounded-3xl border border-white/5 mx-auto max-w-4xl shadow-2xl">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 tracking-tight">
             CE SPUN <span className="text-primary">CLIENȚII</span>
           </h2>
@@ -72,7 +72,7 @@ export function TestimonialsSection() {
             {[...reviews, ...reviews].map((review, idx) => (
               <div
                 key={`${review.id}-${idx}`}
-                className="w-[350px] md:w-[450px] max-w-full flex-shrink-0 relative rounded-2xl border border-border/50 bg-card p-8 md:p-10 transition-all hover:border-primary/50 group"
+                className="w-[350px] md:w-[450px] max-w-full flex-shrink-0 relative rounded-2xl border border-white/10 bg-black/40 backdrop-blur-md p-8 md:p-10 transition-all hover:border-primary/50 group"
               >
                 <div className="absolute top-8 right-8 text-primary/20 group-hover:text-primary/40 transition-colors">
                   <Quote size={40} />

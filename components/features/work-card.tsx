@@ -18,7 +18,7 @@ export function WorkCard({ title, category, tags, imagePlaceholder, onClick }: W
   return (
     <Card
       className={cn(
-        "group relative overflow-hidden cursor-pointer transition-all duration-500 border-border bg-card",
+        "group relative overflow-hidden cursor-pointer transition-all duration-500 border-border bg-black/40 backdrop-blur-md",
         "hover:scale-105 hover:shadow-2xl hover:shadow-primary/20",
       )}
       style={{

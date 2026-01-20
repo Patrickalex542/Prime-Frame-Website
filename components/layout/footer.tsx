@@ -1,4 +1,4 @@
-import { Mail, Facebook, Instagram } from "lucide-react"
+import { Mail, Instagram } from "lucide-react"
 import {
   Dialog,
   DialogContent,
@@ -11,7 +11,7 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 
 export function Footer() {
   return (
-    <footer className="bg-background pt-16 pb-8 border-t border-border">
+    <footer className="bg-transparent pt-16 pb-0 border-t-0 relative z-50">
       <div className="container mx-auto px-4">
         
         {/* Social Icons Section */}
@@ -21,8 +21,9 @@ export function Footer() {
         {/* Separator Wave (Simulated with border or SVG if users wants, Anida has a wave) */}
         {/* Using simple border for now to keep it clean */}
         
-        {/* Main Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
+        {/* Main Grid - Styled as Glass Panel */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16 bg-black/40 backdrop-blur-sm border border-white/5 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+          <div className="absolute inset-0 opacity-30 pointer-events-none contact-glow" />
           
           {/* Column 1: Despre noi */}
           <div className="space-y-6">
@@ -62,7 +63,14 @@ export function Footer() {
             <div className="space-y-4 text-sm text-muted-foreground">
                <div className="flex items-start gap-3">
                   <span className="mt-1">📍</span>
-                  <p>București, Sectorul 4, Strada ANGHEL MOLDOVEANU, Nr. 59</p>
+                  <a 
+                    href="https://www.google.com/maps/search/?api=1&query=Strada+ANGHEL+MOLDOVEANU+Nr+59+Bucuresti+Sectorul+4" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="hover:text-primary transition-colors text-left"
+                  >
+                    București, Sectorul 4, Strada ANGHEL MOLDOVEANU, Nr. 59
+                  </a>
                </div>
                <div className="flex items-center gap-3">
                   <span>✉️</span>
@@ -104,7 +112,11 @@ export function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      </div>
+
+      {/* Full Width Bottom Section */}
+      <div className="w-full border-t border-white/10 bg-black mt-16">
+        <div className="w-full px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-muted-foreground">
             © 2026 PRIME FRAME. Toate drepturile rezervate.
           </p>
@@ -186,10 +198,6 @@ export function Footer() {
             </Dialog>
           </div>
         </div>
-
-        {/* ANPC Banners */}
-
-
       </div>
     </footer>
   )

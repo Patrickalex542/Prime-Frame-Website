@@ -48,7 +48,7 @@ export function ServicesSection() {
     <section id="services" className="py-16 sm:py-20 md:py-32 bg-secondary/30">
       <div className="container mx-auto px-4 sm:px-6">
         <ScrollReveal>
-          <div className="text-center mb-12 md:mb-20">
+          <div className="text-center mb-12 md:mb-20 bg-black/40 backdrop-blur-sm py-8 px-6 rounded-3xl border border-white/5 mx-auto max-w-4xl shadow-2xl">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-balance tracking-widest uppercase">
               CE LIVRĂM
             </h2>
@@ -64,7 +64,7 @@ export function ServicesSection() {
             return (
               <ScrollReveal key={index} delay={index * 0.1} className="h-full">
               <div
-                className="relative overflow-hidden rounded-[20px] bg-[linear-gradient(145deg,#121212,#050505)] border border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-2 hover:border-primary/30 hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.6),0_0_30px_rgba(201,162,106,0.05)] group cursor-default h-full flex flex-col p-[clamp(1.5rem,3vw,2.5rem)]"
+                className="relative overflow-hidden rounded-[20px] bg-black/40 backdrop-blur-md border border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-2 hover:border-primary/30 hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.6),0_0_30px_rgba(201,162,106,0.05)] group cursor-default h-full flex flex-col p-[clamp(1.5rem,3vw,2.5rem)]"
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >
