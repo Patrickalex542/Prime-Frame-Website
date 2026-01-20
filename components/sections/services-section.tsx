@@ -64,28 +64,28 @@ export function ServicesSection() {
             return (
               <ScrollReveal key={index} delay={index * 0.1} className="h-full">
               <div
-                className="relative overflow-hidden p-6 md:p-8 rounded-[20px] bg-[linear-gradient(145deg,#121212,#050505)] border border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-2 hover:border-primary/30 hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.6),0_0_30px_rgba(201,162,106,0.05)] group cursor-default h-full flex flex-col"
+                className="relative overflow-hidden rounded-[20px] bg-[linear-gradient(145deg,#121212,#050505)] border border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-2 hover:border-primary/30 hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.6),0_0_30px_rgba(201,162,106,0.05)] group cursor-default h-full flex flex-col p-[clamp(1.5rem,3vw,2.5rem)]"
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >
                 {/* Cinematic Top Line */}
                 <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-transparent to-transparent group-hover:via-primary transition-all duration-500 opacity-0 group-hover:opacity-100 shadow-[0_0_15px_rgba(201,162,106,0.8)]" />
 
-                <div className="mb-6 relative z-10 flex-1">
-                  <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center mb-6 bg-white/5 border border-white/5 transition-all duration-400 group-hover:scale-105 group-hover:bg-primary/10 group-hover:border-primary/40 group-hover:shadow-[0_0_20px_rgba(201,162,106,0.2)]">
-                    <Icon className="w-7 h-7 md:w-8 md:h-8 text-[#a0a0a0] transition-all duration-300 group-hover:text-primary group-hover:drop-shadow-[0_0_8px_rgba(201,162,106,0.6)]" />
+                <div className="mb-[clamp(1.5rem,3vh,2.5rem)] relative z-10 flex-1">
+                  <div className="rounded-2xl flex items-center justify-center mb-[clamp(1rem,2vh,1.5rem)] bg-white/5 border border-white/5 transition-all duration-400 group-hover:scale-105 group-hover:bg-primary/10 group-hover:border-primary/40 group-hover:shadow-[0_0_20px_rgba(201,162,106,0.2)] w-[clamp(3.5rem,5vw,4.5rem)] h-[clamp(3.5rem,5vw,4.5rem)]">
+                    <Icon className="text-[#a0a0a0] transition-all duration-300 group-hover:text-primary group-hover:drop-shadow-[0_0_8px_rgba(201,162,106,0.6)] w-[clamp(1.75rem,2.5vw,2.25rem)] h-[clamp(1.75rem,2.5vw,2.25rem)]" />
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold mb-3 text-white tracking-wide uppercase">{service.title}</h3>
-                  <p className="text-gray-400 leading-relaxed text-sm md:text-base mb-6 font-light">{service.description}</p>
+                  <h3 className="font-bold mb-3 text-white tracking-wide uppercase text-[clamp(1.25rem,2vw,1.75rem)] leading-tight">{service.title}</h3>
+                  <p className="text-gray-400 leading-relaxed font-light text-[clamp(0.875rem,1.1vw,1rem)]">{service.description}</p>
                 </div>
 
                 <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-primary/20 to-transparent mb-6 opacity-30 group-hover:opacity-60 transition-opacity duration-500 relative z-10" />
 
-                <ul className="space-y-3 relative z-10">
+                <ul className="space-y-[clamp(0.75rem,1.5vh,1rem)] relative z-10">
                   {service.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-3 group/item">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary/60 mt-2 flex-shrink-0 group-hover/item:bg-primary group-hover/item:shadow-[0_0_8px_rgba(201,162,106,0.8)] transition-all duration-300" />
-                      <span className="text-sm text-gray-400 group-hover/item:text-gray-200 transition-colors duration-300">{feature}</span>
+                      <span className="text-gray-400 group-hover/item:text-gray-200 transition-colors duration-300 text-[clamp(0.875rem,1.1vw,1rem)]">{feature}</span>
                     </li>
                   ))}
                 </ul>

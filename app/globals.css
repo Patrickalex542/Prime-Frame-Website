@@ -184,13 +184,13 @@
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
 }
 
-.hero-actions {
+/* .hero-actions {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
   justify-content: center;
   padding-bottom: 20px;
-}
+} */
 
 .btn {
   display: inline-flex;
