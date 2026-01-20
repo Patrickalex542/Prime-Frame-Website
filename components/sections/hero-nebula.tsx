@@ -308,11 +308,12 @@ export default function HeroNebula({
       />
       
       <div 
-        className="hero-overlay relative z-20 h-full flex flex-col justify-between items-center w-full px-5 pt-[110px] pb-[4vh] md:pt-[120px] md:pb-[40px]"
+        className="hero-overlay relative z-20 h-full flex flex-col justify-between items-center w-full px-5 pt-[110px] pb-[20px] md:pt-[120px] md:pb-[40px] max-w-7xl mx-auto"
       >
-        <div className="hero-content-top flex flex-col items-center px-4 md:px-6 lg:px-12 w-full max-w-7xl mx-auto mt-0 mb-[2vh] md:mt-[20px] md:mb-[50px]">
+        {/* TOP: H1 & Subtitle */}
+        <div className="hero-content-top flex flex-col items-center w-full mt-0 mb-4 md:mt-[20px] md:mb-[50px]">
           <div className="badge self-start -mt-[8px] text-[10px] sm:text-[11px] px-[10px] py-[5px] sm:px-[12px] sm:py-[6px] opacity-70">NEXT GEN MARKETING</div>
-          <h1 className="hero-title text-center uppercase tracking-[-0.02em] font-bold mt-[10px] text-[clamp(1.2rem,4.5vw,5rem)] md:text-[clamp(2.5rem,5.5vw,6rem)] lg:text-[clamp(3rem,3.5vw,5.5rem)] px-2 md:px-0 leading-[1.1] w-full max-w-full overflow-hidden whitespace-nowrap">
+          <h1 className="hero-title animate-shimmer text-center uppercase tracking-[-0.02em] font-bold mt-[10px] text-[clamp(1.2rem,4.5vw,5rem)] md:text-[clamp(2.5rem,5.5vw,6rem)] lg:text-[clamp(3rem,3.5vw,5.5rem)] leading-[1.1] w-full max-w-full overflow-hidden whitespace-nowrap">
             CINEMATIC AI-ENHANCED<br />CONTENT
           </h1>
           <p className="hero-subtitle flex justify-center text-center mt-[10px] max-w-[62ch] opacity-70 text-[clamp(0.875rem,2vw,1.125rem)] md:text-lg">
@@ -320,12 +321,16 @@ export default function HeroNebula({
           </p>
         </div>
 
+        {/* MIDDLE: Flexible Sphere Spacer (Ensures space for the 3D element) */}
+        <div className="flex-1 w-full flex items-center justify-center min-h-[15vh]" aria-hidden="true" />
+
+        {/* BOTTOM: Action Buttons & Scroll Indicator */}
         <div className="hero-content-bottom w-full relative z-30">
-          <div className="hero-actions flex flex-row flex-wrap justify-center lg:justify-between items-center w-full max-w-7xl mx-auto px-4 lg:px-20 gap-2 sm:gap-4 -mt-[20px] md:-mt-[15px] pb-[15px] md:pb-0">
+          <div className="hero-actions flex flex-row flex-wrap justify-center lg:justify-between items-center w-full lg:px-20 gap-2 sm:gap-4 pb-[10px] md:pb-0">
             <AIButton href={ctaPrimary.href} label={ctaPrimary.label} className="flex-1 lg:flex-none min-w-[140px] sm:min-w-[180px] py-4 sm:py-5 text-sm sm:text-lg" />
             <AIButton href={ctaSecondary.href} label={ctaSecondary.label} className="secondary-ai-btn flex-1 lg:flex-none min-w-[140px] sm:min-w-[180px] py-4 sm:py-5 text-sm sm:text-lg" />
           </div>
-          <div className="scroll-arrow-container flex justify-center items-center mt-8 mb-5 sm:mt-12">
+          <div className="scroll-arrow-container flex justify-center items-center mt-6 mb-4 md:mt-10">
             <svg
               className="scroll-arrow cursor-pointer animate-bounce w-8 h-8 sm:w-10 sm:h-10 text-primary opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300"
               viewBox="0 0 24 24"

@@ -11,7 +11,7 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 
 export function Footer() {
   return (
-    <footer className="bg-transparent pt-16 pb-0 border-t-0 relative z-50">
+    <footer className="bg-transparent pt-16 pb-[env(safe-area-inset-bottom)] border-t-0 relative z-50">
       <div className="container mx-auto px-4">
         
         {/* Social Icons Section */}
