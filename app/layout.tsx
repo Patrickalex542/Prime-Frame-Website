@@ -38,7 +38,7 @@ const jsonLd = {
 }
 
 export const metadata: Metadata = {
-  title: "PRIME FRAME | Agenție de Publicitate AI pentru iGaming",
+  title: "PRIME FRAME | AI Studio",
   description:
     "Transformăm viziunea ta în realitate vizuală. Studio specializat în creativități video și statice de impact, generate cu AI, pentru branduri de iGaming competitive.",
   keywords: [
@@ -99,19 +99,11 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
+        url: "/assets/icons/fara_baground.svg",
         type: "image/svg+xml",
       },
     ],
-    apple: "/apple-icon.png",
+    apple: "/assets/icons/fara_baground.svg", // Use the same SVGs or generate a PNG if needed later
   },
 };
 
