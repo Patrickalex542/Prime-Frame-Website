@@ -2,6 +2,7 @@ import type React from "react";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { MobileStabilizer } from "@/components/features/mobile-stabilizer";
 import "./globals.css";
 
 const _geist = Geist({ subsets: ["latin"] });
@@ -131,6 +132,7 @@ export default function RootLayout({
   return (
     <html lang="ro" className="dark scroll-smooth">
       <body className={`font-sans antialiased`}>
+        <MobileStabilizer />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

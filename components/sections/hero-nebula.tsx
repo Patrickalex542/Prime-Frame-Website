@@ -28,6 +28,10 @@ export default function HeroNebula({
 
     cleanedUpRef.current = false
 
+    // Stabilize mobile dimensions to prevent jumpy address bar resizes
+    const initialHeight = window.innerHeight
+    const initialWidth = window.innerWidth
+
     const getViewportParams = () => {
       const width = window.innerWidth
       const height = window.innerHeight
@@ -35,7 +39,10 @@ export default function HeroNebula({
       const isMobile = width < 768
       const isLandscapeMobile = width > height && height < 500
       
-      const minDim = Math.min(width, height)
+      // Use initial height in portrait mobile to keep sphere radius constant
+      const stableHeight = (isMobile && !isLandscapeMobile) ? initialHeight : height
+      const minDim = Math.min(width, stableHeight)
+      
       let radiusBase = minDim * 0.0025 
       
       if (isMobile) {
@@ -226,14 +233,14 @@ export default function HeroNebula({
       const w = window.innerWidth
       const h = window.innerHeight
       
-      // On mobile, ignore resize if only height changes (address bar)
-      // We only want to re-create the scene if width changes (orientation change)
+      // On mobile, ignore resize if only height changes (address bar jitter)
       const isMobile = w < 768
       if (isMobile && w === lastWidth) {
-        // Just update sizes without recreating objects
+        // We still update camera aspect but avoid heavy re-render logic
         camera.aspect = w / h
         camera.updateProjectionMatrix()
-        rendererRef.current.setSize(w, h)
+        // No renderer.setSize(w, h) here to prevent the "lag/jump" 
+        // because the section container is 100dvh and fluctuates
         return
       }
 
@@ -245,9 +252,11 @@ export default function HeroNebula({
       rendererRef.current.setSize(w, h)
       
       resizeTimeout = setTimeout(() => {
+         if (cleanedUpRef.current) return
+         params = getViewportParams() // Re-calculate params on orientation/desktop resize
          createObjects()
          camera.position.z = params.cameraZ
-      }, 200)
+      }, 250)
     }
 
     window.addEventListener("resize", onResize)
