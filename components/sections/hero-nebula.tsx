@@ -220,40 +220,10 @@ export default function HeroNebula({
     window.addEventListener("pointerdown", onPointerDown)
     window.addEventListener("pointerup", onPointerUp)
 
-    let lastWidth = window.innerWidth
-    let resizeTimeout: NodeJS.Timeout
+    // RESIZE HANDLER COMPLETELY REMOVED
+    // The sphere is now locked to initial viewport dimensions
+    // This prevents ANY zoom/scale changes when mobile address bar appears/disappears
 
-    function onResize() {
-      if (!mount || !rendererRef.current) return
-      
-      const w = window.innerWidth
-      const h = window.innerHeight
-      
-      // Update camera and renderer size immediately for smoothness
-      camera.aspect = w / h
-      camera.updateProjectionMatrix()
-      rendererRef.current.setSize(w, h)
-
-      const isMobile = w < 768
-      
-      // CRITICAL: If ONLY height changed (address bar), do NOT trigger createObjects.
-      // This is what causes the "zoom/reflow" effect on scroll.
-      if (isMobile && w === lastWidth) {
-        return 
-      }
-
-      lastWidth = w
-      
-      clearTimeout(resizeTimeout)
-      resizeTimeout = setTimeout(() => {
-         if (cleanedUpRef.current) return
-         params = getViewportParams() // Re-load params to check if radius should change (e.g. orientation)
-         createObjects()
-         camera.position.z = params.cameraZ
-      }, 300)
-    }
-
-    window.addEventListener("resize", onResize)
 
     // Scroll sync logic
     function computeScrollTarget() {
@@ -303,7 +273,6 @@ export default function HeroNebula({
       cleanedUpRef.current = true
       if (rafRef.current) cancelAnimationFrame(rafRef.current)
       window.removeEventListener("scroll", computeScrollTarget)
-      window.removeEventListener("resize", onResize)
       window.removeEventListener("pointermove", onPointerMove)
       window.removeEventListener("pointerdown", onPointerDown)
       window.removeEventListener("pointerup", onPointerUp)
