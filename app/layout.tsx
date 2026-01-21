@@ -40,16 +40,12 @@ const jsonLd = {
 export const metadata: Metadata = {
   title: "PRIME FRAME | AI Studio",
   description:
-    "Transformăm viziunea ta în realitate vizuală. Studio specializat în creativități video și statice de impact, generate cu AI, pentru branduri de iGaming competitive.",
+    "Transformăm viziunea ta în realitate vizuală. Studio specializat în creativități video și statice de impact, generate cu AI, pentru branduri care vor să domine piața digitală.",
   keywords: [
     "AI advertising agency",
-    "agentie marketing AI",
-    "iGaming creative studio",
-    "video ads production",
-    "reclame video AI",
-    "social media content",
-    "performance marketing visuals",
-    "Prime Frame"
+    "video production AI",
+    "digital marketing assets",
+    "creative studio Romania",
   ],
   authors: [{ name: "PRIME FRAME", url: "https://primeframe.ro" }],
   creator: "PRIME FRAME",
