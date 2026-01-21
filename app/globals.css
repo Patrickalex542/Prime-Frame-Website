@@ -147,10 +147,10 @@
   );
   background-size: 200% auto;
   color: #000;
-  background-clip: text;
-  text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
   animation: text-shimmer 4s linear infinite;
 }
 
