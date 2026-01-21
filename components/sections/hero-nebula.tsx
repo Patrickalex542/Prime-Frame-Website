@@ -217,12 +217,29 @@ export default function HeroNebula({
     window.addEventListener("pointerdown", onPointerDown)
     window.addEventListener("pointerup", onPointerUp)
 
+    let lastWidth = window.innerWidth
     let resizeTimeout: NodeJS.Timeout
+
     function onResize() {
       if (!mount || !rendererRef.current) return
-      clearTimeout(resizeTimeout)
+      
       const w = window.innerWidth
       const h = window.innerHeight
+      
+      // On mobile, ignore resize if only height changes (address bar)
+      // We only want to re-create the scene if width changes (orientation change)
+      const isMobile = w < 768
+      if (isMobile && w === lastWidth) {
+        // Just update sizes without recreating objects
+        camera.aspect = w / h
+        camera.updateProjectionMatrix()
+        rendererRef.current.setSize(w, h)
+        return
+      }
+
+      lastWidth = w
+      
+      clearTimeout(resizeTimeout)
       camera.aspect = w / h
       camera.updateProjectionMatrix()
       rendererRef.current.setSize(w, h)
