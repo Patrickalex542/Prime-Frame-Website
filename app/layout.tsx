@@ -118,7 +118,8 @@ export const viewport = {
   themeColor: "#000000",
   width: "device-width",
   initialScale: 1,
-  maximumScale: 5,
+  maximumScale: 1, // Prevent zoom on mobile
+  userScalable: false, // Disable pinch-to-zoom
   viewportFit: "cover",
 };
 
