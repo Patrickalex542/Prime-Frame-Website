@@ -66,7 +66,31 @@ export function WorkModal({ isOpen, onClose, title, category, tags, description,
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-2 sm:p-4 animate-in fade-in duration-200">
       <div className="absolute inset-0 bg-background/95 backdrop-blur-lg" onClick={onClose} />
 
-      <div className="relative z-10 w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-card border border-border rounded-lg overflow-hidden animate-in zoom-in-95 duration-300">
+      <div className="relative z-10 w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-card border border-border rounded-lg overflow-hidden animate-in zoom-in-95 duration-300 shadow-2xl">
+        {/* Animated Close Button */}
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 z-50 p-2 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-white/80 hover:text-amber-400 hover:border-amber-500/50 transition-all duration-300 hover:rotate-90 group"
+          aria-label="Close modal"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 transition-transform"
+          >
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+          <span className="absolute inset-0 rounded-full animate-pulse ring-1 ring-white/20 group-hover:ring-amber-500/50"></span>
+        </button>
+
         <div className="aspect-video bg-muted relative flex items-center justify-center">
           {videoUrl ? (
             isEmbed ? (
