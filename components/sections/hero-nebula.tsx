@@ -297,7 +297,7 @@ export default function HeroNebula({
       />
       
       <div 
-        className="hero-overlay relative z-20 h-full flex flex-col justify-between items-center w-full px-5 pt-[110px] pb-[20px] md:pt-[120px] md:pb-[40px] max-w-7xl mx-auto"
+        className="hero-overlay relative z-20 h-full flex flex-col justify-between items-center w-full px-5 pt-[80px] pb-[15px] md:pt-[120px] md:pb-[40px] max-w-7xl mx-auto"
       >
         {/* TOP: H1 & Subtitle */}
         <div className="hero-content-top flex flex-col items-center w-full mt-0 mb-4 md:mt-[20px] md:mb-[50px]">
@@ -311,7 +311,7 @@ export default function HeroNebula({
         </div>
 
         {/* MIDDLE: Flexible Sphere Spacer (Ensures space for the 3D element) */}
-        <div className="flex-1 w-full flex items-center justify-center min-h-[15vh]" aria-hidden="true" />
+        <div className="flex-1 w-full flex items-center justify-center min-h-[10vh]" aria-hidden="true" />
 
         {/* BOTTOM: Action Buttons & Scroll Indicator */}
         <div className="hero-content-bottom w-full relative z-30">
