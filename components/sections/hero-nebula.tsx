@@ -28,10 +28,6 @@ export default function HeroNebula({
 
     cleanedUpRef.current = false
 
-    // Stabilize mobile dimensions to prevent jumpy address bar resizes
-    const initialHeight = window.innerHeight
-    const initialWidth = window.innerWidth
-
     const getViewportParams = () => {
       const width = window.innerWidth
       const height = window.innerHeight
@@ -39,10 +35,7 @@ export default function HeroNebula({
       const isMobile = width < 768
       const isLandscapeMobile = width > height && height < 500
       
-      // Use initial height in portrait mobile to keep sphere radius constant
-      const stableHeight = (isMobile && !isLandscapeMobile) ? initialHeight : height
-      const minDim = Math.min(width, stableHeight)
-      
+      const minDim = Math.min(width, height)
       let radiusBase = minDim * 0.0025 
       
       if (isMobile) {
@@ -230,30 +223,27 @@ export default function HeroNebula({
     function onResize() {
       if (!mount || !rendererRef.current) return
       
+      // Update sizes from the container to be 100% accurate
       const w = window.innerWidth
       const h = window.innerHeight
       
-      // On mobile, ignore resize if only height changes (address bar jitter)
+      // Sync camera and renderer - FAST operation, prevents stretching
+      camera.aspect = w / h
+      camera.updateProjectionMatrix()
+      rendererRef.current.setSize(w, h)
+
       const isMobile = w < 768
       if (isMobile && w === lastWidth) {
-        // We still update camera aspect but avoid heavy re-render logic
-        camera.aspect = w / h
-        camera.updateProjectionMatrix()
-        // No renderer.setSize(w, h) here to prevent the "lag/jump" 
-        // because the section container is 100dvh and fluctuates
+        // Ignore height-only resize for heavy object re-creation (avoids lag)
         return
       }
 
       lastWidth = w
       
       clearTimeout(resizeTimeout)
-      camera.aspect = w / h
-      camera.updateProjectionMatrix()
-      rendererRef.current.setSize(w, h)
-      
       resizeTimeout = setTimeout(() => {
          if (cleanedUpRef.current) return
-         params = getViewportParams() // Re-calculate params on orientation/desktop resize
+         params = getViewportParams()
          createObjects()
          camera.position.z = params.cameraZ
       }, 250)
