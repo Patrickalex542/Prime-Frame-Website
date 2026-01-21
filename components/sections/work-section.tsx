@@ -8,63 +8,57 @@ import { ScrollReveal } from "@/components/features/scroll-reveal"
 const workProjects = [
   {
     id: 1,
-    title: "Lansare Cazinou Cripto",
-    category: "iGaming",
-    tags: ["Conținut Video", "Variante A/B", "Stil UGC"],
-    imagePlaceholder: "Campanie Conținut Cazinou",
-    videoUrl: "https://drive.google.com/file/d/1nVeY7qcVHPrp4Um7KRmV5VgtnzTIhfLo/preview",
-    description:
-      "Am lansat o campanie de conținut video cinematic cu conversie ridicată pentru o nouă platformă de cazinou cripto. Am generat peste 50 de variante cu AI, testând diferite hook-uri și CTA-uri.",
+    title: "Prezentare PRIME FRAME",
+    category: "Showreel",
+    tags: ["Cinematic", "AI Generated", "High Energy"],
+    imagePlaceholder: "/assets/images/project1_thumb.png",
+    videoUrl: "https://customer-b1qiu5sh2cpso0d8.cloudflarestream.com/c82977043c58a43128de6ff208281b60/manifest/video.m3u8",
+    description: "Un montaj dinamic ce definește standardul Prime Frame. O succesiune de vizualuri hipnotice care culminează cu un final narativ provocator: 'That's just what you've seen' – o promisiune a potențialului nemărginit pe care îl oferim.",
   },
   {
     id: 2,
-    title: "Promoție Pariuri Sportive",
-    category: "Marketing de Performanță",
-    tags: ["Conținut Static", "Localizare", "Variante A/B"],
-    imagePlaceholder: "Campanie Pariuri",
-    videoUrl: "https://youtube.com/shorts/-BQTkBSQUbg", // Adaugă URL-ul tău de video aici
-    description:
-      "Am creat seturi de conținut static localizat pentru 12 piețe. Generarea bazată pe AI a permis testarea rapidă a titlurilor și vizualurilor.",
+    title: "Duelul Națiunilor",
+    category: "Sports Betting",
+    tags: ["Character Design", "High Concept", "Regional Marketing"],
+    imagePlaceholder: "https://customer-b1qiu5sh2cpso0d8.cloudflarestream.com/01c303e294d969589114cce605e53901/thumbnails/thumbnail.jpg?time=1s&height=600",
+    videoUrl: "https://customer-b1qiu5sh2cpso0d8.cloudflarestream.com/01c303e294d969589114cce605e53901/manifest/video.m3u8",
+    description: "Un meci de tenis reinterpretat mitologic. Spania (Toreador) vs. Italia (Gladiator) într-o confruntare vizuală unică. Am folosit AI pentru a fuziona estetica sportivă cu designul de costume istorice, creând o campanie memorabilă pentru audiențe specifice.",
   },
   {
     id: 3,
-    title: "Creative Joc Slots",
-    category: "iGaming",
-    tags: ["Conținut Video", "Stil UGC"],
-    imagePlaceholder: "Video Slots",
-    videoUrl: "", // Adaugă URL-ul tău de video aici
-    description:
-      "Am produs conținut video autentic în stil UGC care prezintă gameplay-ul la sloturi. AI a ajutat la menținerea consistenței brandului, scalând producția de conținut de 10 ori mai rapid decât metodele tradiționale.",
+    title: "Derby-ul Războinicilor",
+    category: "Sports Promo",
+    tags: ["Epic Battle", "Team Branding", "Visual FX"],
+    imagePlaceholder: "https://customer-b1qiu5sh2cpso0d8.cloudflarestream.com/23fedd2a2625c8ab43f015caa47d61e0/thumbnails/thumbnail.jpg?time=2s&height=600",
+    videoUrl: "https://customer-b1qiu5sh2cpso0d8.cloudflarestream.com/23fedd2a2625c8ab43f015caa47d61e0/manifest/video.m3u8",
+    description: "FCSB vs Fenerbahçe re-imaginat ca o bătălie epică. Terenul devine câmp de luptă, iar jucătorii sunt războinici în armuri personalizate cu culorile cluburilor. O metaforă vizuală puternică pentru intensitatea competiției la nivel înalt.",
   },
   {
     id: 4,
-    title: "Experiență Cazinou Live",
-    category: "Gaming Premium",
-    tags: ["Conținut Video", "Conținut Static", "Variante A/B"],
-    imagePlaceholder: "Cazinou Live",
-    videoUrl: "", // Adaugă URL-ul tău de video aici
-    description:
-      "Am dezvoltat creative video și statice premium care evidențiază experiența cu dealer live. Testarea multi-variantă a identificat combinații câștigătoare care au dublat ratele de conversie.",
+    title: "Anida Beauty Care AI",
+    category: "Beauty Commercial",
+    tags: ["AI Model", "Hyper-Realistic", "Product Focus"],
+    imagePlaceholder: "/assets/images/project4_thumb.png",
+    videoUrl: "https://customer-b1qiu5sh2cpso0d8.cloudflarestream.com/33c7c2b8763dd03f9a1f5148c63e1b3a/manifest/video.m3u8",
+    description: "Spot publicitar pentru salonul Anida Beauty Care. Protagonista este un model 100% generat de AI, demonstrând aplicarea produsului cu un nivel de realism care sfidează distincția dintre virtual și real.",
   },
   {
     id: 5,
-    title: "Campanie Rețea Afiliere",
-    category: "Marketing de Performanță",
-    tags: ["Conținut Static", "Localizare", "Variante A/B"],
-    imagePlaceholder: "Campanie Afiliere",
-    videoUrl: "", // Adaugă URL-ul tău de video aici
-    description:
-      "Am construit un sistem scalabil de conținut creativ pentru parteneri afiliați în peste 20 de piețe.",
+    title: "Travel Free Experience",
+    category: "Retail Commercial",
+    tags: ["Product Showcase", "Retail Marketing", "Dynamic Editing"],
+    imagePlaceholder: "/assets/images/project5_thumb.png",
+    videoUrl: "https://customer-b1qiu5sh2cpso0d8.cloudflarestream.com/abf9d3ec0f4d8c1dd2a0ec1a252f95b2/manifest/video.m3u8",
+    description: "Campanie video pentru Travel Free Bordershop. O prezentare dinamică a selecției exclusive de produse, concepută pentru a capta atenția călătorilor și a evidenția varietatea ofertei premium din locațiile de graniță.",
   },
   {
     id: 6,
-    title: "Promovare Turneu",
-    category: "iGaming",
-    tags: ["Conținut Video", "Conținut Static", "Stil UGC"],
-    imagePlaceholder: "Conținut Turneu",
-    videoUrl: "", // Adaugă URL-ul tău de video aici
-    description:
-      "Am creat conținut video și static care transmit urgență pentru turneul sezonier de poker. Variantele generate cu AI au testat diferite trigger-e emoționale, rezultând o creștere de 250% în înscrieri.",
+    title: "Free Spins Campaign",
+    category: "Casino Marketing",
+    tags: ["Player Acquisition", "Promo Offer", "Visual FX"],
+    imagePlaceholder: "https://customer-b1qiu5sh2cpso0d8.cloudflarestream.com/113f1cc45b60e2f00bb0983738f3ccc4/thumbnails/thumbnail.jpg?time=1s&height=600",
+    videoUrl: "https://customer-b1qiu5sh2cpso0d8.cloudflarestream.com/113f1cc45b60e2f00bb0983738f3ccc4/manifest/video.m3u8",
+    description: "Campanie dedicată ofertei de rotiri gratuite fără depunere. Un spot alert, construit pentru a maximiza rata de conversie și a comunica instantaneu valoarea beneficiului către jucători.",
   },
 ]
 

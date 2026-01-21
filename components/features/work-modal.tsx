@@ -31,11 +31,22 @@ export function WorkModal({ isOpen, onClose, title, category, tags, description,
       const videoId = url.split("/shorts/")[1].split("?")[0]
       return `https://www.youtube.com/embed/${videoId}?modestbranding=1&rel=0&controls=1`
     }
-    if (url.includes("cloudflarestream.com")) {
-      // Cloudflare Stream 4K optimization
+    if (url.includes("cloudflarestream.com") || url.includes("videodelivery.net")) {
+      // Handle iframe links directly
       if (url.includes("/iframe")) return url
-      const videoId = url.split("/").pop()
-      return `https://customer-f3s7okvsv6y788s3.cloudflarestream.com/${videoId}/iframe?preload=true&poster=true`
+      
+      // Extract Video ID from various formats
+      // Format 1: https://customer-xyz.cloudflarestream.com/VIDEO_ID/manifest/video.m3u8
+      // Format 2: https://customer-xyz.cloudflarestream.com/VIDEO_ID/watch
+      const match = url.match(/([a-f0-9]{32})/)
+      const videoId = match ? match[1] : null
+
+      if (videoId) {
+         // Use the standard iframe domain which works for all customers
+         // Removed poster=true as it expects a URL, default behavior is fine
+         return `https://iframe.videodelivery.net/${videoId}?preload=true`
+      }
+      return url
     }
     if (url.includes("drive.google.com")) {
       return url
