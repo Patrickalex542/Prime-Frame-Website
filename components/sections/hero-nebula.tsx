@@ -35,11 +35,14 @@ export default function HeroNebula({
       const isMobile = width < 768
       const isLandscapeMobile = width > height && height < 500
       
-      const minDim = Math.min(width, height)
-      let radiusBase = minDim * 0.0025 
+      // Use width as the stable base for radius on mobile portrait to prevent scaling jumps 
+      // when the address bar hides/shows.
+      const radiusBaseWidth = isMobile && !isLandscapeMobile ? width : Math.min(width, height)
+      let radiusBase = radiusBaseWidth * 0.0025 
       
       if (isMobile) {
-        radiusBase = Math.max(1.5, Math.min(2.1, width * 0.005))
+        // Higher multiplier for mobile to keep sphere prominent
+        radiusBase = Math.max(1.6, Math.min(2.2, width * 0.0055))
       } else {
         radiusBase = Math.max(2.5, Math.min(3.5, width * 0.002))
       }
@@ -49,7 +52,7 @@ export default function HeroNebula({
       return {
         isMobile,
         isLandscapeMobile,
-        particleCount: isMobile ? 8000 : 20000,
+        particleCount: 20000, // User requested 20k on mobile too
         sphereRadius: radiusBase,
         cameraZ: isLandscapeMobile ? 12 : isMobile ? 12 : 9 
       }
@@ -223,19 +226,20 @@ export default function HeroNebula({
     function onResize() {
       if (!mount || !rendererRef.current) return
       
-      // Update sizes from the container to be 100% accurate
       const w = window.innerWidth
       const h = window.innerHeight
       
-      // Sync camera and renderer - FAST operation, prevents stretching
+      // Update camera and renderer size immediately for smoothness
       camera.aspect = w / h
       camera.updateProjectionMatrix()
       rendererRef.current.setSize(w, h)
 
       const isMobile = w < 768
+      
+      // CRITICAL: If ONLY height changed (address bar), do NOT trigger createObjects.
+      // This is what causes the "zoom/reflow" effect on scroll.
       if (isMobile && w === lastWidth) {
-        // Ignore height-only resize for heavy object re-creation (avoids lag)
-        return
+        return 
       }
 
       lastWidth = w
@@ -243,10 +247,10 @@ export default function HeroNebula({
       clearTimeout(resizeTimeout)
       resizeTimeout = setTimeout(() => {
          if (cleanedUpRef.current) return
-         params = getViewportParams()
+         params = getViewportParams() // Re-load params to check if radius should change (e.g. orientation)
          createObjects()
          camera.position.z = params.cameraZ
-      }, 250)
+      }, 300)
     }
 
     window.addEventListener("resize", onResize)
