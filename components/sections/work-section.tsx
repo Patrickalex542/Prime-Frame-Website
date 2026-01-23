@@ -20,7 +20,7 @@ const workProjects = [
     title: "Duelul Națiunilor",
     category: "Sports Betting",
     tags: ["Character Design", "High Concept", "Regional Marketing"],
-    imagePlaceholder: "https://customer-b1qiu5sh2cpso0d8.cloudflarestream.com/01c303e294d969589114cce605e53901/thumbnails/thumbnail.jpg?time=1s&height=600",
+    imagePlaceholder: "https://customer-b1qiu5sh2cpso0d8.cloudflarestream.com/01c303e294d969589114cce605e53901/thumbnails/thumbnail.jpg?time=38s&height=600",
     videoUrl: "https://customer-b1qiu5sh2cpso0d8.cloudflarestream.com/01c303e294d969589114cce605e53901/manifest/video.m3u8",
     description: "Un meci de tenis reinterpretat mitologic. Spania (Toreador) vs. Italia (Gladiator) într-o confruntare vizuală unică. Am folosit AI pentru a fuziona estetica sportivă cu designul de costume istorice, creând o campanie memorabilă pentru audiențe specifice.",
   },
@@ -29,7 +29,7 @@ const workProjects = [
     title: "Derby-ul Războinicilor",
     category: "Sports Promo",
     tags: ["Epic Battle", "Team Branding", "Visual FX"],
-    imagePlaceholder: "https://customer-b1qiu5sh2cpso0d8.cloudflarestream.com/23fedd2a2625c8ab43f015caa47d61e0/thumbnails/thumbnail.jpg?time=2s&height=600",
+    imagePlaceholder: "https://customer-b1qiu5sh2cpso0d8.cloudflarestream.com/23fedd2a2625c8ab43f015caa47d61e0/thumbnails/thumbnail.jpg?time=8s&height=600",
     videoUrl: "https://customer-b1qiu5sh2cpso0d8.cloudflarestream.com/23fedd2a2625c8ab43f015caa47d61e0/manifest/video.m3u8",
     description: "FCSB vs Fenerbahçe re-imaginat ca o bătălie epică. Terenul devine câmp de luptă, iar jucătorii sunt războinici în armuri personalizate cu culorile cluburilor. O metaforă vizuală puternică pentru intensitatea competiției la nivel înalt.",
   },
@@ -38,7 +38,7 @@ const workProjects = [
     title: "Anida Beauty Care AI",
     category: "Beauty Commercial",
     tags: ["AI Model", "Hyper-Realistic", "Product Focus"],
-    imagePlaceholder: "/assets/images/project4_thumb.png",
+    imagePlaceholder: "https://customer-b1qiu5sh2cpso0d8.cloudflarestream.com/33c7c2b8763dd03f9a1f5148c63e1b3a/thumbnails/thumbnail.jpg?time=4s&height=600",
     videoUrl: "https://customer-b1qiu5sh2cpso0d8.cloudflarestream.com/33c7c2b8763dd03f9a1f5148c63e1b3a/manifest/video.m3u8",
     description: "Spot publicitar pentru salonul Anida Beauty Care. Protagonista este un model 100% generat de AI, demonstrând aplicarea produsului cu un nivel de realism care sfidează distincția dintre virtual și real.",
   },
@@ -105,6 +105,7 @@ export function WorkSection() {
           tags={selectedProject.tags}
           description={selectedProject.description}
           videoUrl={selectedProject.videoUrl}
+          imagePlaceholder={selectedProject.imagePlaceholder}
         />
       )}
     </section>

@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect } from "react"
+import { useState, useEffect } from "react"
 
 interface WorkModalProps {
   isOpen: boolean
@@ -10,12 +10,16 @@ interface WorkModalProps {
   tags: string[]
   description: string
   videoUrl?: string
+  imagePlaceholder?: string
 }
 
-export function WorkModal({ isOpen, onClose, title, category, tags, description, videoUrl }: WorkModalProps) {
+export function WorkModal({ isOpen, onClose, title, category, tags, description, videoUrl, imagePlaceholder }: WorkModalProps) {
+  const [isPlaying, setIsPlaying] = useState(false)
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden"
+      setIsPlaying(false) // Reset play state when opening
     } else {
       document.body.style.overflow = "unset"
     }
@@ -29,26 +33,17 @@ export function WorkModal({ isOpen, onClose, title, category, tags, description,
   const getEmbedUrl = (url: string) => {
     if (url.includes("youtube.com/shorts/")) {
       const videoId = url.split("/shorts/")[1].split("?")[0]
-      return `https://www.youtube.com/embed/${videoId}?modestbranding=1&rel=0&controls=1`
+      return `https://www.youtube.com/embed/${videoId}?modestbranding=1&rel=0&controls=1&autoplay=1`
     }
     if (url.includes("cloudflarestream.com") || url.includes("videodelivery.net")) {
-      // Handle iframe links directly
-      if (url.includes("/iframe")) return url
+      if (url.includes("/iframe")) return url + "?autoplay=true"
       
-      // Extract Video ID from various formats
-      // Format 1: https://customer-xyz.cloudflarestream.com/VIDEO_ID/manifest/video.m3u8
-      // Format 2: https://customer-xyz.cloudflarestream.com/VIDEO_ID/watch
       const match = url.match(/([a-f0-9]{32})/)
       const videoId = match ? match[1] : null
 
       if (videoId) {
-         // Use the standard iframe domain which works for all customers
-         // Removed poster=true as it expects a URL, default behavior is fine
-         return `https://iframe.videodelivery.net/${videoId}?preload=true`
+         return `https://iframe.videodelivery.net/${videoId}?preload=true&autoplay=true`
       }
-      return url
-    }
-    if (url.includes("drive.google.com")) {
       return url
     }
     return url
@@ -91,20 +86,57 @@ export function WorkModal({ isOpen, onClose, title, category, tags, description,
           <span className="absolute inset-0 rounded-full animate-pulse ring-1 ring-white/20 group-hover:ring-amber-500/50"></span>
         </button>
 
-        <div className="aspect-video bg-muted relative flex items-center justify-center">
+        <div className="aspect-video bg-muted relative flex items-center justify-center overflow-hidden">
           {videoUrl ? (
-            isEmbed ? (
-              <iframe
-                src={embedUrl}
-                title={title}
-                className="w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+            isPlaying ? (
+              isEmbed ? (
+                <iframe
+                  src={embedUrl}
+                  title={title}
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              ) : (
+                <video src={videoUrl} controls className="w-full h-full object-contain" autoPlay playsInline>
+                  Browser-ul tău nu suportă video playback.
+                </video>
+              )
             ) : (
-              <video src={videoUrl} controls className="w-full h-full object-contain" autoPlay playsInline>
-                Browser-ul tău nu suportă video playback.
-              </video>
+              // Cover State with Custom Play Button
+              <div 
+                className="absolute inset-0 cursor-pointer group" 
+                onClick={() => setIsPlaying(true)}
+              >
+                {/* Thumbnail */}
+                {imagePlaceholder && (imagePlaceholder.startsWith("/") || imagePlaceholder.startsWith("http")) ? (
+                  <img 
+                    src={imagePlaceholder} 
+                    alt={title} 
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-black flex items-center justify-center">
+                    <span className="text-muted-foreground">No Preview</span>
+                  </div>
+                )}
+                
+                {/* Black Glass Play Button Overlay */}
+                <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/40 transition-colors duration-300">
+                  <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-black/40 backdrop-blur-sm border border-white/20 flex items-center justify-center shadow-xl group-hover:bg-black/60 group-hover:border-amber-500/30 group-hover:scale-110 transition-all duration-300">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="w-8 h-8 sm:w-10 sm:h-10 text-white ml-1 shadow-sm"
+                    >
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
             )
           ) : (
             <div className="text-center text-muted-foreground">

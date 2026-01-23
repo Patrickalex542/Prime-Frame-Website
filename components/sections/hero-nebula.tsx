@@ -220,10 +220,32 @@ export default function HeroNebula({
     window.addEventListener("pointerdown", onPointerDown)
     window.addEventListener("pointerup", onPointerUp)
 
-    // RESIZE HANDLER COMPLETELY REMOVED
-    // The sphere is now locked to initial viewport dimensions
-    // This prevents ANY zoom/scale changes when mobile address bar appears/disappears
+    // Smart Resize Handler
+    // Only resizes if WIDTH changes (or significant height change > 100px for orientation)
+    // This prevents mobile address bar jitter from resetting the sphere
+    let prevWidth = window.innerWidth
+    
+    function onResize() {
+      const newWidth = window.innerWidth
+      const newHeight = window.innerHeight
+      
+      // Strict check: Only resize if width changed (orientation/devtools) 
+      // OR if height changed dramatically (>150px) which implies orientation change
+      if (Math.abs(newWidth - prevWidth) > 10 || Math.abs(newHeight - window.innerHeight) > 200) {
+        prevWidth = newWidth
+        
+        if (mount && renderer && camera) {
+          renderer.setSize(mount.clientWidth, mount.clientHeight)
+          camera.aspect = mount.clientWidth / mount.clientHeight
+          camera.updateProjectionMatrix()
+          
+          // Re-create objects to adjust particle count/size for new device category
+          createObjects()
+        }
+      }
+    }
 
+    window.addEventListener("resize", onResize)
 
     // Scroll sync logic
     function computeScrollTarget() {
@@ -272,6 +294,7 @@ export default function HeroNebula({
     return () => {
       cleanedUpRef.current = true
       if (rafRef.current) cancelAnimationFrame(rafRef.current)
+      window.removeEventListener("resize", onResize)
       window.removeEventListener("scroll", computeScrollTarget)
       window.removeEventListener("pointermove", onPointerMove)
       window.removeEventListener("pointerdown", onPointerDown)
