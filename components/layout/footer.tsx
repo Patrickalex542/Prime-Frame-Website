@@ -52,7 +52,7 @@ export function Footer() {
               <li><a href="#work" className="hover:text-primary transition-colors">PROIECTE</a></li>
               <li><a href="#services" className="hover:text-primary transition-colors">SERVICII</a></li>
               <li><a href="#process" className="hover:text-primary transition-colors">PROCES</a></li>
-              <li><a href="#testimonials" className="hover:text-primary transition-colors">TESTIMONIALE</a></li>
+              <li><a href="#pricing" className="hover:text-primary transition-colors">PREȚURI</a></li>
               <li><a href="#contact" className="hover:text-primary transition-colors">CONTACT</a></li>
             </ul>
           </div>
@@ -90,7 +90,7 @@ export function Footer() {
                   className="block w-[200px]"
                 >
                   <img 
-                    src="https://anidabeautycare.ro/wp-content/uploads/2023/02/SAL-site.png" 
+                    src="/images/anpc-sal.png" 
                     alt="ANPC - Soluționarea Alternativă a Litigiilor" 
                     className="w-full h-auto object-contain dark:invert"
                   />
@@ -102,7 +102,7 @@ export function Footer() {
                   className="block w-[200px]"
                 >
                   <img 
-                    src="https://anidabeautycare.ro/wp-content/uploads/2023/02/SOL-site.png" 
+                    src="/images/anpc-sol.png" 
                     alt="Soluționarea Online a Litigiilor" 
                     className="w-full h-auto object-contain dark:invert"
                   />

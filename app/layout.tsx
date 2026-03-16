@@ -1,7 +1,7 @@
 import type React from "react";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
+
 import { MobileStabilizer } from "@/components/features/mobile-stabilizer";
 import "./globals.css";
 
@@ -10,7 +10,7 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Agency",
+  "@type": "Organization",
   "name": "PRIME FRAME",
   "url": "https://primeframe.ro",
   "logo": "https://primeframe.ro/images/logo-icon.jpg",
@@ -126,7 +126,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         {children}
-        <Analytics />
+
       </body>
     </html>
   );
