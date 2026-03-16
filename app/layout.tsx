@@ -34,7 +34,7 @@ const jsonLd = {
     "areaServed": "RO",
     "availableLanguage": ["Romanian", "English"]
   },
-  "description": "Studio de creație AI specializat în conținut video și static cinematic pentru iGaming și performance marketing."
+  "description": "Studio de creație AI specializat în conținut video și static cinematic pentru performance marketing."
 }
 
 export const metadata: Metadata = {
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: "PRIME FRAME | Reclame AI de Impact pentru iGaming",
+    title: "PRIME FRAME | AI Creative Studio",
     description: "Creativitate fără limite. Descoperă portofoliul nostru de vizualuri generate cu AI pentru campanii de succes.",
     url: "https://primeframe.ro",
     siteName: "PRIME FRAME",
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "PRIME FRAME - Agenție AI",
-    description: "Reclame Video & Foto AI de impact pentru iGaming.",
+    description: "Reclame Video & Foto AI de impact pentru campanii digitale.",
     images: ["/images/logo-icon.jpg"], 
   },
   robots: {
